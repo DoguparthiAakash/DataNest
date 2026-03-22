@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Request a dataset to be added to DataNest.">
+  <title>Request Dataset — DataNest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <span>DataNest</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Browse</a>
+        <a href="request.html" class="nav-link">Request</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="page-header">
+      <a href="index.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back</a>
+      <h1>Request a <span class="gradient-text">Dataset</span></h1>
+      <p>Can't find what you need? Submit a request.</p>
+    </section>
+
+    <section class="request-section">
+      <div class="request-card">
+        <div class="request-card-header">
+          <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>Dataset Info</h2>
+        </div>
+        <div class="request-card-body">
+          <form id="f">
+            <div class="form-group"><label>Dataset Title *</label><input type="text" id="t" required placeholder="e.g., Indian Census Data"></div>
+            <div class="form-row">
+              <div class="form-group"><label>Topic *</label><select id="tp" required><option value="">Select</option><option>Healthcare</option><option>Climate</option><option>Finance</option><option>NLP</option><option>Computer Vision</option><option>Other</option></select></div>
+              <div class="form-group"><label>Format</label><select id="frm"><option value="">Select</option><option>CSV</option><option>JSON</option><option>API</option><option>Other</option></select></div>
+            </div>
+            <div class="form-group"><label>Description *</label><textarea id="d" required placeholder="What does this contain?"></textarea></div>
+            <div class="form-group"><label>Access Type *</label><select id="acc" required onchange="toggleAccess()"><option value="download">Direct Download URL</option><option value="api">API / Code Only</option></select></div>
+            <div class="form-group" id="urlG"><label>Download URL *</label><input type="url" id="u" placeholder="https://..."><span class="form-hint">GitHub: https://github.com/user/repo/archive/refs/heads/main.zip</span></div>
+            <div class="form-group" id="codeG" style="display:none"><label>Usage Code *</label><textarea id="c" placeholder="pip install datasets&#10;from datasets import load_dataset&#10;dataset = load_dataset('name')"></textarea></div>
+            <div class="request-card-header" style="background:var(--bg);margin:24px -20px -20px;padding:16px 20px;border-top:1px solid var(--border)"><h2 style="font-size:13px;text-transform:uppercase;letter-spacing:.5px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>Your Info</h2></div>
+            <div style="padding:20px">
+              <div class="form-row">
+                <div class="form-group"><label>Name *</label><input type="text" id="n" required placeholder="John Doe"></div>
+                <div class="form-group"><label>Email *</label><input type="email" id="e" required placeholder="john@example.com"></div>
+              </div>
+              <button type="submit" class="btn btn-primary submit-btn" id="sb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Submit Request</button>
+            </div>
+          </form>
+          <div class="success-card" id="sc">
+            <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h2>Request Submitted!</h2>
+            <p>We'll review and add the dataset if it meets our criteria.</p>
+            <a href="index.html" class="btn btn-primary">Browse Datasets</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand"><div class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><span>DataNest</span></div><p>Curated datasets for researchers.</p></div>
+      <div class="footer-links"><a href="index.html">Browse</a><a href="request.html">Request</a><a href="about.html">About</a></div>
+    </div>
+    <div class="footer-bottom"><p>Free & Open Source</p></div>
+  </footer>
+
+  <script>
+    function toggleAccess() {
+      const type = document.getElementById('acc').value;
+      document.getElementById('urlG').style.display = type === 'download' ? 'block' : 'none';
+      document.getElementById('codeG').style.display = type === 'api' ? 'block' : 'none';
+    }
+    document.getElementById('f').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = document.getElementById('sb');
+      btn.disabled = true;
+      btn.innerHTML = 'Sending...';
+      const title = document.getElementById('t').value;
+      const type = document.getElementById('acc').value;
+      const sub = encodeURIComponent('DataNest Request: ' + title);
+      const body = encodeURIComponent('Title: ' + title + '\nTopic: ' + document.getElementById('tp').value + '\nFormat: ' + document.getElementById('frm').value + '\nType: ' + (type === 'download' ? 'Download' : 'API/Code') + '\n\n' + (type === 'download' ? 'URL: ' + document.getElementById('u').value : 'Code:\n' + document.getElementById('c').value) + '\n\nFrom: ' + document.getElementById('n').value + '\nEmail: ' + document.getElementById('e').value);
+      window.location.href = 'mailto:datanest@example.com?subject=' + sub + '&body=' + body;
+      document.getElementById('f').classList.add('hidden');
+      document.getElementById('sc').classList.add('show');
+    });
+  </script>
+</body>
+</html>

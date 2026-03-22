@@ -1,0 +1,24 @@
+{
+  "id": "6",
+  "title": "Chennai Air Quality Index 2015–2023",
+  "topic": "Climate",
+  "format": "CSV",
+  "size": "8.4 MB",
+  "rows": "62000",
+  "overview": "Daily PM2.5, PM10, NO2, SO2, and CO readings from 12 TNPCB monitoring stations across Chennai. Useful for pollution trend analysis and health impact studies.",
+  "source": "Tamil Nadu Pollution Control Board",
+  "visit_url": "https://www.tnpcb.gov.in",
+  "download_url": "https://example.com/chennai-air.csv",
+  "added": "2025-11-20",
+  "tags": ["air-quality", "pollution", "chennai", "pm25", "environment", "aqi"],
+  "preview": {
+    "cols": ["date", "station", "pm25", "pm10", "no2", "aqi"],
+    "rows": [
+      ["2023-01-01", "Alandur", "68.2", "112.4", "38.1", "147"],
+      ["2023-01-01", "Manali", "94.8", "156.2", "52.3", "201"],
+      ["2023-01-01", "Velachery", "55.3", "89.7", "29.8", "121"],
+      ["2023-01-01", "T.Nagar", "61.7", "98.4", "33.5", "134"],
+      ["2023-01-02", "Alandur", "72.1", "118.9", "41.2", "158"]
+    ]
+  }
+}

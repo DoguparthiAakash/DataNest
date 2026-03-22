@@ -1,0 +1,24 @@
+{
+  "id": "10",
+  "title": "Indian Languages NLP Corpus",
+  "topic": "NLP",
+  "format": "JSON",
+  "size": "2.1 GB",
+  "rows": "5000000",
+  "overview": "Parallel text corpus for 22 Indian languages with English translations. Sourced from government documents, news articles, and educational content.",
+  "source": "AI4Bharat, IIT Bombay",
+  "visit_url": "https://ai4bharat.org",
+  "download_url": "https://example.com/indian-nlp-corpus.json",
+  "added": "2025-07-05",
+  "tags": ["nlp", "translation", "indian-languages", "multilingual", "ai", "transformers"],
+  "preview": {
+    "cols": ["id", "hindi", "tamil", "telugu", "english"],
+    "rows": [
+      ["1", "भारत एक महान देश है", "இந்தியா ஒரு பெரிய நாடு", "భారతదేశం", "India is a great nation"],
+      ["2", "नमस्ते कैसे हैं आप", "வணக்கம்", "నమస్కారం", "Hello, how are you"],
+      ["3", "धन्यवाद", "நன்றி", "ధన్యవాదాలు", "Thank you"],
+      ["4", "आज मौसम अच्छा है", "காலை", "ఈ రోజు", "The weather is nice today"],
+      ["5", "मुझे भोजन पसंद है", "உணவு", "ఆహారం", "I like food"]
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "3",
+  "title": "Tamil Sentiment Corpus",
+  "topic": "NLP",
+  "format": "JSON",
+  "size": "22 MB",
+  "rows": "90000",
+  "overview": "90,000 Tamil tweets and social media posts labelled positive, negative, or neutral. Balanced across topics: politics, cinema, sports, and daily life.",
+  "source": "AU-KBC Research Centre",
+  "visit_url": "https://au-kbc.org",
+  "download_url": "https://example.com/tamil-sentiment.json",
+  "added": "2026-01-20",
+  "tags": ["tamil", "nlp", "sentiment", "tweets", "classification", "social-media"],
+  "preview": {
+    "cols": ["id", "text", "label", "topic"],
+    "rows": [
+      ["1", "நல்ல படம்", "positive", "cinema"],
+      ["2", "மோசமான சேவை", "negative", "daily"],
+      ["3", "சரியான முடிவு", "positive", "politics"],
+      ["4", "கோபமாக இருக்கிறது", "negative", "daily"],
+      ["5", "அருமையான ஆட்டம்", "positive", "sports"]
+    ]
+  }
+}

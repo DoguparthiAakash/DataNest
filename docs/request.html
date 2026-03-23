@@ -34,7 +34,7 @@
     <section class="request-section">
       <div class="request-card">
         <div class="request-card-header">
-          <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>Dataset Info</h2>
+          <h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>Dataset Info</h2>
         </div>
         <div class="request-card-body">
           <form id="f">
@@ -47,13 +47,13 @@
             <div class="form-group"><label>Access Type *</label><select id="acc" required onchange="toggleAccess()"><option value="download">Direct Download URL</option><option value="api">API / Code Only</option></select></div>
             <div class="form-group" id="urlG"><label>Download URL *</label><input type="url" id="u" placeholder="https://..."><span class="form-hint">GitHub: https://github.com/user/repo/archive/refs/heads/main.zip</span></div>
             <div class="form-group" id="codeG" style="display:none"><label>Usage Code *</label><textarea id="c" placeholder="pip install datasets&#10;from datasets import load_dataset&#10;dataset = load_dataset('name')"></textarea></div>
-            <div class="request-card-header" style="background:var(--bg);margin:24px -20px -20px;padding:16px 20px;border-top:1px solid var(--border)"><h2 style="font-size:13px;text-transform:uppercase;letter-spacing:.5px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>Your Info</h2></div>
+            <div class="request-card-header" style="background:var(--bg);margin:24px -20px -20px;padding:16px 20px;border-top:1px solid var(--border)"><h2 style="font-size:13px;text-transform:uppercase;letter-spacing:.5px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>Your Info</h2></div>
             <div style="padding:20px">
               <div class="form-row">
                 <div class="form-group"><label>Name *</label><input type="text" id="n" required placeholder="John Doe"></div>
                 <div class="form-group"><label>Email *</label><input type="email" id="e" required placeholder="john@example.com"></div>
               </div>
-              <button type="submit" class="btn btn-primary submit-btn" id="sb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Submit Request</button>
+              <button type="submit" class="btn btn-primary submit-btn" id="sb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Submit Request</button>
             </div>
           </form>
           <div class="success-card" id="sc">

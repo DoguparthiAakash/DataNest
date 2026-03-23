@@ -1,95 +1,54 @@
-# DataNest — Open Dataset Directory
+# DataNest
 
-A curated directory of open research datasets. Hosted on GitHub Pages with an admin portal for managing datasets.
+**Open Dataset Directory** — A lightweight, fast dataset navigator for researchers.
 
-**Live Site:** `https://yourusername.github.io/datanest`
+[![Deploy to GitHub Pages](https://github.com/anomalyco/datanest/actions/workflows/deploy.yml/badge.svg)](https://github.com/anomalyco/datanest/actions/workflows/deploy.yml)
+
+---
+
+## Features
+
+- Browse 20+ curated datasets
+- Search & filter by topic, format
+- Download or view via API (HuggingFace, Kaggle)
+- Mobile-first responsive design
+- No build step — pure static HTML/CSS/JS
+- Free hosting on GitHub Pages
 
 ---
 
 ## Quick Start
 
 ```bash
-# 1. Push this repo to GitHub
-# 2. Settings → Pages → Source: GitHub Actions
-# 3. Go to /admin to manage datasets
-# Done!
+# 1. Clone the repo
+git clone https://github.com/yourusername/datanest.git
+cd datanest
+
+# 2. Test locally
+cd docs && python3 -m http.server 8000
+
+# 3. Open http://localhost:8000
 ```
 
 ---
 
-## Project Structure
+## Deployment
 
-```
-datanest/
-├── docs/
-│   ├── index.html           # Main page
-│   ├── request.html         # Request form
-│   ├── about.html           # About page
-│   ├── admin/               # Decap CMS admin
-│   │   ├── index.html
-│   │   └── config.yml
-│   ├── css/style.css        # Styles
-│   ├── js/app.js            # Application
-│   ├── datas/                # Dataset files
-│   │   ├── index.json        # List of datasets
-│   │   ├── covid-india.json
-│   │   ├── tn-rainfall.json
-│   │   └── ...
-│   └── data/
-│       └── requests/        # User requests
-│
-├── .github/workflows/deploy.yml
-└── README.md
-```
+1. Push to GitHub
+2. Settings → Pages → Source: **GitHub Actions**
+3. Site goes live automatically
 
 ---
 
-## Adding/Removing Datasets
+## Adding Datasets
 
-### Method 1: Admin Portal (Recommended)
+```bash
+# 1. Create dataset file
+docs/datas/my-dataset.json
 
-1. Go to `/admin` → Login with GitHub
-2. Click **Datasets** → **New Datasets**
-3. Fill the form and click **Publish**
-4. The dataset is automatically added to `datas/` folder
-
-To remove: Open a dataset in admin → **Delete**
-
-### Method 2: Manual
-
-**Add a new dataset:**
-1. Create a new JSON file in `docs/datas/` (e.g., `my-dataset.json`)
-2. Add the filename to `docs/datas/index.json`
-
-```json
-// docs/datas/my-dataset.json
-{
-  "id": "11",
-  "title": "My Dataset",
-  "topic": "Healthcare",
-  "format": "CSV",
-  "size": "10 MB",
-  "rows": "50000",
-  "overview": "Description here...",
-  "source": "Organization",
-  "download_url": "https://...",
-  "added": "2026-03-22",
-  "tags": ["tag1", "tag2"]
-}
+# 2. Add to index
+docs/datas/index.json
 ```
-
-```json
-// docs/datas/index.json
-[
-  "covid-india.json",
-  "tn-rainfall.json",
-  "my-dataset.json"
-]
-```
-
-**Remove a dataset:**
-1. Delete the file from `docs/datas/`
-2. Remove it from `docs/datas/index.json`
 
 ---
 
@@ -97,70 +56,42 @@ To remove: Open a dataset in admin → **Delete**
 
 ```json
 {
-  "id": "11",
+  "id": "unique-id",
   "title": "Dataset Name",
   "topic": "Healthcare",
   "format": "CSV",
   "size": "10 MB",
   "rows": "50000",
-  "overview": "Describe what this dataset contains...",
-  "source": "Organization Name",
-  "visit_url": "https://...",
+  "overview": "What this dataset contains...",
+  "source": "Source Organization",
+  "access_type": "download",
   "download_url": "https://...",
+  "visit_url": "https://...",
   "added": "2026-03-22",
-  "tags": ["tag1", "tag2", "tag3"],
-  "preview": {
-    "cols": ["col1", "col2", "col3"],
-    "rows": [
-      ["val1", "val2", "val3"],
-      ["val1", "val2", "val3"],
-      ["val1", "val2", "val3"],
-      ["val1", "val2", "val3"],
-      ["val1", "val2", "val3"]
-    ]
-  }
+  "tags": ["tag1", "tag2"]
 }
 ```
 
-### Available Topics
-
-Healthcare · Climate · Finance · NLP · Agriculture · Computer Vision · Education · Social Science · Economics · Sports · Other
-
----
-
-## Admin Portal
-
-Access at `/admin` — requires GitHub login with repo access.
-
-### Setup (One-time)
-
-1. Go to GitHub → Settings → Developer settings → OAuth Apps
-2. Create new OAuth App:
-   - Homepage URL: `https://yourusername.github.io/datanest`
-   - Callback URL: `https://yourusername.github.io/datanest/admin/index.html`
-3. In `docs/admin/config.yml`, update:
-   ```yaml
-   backend:
-     repo: yourusername/datanest  # Change this
-   ```
+For API-only datasets:
+```json
+{
+  "access_type": "api",
+  "usage_code": "from datasets import load_dataset\nds = load_dataset('path')",
+  ...
+}
+```
 
 ---
 
-## How Requests Work
+## Tech Stack
 
-Users submit requests via `/request.html`. View/manage them in `/admin` → **Dataset Requests**.
-
----
-
-## Security
-
-- Admin access requires GitHub login
-- Only repo collaborators can access `/admin`
-- All changes tracked in Git history
-- Remove repo access to revoke admin rights
+- HTML5 + CSS3 + Vanilla JS
+- Google Fonts (Outfit, JetBrains Mono)
+- GitHub Pages (hosting)
+- GitHub Actions (deployment)
 
 ---
 
 ## License
 
-MIT — Use freely.
+MIT — Free for personal and commercial use.

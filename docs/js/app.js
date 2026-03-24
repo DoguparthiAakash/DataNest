@@ -1,4 +1,5 @@
 // DataNest - Dataset Browser
+console.log("DataNest Portal v1.0.2 - Fixed Modal & Download Robustness");
 let datasets = [], filtered = [];
 const PER_PAGE = 20;
 let currentPage = 1;

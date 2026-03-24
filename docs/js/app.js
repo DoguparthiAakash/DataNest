@@ -78,7 +78,7 @@ function getCardAction(d) {
   if (d.access_type === 'api') {
     const source = d.source?.toLowerCase() || '';
     let primaryBtn = '';
-    const icon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+    const icon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
     const codeIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>`;
     
     if (source.includes('huggingface')) primaryBtn = `<a href="${esc(d.visit_url)}" class="btn btn-primary btn-sm btn-flex" target="_blank" rel="noopener" onclick="event.stopPropagation()">${icon}HuggingFace</a>`;
@@ -86,7 +86,8 @@ function getCardAction(d) {
     else primaryBtn = `<a href="#" class="btn btn-primary btn-sm btn-flex" onclick="event.stopPropagation();openModal('${d.id}');return false;">${codeIcon}View Code</a>`;
     return primaryBtn;
   }
-  return `<a href="${esc(d.download_url)}" class="btn btn-primary btn-sm btn-flex" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download</a>`;
+  const filename = d.download_url ? (d.download_url.split('/').pop().split('?')[0].split('#')[0] || 'data.dat') : `${d.id}.${d.format?.toLowerCase() || 'dat'}`;
+  return `<button class="btn btn-primary btn-sm btn-flex" onclick="event.stopPropagation();downloadFile('${esc(d.download_url)}', '${esc(filename)}')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download</button>`;
 }
 
 function renderCards() {
@@ -98,7 +99,7 @@ function renderCards() {
   const start = (currentPage - 1) * PER_PAGE;
   const pageItems = filtered.slice(start, start + PER_PAGE);
   
-  con.innerHTML = pageItems.map((d, i) => `<div class="card" style="animation-delay:${i * 30}ms" onclick="openModal('${d.id}')"><div class="card-header"><span class="topic-badge ${(d.topic || 'other').toLowerCase().replace(/\s+/g, '-')}">${esc(d.topic)}</span>${getBadge(d)}</div><div class="card-title">${esc(d.title)}</div><p class="card-overview">${esc(d.overview)}</p><div class="card-meta">${d.size ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/></svg>${esc(d.size)}</span>` : ''}${d.rows ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>${fmtNum(d.rows)}</span>` : ''}${d.source ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>${esc(d.source)}</span>` : ''}</div><div class="card-footer">${getCardAction(d)}${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline btn-sm btn-flex" target="_blank" rel="noopener" onclick="event.stopPropagation()">Source</a>` : ''}</div></div>`).join('');
+  con.innerHTML = pageItems.map((d, i) => `<div class="card" style="animation-delay:${i * 30}ms" onclick="openModal('${d.id}', event)"><div class="card-header"><span class="topic-badge ${(d.topic || 'other').toLowerCase().replace(/\s+/g, '-')}">${esc(d.topic)}</span>${getBadge(d)}</div><div class="card-title">${esc(d.title)}</div><p class="card-overview">${esc(d.overview)}</p><div class="card-meta">${d.size ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/></svg>${esc(d.size)}</span>` : ''}${d.rows ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>${fmtNum(d.rows)}</span>` : ''}${d.source ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>${esc(d.source)}</span>` : ''}</div><div class="card-footer">${getCardAction(d)}${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline btn-sm btn-flex" target="_blank" rel="noopener" onclick="event.stopPropagation()">Source</a>` : ''}</div></div>`).join('');
 }
 
 function renderPagination() {
@@ -160,29 +161,121 @@ function goToPage(page) {
   document.querySelector('.cards-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function openModal(id) {
+function openModal(id, event) {
+  if (event && (event.target.closest('button') || event.target.closest('a'))) return;
   const d = datasets.find(x => x.id === id);
   if (!d) return;
   const tags = d.tags?.length ? `<div class="modal-tags">${d.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>` : '';
-  const code = d.access_type === 'api' && d.usage_code ? `<h4 style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin:16px 0 8px">How to Use</h4><div class="code-block"><button class="code-copy-btn" onclick="copyCode(this)">Copy</button><pre><code>${esc(d.usage_code)}</code></pre></div>` : '';
+  const code = d.access_type === 'api' && d.usage_code ? `<h4 style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin:16px 0 8px">How to Use (Python)</h4><div class="code-block"><button class="code-copy-btn" onclick="copyCode(this)">Copy</button><pre><code>${esc(d.usage_code)}</code></pre></div>` : '';
+  
+  const filename = d.download_url ? (d.download_url.split('/').pop().split('?')[0].split('#')[0] || 'data.dat') : `${d.id}.${d.format?.toLowerCase() || 'dat'}`;
+  
+  // CLI Command Generation
+  const curlCmd = `curl -L -o ${filename} "${d.download_url}"`;
+  const wgetCmd = `wget -O ${filename} "${d.download_url}"`;
+  const psCmd = `Invoke-WebRequest -Uri "${d.download_url}" -OutFile "${filename}"`;
+  const pySnippet = `import requests\nurl = "${d.download_url}"\nr = requests.get(url, allow_redirects=True)\nopen("${filename}", "wb").write(r.content)`;
+  const nodeSnippet = `const https = require('https');\nconst fs = require('fs');\nconst file = fs.createWriteStream("${filename}");\nhttps.get("${d.download_url}", (res) => { res.pipe(file); });`;
+
+  const cliSection = d.access_type !== 'api' && d.download_url ? `
+    <h4 style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin:16px 0 0">CLI Download Methodology</h4>
+    <div class="cli-tabs">
+      <button class="tab-btn active" onclick="switchTab(this, 'bash')">Bash</button>
+      <button class="tab-btn" onclick="switchTab(this, 'ps')">PowerShell</button>
+      <button class="tab-btn" onclick="switchTab(this, 'py')">Python</button>
+      <button class="tab-btn" onclick="switchTab(this, 'node')">Node.js</button>
+    </div>
+    <div class="tab-content" id="cliContents">
+      <div id="bash" class="tab-pane active">
+        <div class="code-block"><button class="code-copy-btn" onclick="copyCode(this)">Copy</button><pre><code>${esc(curlCmd)}</code></pre></div>
+        <div class="code-block" style="margin-top:8px"><button class="code-copy-btn" onclick="copyCode(this)">Copy</button><pre><code>${esc(wgetCmd)}</code></pre></div>
+      </div>
+      <div id="ps" class="tab-pane">
+        <div class="code-block"><button class="code-copy-btn" onclick="copyCode(this)">Copy</button><pre><code>${esc(psCmd)}</code></pre></div>
+      </div>
+      <div id="py" class="tab-pane">
+        <div class="code-block"><button class="code-copy-btn" onclick="copyCode(this)">Copy</button><pre><code>${esc(pySnippet)}</code></pre></div>
+      </div>
+      <div id="node" class="tab-pane">
+        <div class="code-block"><button class="code-copy-btn" onclick="copyCode(this)">Copy</button><pre><code>${esc(nodeSnippet)}</code></pre></div>
+      </div>
+    </div>
+  ` : '';
   
   let action = '';
   if (d.access_type === 'api') {
     const source = d.source?.toLowerCase() || '';
-    if (source.includes('huggingface')) action = `<div class="modal-actions"><a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on HuggingFace</a><a href="${esc(d.download_url)}" class="btn btn-outline" target="_blank" rel="noopener">Documentation</a></div>`;
-    else if (source.includes('kaggle')) action = `<div class="modal-actions"><a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on Kaggle</a></div>`;
-    else action = `<div class="modal-actions">${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Visit Site</a>` : ''}</div>`;
+    if (source.includes('huggingface')) action = `<div class="modal-actions"><a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on HuggingFace</a><a href="${esc(d.download_url)}" class="btn btn-outline" target="_blank" rel="noopener">Documentation</a></div>`;
+    else if (source.includes('kaggle')) action = `<div class="modal-actions"><a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on Kaggle</a></div>`;
+    else action = `<div class="modal-actions">${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Visit Site</a>` : ''}</div>`;
   } else {
-    action = `<div class="modal-actions"><a href="${esc(d.download_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download</a>${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline" target="_blank" rel="noopener">Source</a>` : ''}</div>`;
+    action = `<div class="modal-actions"><button class="btn btn-primary" onclick="downloadFile('${esc(d.download_url)}', '${esc(filename)}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Now</button>${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline" target="_blank" rel="noopener">Source Portal</a>` : ''}</div>`;
   }
 
-  document.getElementById('modalContent').innerHTML = `<div class="modal-title">${esc(d.title)}</div><p class="modal-overview">${esc(d.overview)}</p>${d.access_type === 'api' ? '<div class="api-badge-large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>API / Code Required</div>' : ''}<div class="modal-meta"><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.topic)}</div><div class="modal-meta-label">Topic</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.format || '—')}</div><div class="modal-meta-label">Format</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.size || '—')}</div><div class="modal-meta-label">Size</div></div><div class="modal-meta-item"><div class="modal-meta-val">${fmtNum(d.rows)}</div><div class="modal-meta-label">Rows</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.source || '—')}</div><div class="modal-meta-label">Source</div></div><div class="modal-meta-item"><div class="modal-meta-val">${new Date(d.added).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div><div class="modal-meta-label">Added</div></div></div>${tags}${code}${action}`;
+  document.getElementById('modalContent').innerHTML = `<div class="modal-title">${esc(d.title)}</div><p class="modal-overview">${esc(d.overview)}</p>${d.access_type === 'api' ? '<div class="api-badge-large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>API / Code Required</div>' : ''}<div class="modal-meta"><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.topic)}</div><div class="modal-meta-label">Topic</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.format || '—')}</div><div class="modal-meta-label">Format</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.size || '—')}</div><div class="modal-meta-label">Size</div></div><div class="modal-meta-item"><div class="modal-meta-val">${fmtNum(d.rows)}</div><div class="modal-meta-label">Rows</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.source || '—')}</div><div class="modal-meta-label">Source</div></div><div class="modal-meta-item"><div class="modal-meta-val">${new Date(d.added).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div><div class="modal-meta-label">Added</div></div></div>${tags}${code}${cliSection}${action}<p style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:20px;padding-top:16px;border-top:1px dashed var(--border)">Need help? <a href="documentation/manual-download.html" target="_blank">View Platform Methodology</a></p>`;
   document.getElementById('modalOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
 }
 
 function closeModal() { document.getElementById('modalOverlay').classList.remove('show'); document.body.style.overflow = ''; }
 function copyCode(btn) { navigator.clipboard.writeText(btn.parentElement.querySelector('code').textContent).then(() => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 2000); }); }
+function switchTab(btn, tabId) {
+  const modal = document.getElementById('modalContent');
+  modal.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  modal.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  modal.querySelector(`#${tabId}`).classList.add('active');
+}
+
+async function downloadFile(url, filename) {
+  const statusEl = document.createElement('div');
+  statusEl.className = 'download-status';
+  statusEl.innerHTML = `<div class="status-spinner"></div><p>Starting Download...</p>`;
+  document.body.appendChild(statusEl);
+  
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('CORS or Network error');
+    const blob = await res.blob();
+
+    if ('showSaveFilePicker' in window) {
+      statusEl.innerHTML = `<p>Please select a location...</p>`;
+      try {
+        const handle = await window.showSaveFilePicker({
+          suggestedName: filename,
+          types: [{ description: 'Dataset File', accept: { '*/*': ['.csv', '.json', '.zip', '.txt'] } }]
+        });
+        const writable = await handle.createWritable();
+        await writable.write(blob);
+        await writable.close();
+        statusEl.remove();
+        return;
+      } catch (pickerErr) {
+        if (pickerErr.name === 'AbortError') { statusEl.remove(); return; }
+      }
+    }
+
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(blobUrl); statusEl.remove(); }, 100);
+  } catch (e) {
+    statusEl.innerHTML = `<p>Host restricted direct download.<br>Opening in new tab...</p><p style="font-size:12px;margin-top:8px;color:rgba(255,255,255,0.7)">Tip: To always see the "Save As" popup, enable <b>'Ask where to save each file'</b> in browser settings.</p>`;
+    
+    // Trigger download immediately without setTimeout to avoid popup blockers
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { document.body.removeChild(a); statusEl.remove(); }, 4000);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', init);
 document.getElementById('searchInput')?.addEventListener('input', e => { clearTimeout(window.searchTimeout); window.searchTimeout = setTimeout(() => { currentPage = 1; filter(); }, 150); });
@@ -191,4 +284,17 @@ document.getElementById('formatFilter')?.addEventListener('change', () => { curr
 document.getElementById('sortBy')?.addEventListener('change', () => { currentPage = 1; filter(); });
 document.getElementById('modalClose')?.addEventListener('click', closeModal);
 document.getElementById('modalOverlay')?.addEventListener('click', e => { if (e.target === document.getElementById('modalOverlay')) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => { 
+  if (e.key === 'Escape') closeModal();
+  if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+    // If modal is open, trigger download for that dataset
+    const modal = document.getElementById('modalOverlay');
+    if (modal && modal.classList.contains('show')) {
+      const btn = modal.querySelector('.modal-actions .btn-primary');
+      if (btn && btn.onclick) {
+        e.preventDefault();
+        btn.click();
+      }
+    }
+  }
+});

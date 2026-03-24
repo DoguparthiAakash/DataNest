@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Download Methodology — DataNest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .guide-content{max-width:800px;margin:0 auto;padding:40px 16px 100px}
+    .guide-card{background:var(--surface);border-radius:var(--radius-xl);border:1px solid var(--border);padding:32px;margin-bottom:24px}
+    .guide-card h2{font-size:24px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+    .guide-card h2 svg{color:var(--primary)}
+    .guide-card p{margin-bottom:20px;color:var(--text-secondary)}
+    .method-box{background:var(--bg);border-radius:var(--radius);padding:20px;margin-bottom:20px}
+    .method-title{font-size:16px;font-weight:600;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+    .platform-tag{font-size:10px;padding:3px 8px;border-radius:4px;background:var(--primary-bg);color:var(--primary);text-transform:uppercase}
+    .code-snippet{position:relative;background:#1e293b;border-radius:8px;padding:16px;margin:12px 0;overflow-x:auto}
+    .code-snippet code{font-family:var(--font-mono);font-size:13px;color:#e2e8f0}
+    .note-box{border-left:4px solid var(--primary);padding:12px 20px;background:var(--primary-bg);font-size:14px;border-radius:0 8px 8px 0}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <span>DataNest</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Browse</a>
+        <a href="../request.html" class="nav-link">Request</a>
+        <a href="../about.html" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="guide-content">
+      <a href="../index.html" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to Browse
+      </a>
+      
+      <section class="page-header" style="text-align:left;padding:24px 0">
+        <h1>Direct Download <span class="gradient-text">Methodology</span></h1>
+        <p>Learn how to download specific dataset files efficiently using CLI tools or your browser, without cloning entire repositories.</p>
+      </section>
+
+      <div class="guide-card">
+        <h2><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub Single-File Download</h2>
+        <p>GitHub makes it easy to download individual files if you know where to look. To avoid cloning the whole repo, use <b>Raw URLs</b>.</p>
+        
+        <div class="method-box">
+          <div class="method-title">Browser Method <span class="platform-tag">UI</span></div>
+          <ol style="padding-left:20px;font-size:14px">
+            <li>Find your file (e.g., <code>data.csv</code>) in the GitHub repository.</li>
+            <li>Click the **Raw** button at the top right of the file preview.</li>
+            <li>Right-click anywhere and select **Save As...** (or press **Ctrl+S**).</li>
+          </ol>
+        </div>
+
+        <div class="method-box">
+          <div class="method-title">CLI Method <span class="platform-tag">Terminal</span></div>
+          <div class="code-snippet"><code>curl -L -o filename.csv "https://raw.githubusercontent.com/user/repo/branch/path/filename.csv"</code></div>
+          <p style="font-size:13px;margin:0">Use <code>-L</code> to follow redirects and <code>-o</code> to specify the output name.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <h2><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>HuggingFace Direct Download</h2>
+        <p>HuggingFace datasets can be downloaded directly using <b>Resolve URLs</b> which bypass the data explorer UI.</p>
+        
+        <div class="method-box">
+          <div class="method-title">Resolve URL Format <span class="platform-tag">HF</span></div>
+          <div class="code-snippet"><code>https://huggingface.co/datasets/{user}/{repo}/resolve/main/{filename}</code></div>
+          <p style="font-size:13px;margin:0">You can use this URL format directly with <code>wget</code> or <code>curl</code>.</p>
+        </div>
+
+        <div class="method-box">
+          <div class="method-title">Wget Example <span class="platform-tag">Terminal</span></div>
+          <div class="code-snippet"><code>wget https://huggingface.co/datasets/glue/resolve/main/README.md</code></div>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <h2><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>Kaggle CLI Integration</h2>
+        <p>For Kaggle, the most reliable way to download specific files without the whole archive is the Official Kaggle CLI.</p>
+        
+        <div class="method-box">
+          <div class="method-title">Download Single File <span class="platform-tag">CLI</span></div>
+          <div class="code-snippet"><code>kaggle datasets download -d {user}/{repo} -f {filename}</code></div>
+          <p style="font-size:13px;margin:0">Note: This requires a <code>kaggle.json</code> API key in your user directory.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <h2><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Platform Setup (Tool Installation)</h2>
+        <p>If you don't have <code>curl</code> or <code>wget</code> installed, use these commands to set them up quickly using your platform's package manager.</p>
+        
+        <div class="method-box">
+          <div class="method-title">Windows (Chocolatey) <span class="platform-tag">Tool</span></div>
+          <div class="code-snippet"><code>choco install curl wget</code></div>
+        </div>
+
+        <div class="method-box">
+          <div class="method-title">Windows (Scoop) <span class="platform-tag">Tool</span></div>
+          <div class="code-snippet"><code>scoop install curl wget</code></div>
+        </div>
+
+        <div class="method-box">
+          <div class="method-title">macOS (Homebrew) <span class="platform-tag">Tool</span></div>
+          <div class="code-snippet"><code>brew install curl wget</code></div>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <h2><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Enable "Save As" Popup</h2>
+        <p>If you prefer to choose exactly where each file is saved on your system, you can enable this feature in your browser settings once for all downloads.</p>
+        
+        <div class="method-box">
+          <div class="method-title">Google Chrome & Microsoft Edge</div>
+          <ul style="padding-left:20px;font-size:14px">
+            <li>Go to <b>Settings</b> > <b>Downloads</b>.</li>
+            <li>Enable <b>"Ask where to save each file before downloading"</b>.</li>
+          </ul>
+        </div>
+
+        <div class="method-box">
+          <div class="method-title">Mozilla Firefox</div>
+          <ul style="padding-left:20px;font-size:14px">
+            <li>Go to <b>Settings</b> > <b>General</b> > <b>Files and Applications</b>.</li>
+            <li>Select <b>"Always ask you where to save files"</b>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <b>Direct Saving:</b> Modern browsers like Chrome and Edge now support the <b>FileSystem Access API</b>, which DataNest uses to trigger a system "Save As" dialog automatically for most datasets!
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo"><div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><span>DataNest</span></div>
+        <p>Curated datasets for researchers.</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>Free & Open Source - Hosted on GitHub Pages</p></div>
+  </footer>
+</body>
+</html>

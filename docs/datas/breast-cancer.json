@@ -1,0 +1,16 @@
+{
+  "id": "breast-cancer",
+  "title": "Breast Cancer Wisconsin",
+  "topic": "Biology",
+  "format": "CSV",
+  "size": "120 KB",
+  "rows": "569",
+  "overview": "Wisconsin Diagnostic Breast Cancer (WDBC) dataset. Features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass.",
+  "source": "UCI/GitHub",
+  "access_type": "download",
+  "download_url": "https://raw.githubusercontent.com/remi-granier/breast-cancer-wisconsin-data/master/data.csv",
+  "visit_url": "https://github.com/remi-granier/breast-cancer-wisconsin-data",
+  "added": "2026-03-25",
+  "tags": ["health", "medical", "classification", "biology"],
+  "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/remi-granier/breast-cancer-wisconsin-data/master/data.csv'\ndf = pd.read_csv(url)\nprint(df.diagnosis.value_counts())"
+}

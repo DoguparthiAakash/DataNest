@@ -1,0 +1,16 @@
+{
+  "id": "bitcoin-historical",
+  "title": "Bitcoin Historical Data",
+  "topic": "Economics",
+  "format": "CSV",
+  "size": "500 KB",
+  "rows": "2900",
+  "overview": "Daily Bitcoin price (USD) and network metrics from the genesis block to 2024. Includes Volume, Market Cap, and Transaction counts.",
+  "source": "CoinMetrics (GitHub)",
+  "access_type": "download",
+  "download_url": "https://raw.githubusercontent.com/datasets/Bitcoin-Dataset/master/bitcoin_dataset.csv",
+  "visit_url": "https://github.com/datasets/Bitcoin-Dataset",
+  "added": "2026-03-25",
+  "tags": ["crypto", "finance", "bitcoin", "economics"],
+  "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/datasets/Bitcoin-Dataset/master/bitcoin_dataset.csv'\ndf = pd.read_csv(url)\nprint(df[['Date', 'btc_market_price']].tail())"
+}

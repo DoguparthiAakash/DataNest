@@ -1,17 +1,50 @@
 // DataNest - Dataset Browser
-console.log("DataNest Portal v1.0.2 - Fixed Modal & Download Robustness");
+console.log("DataNest Portal v1.0.3 - Automated Dataset Discovery");
 let datasets = [], filtered = [];
 const PER_PAGE = 20;
 let currentPage = 1;
 
 async function init() {
+  let fileList = [];
+  
+  // Try dynamic discovery via GitHub API (for GitHub Pages hosting)
   try {
-    const res = await fetch('./datas/index.json');
-    datasets = await Promise.all((await res.json()).map(f => fetch(`./datas/${f}`).then(r => r.json())));
+    const apiRes = await fetch('https://api.github.com/repos/DoguparthiAakash/DataNest/contents/docs/datas');
+    if (apiRes.ok) {
+      const data = await apiRes.json();
+      fileList = data
+        .filter(item => item.name.endsWith('.json') && item.name !== 'index.json')
+        .map(item => item.name);
+      console.log(`Auto-discovered ${fileList.length} datasets via GitHub API`);
+    } else {
+      console.warn(`GitHub API returned status ${apiRes.status}. Fallback to index.json.`);
+    }
   } catch (e) {
-    document.getElementById('cards').innerHTML = '<div class="empty-state"><div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div><h3>Error loading</h3><p>Check your connection.</p></div>';
+    console.warn("GitHub API discovery failed. Falling back to index.json.", e);
+  }
+
+  // Fallback to manual index.json if API discovery failed or returned no files
+  if (fileList.length === 0) {
+    try {
+      const res = await fetch('./datas/index.json');
+      if (res.ok) {
+        fileList = await res.json();
+        console.log(`Loaded ${fileList.length} datasets via index.json registry`);
+      }
+    } catch (e) {
+      document.getElementById('cards').innerHTML = '<div class="empty-state"><div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div><h3>Error loading</h3><p>Check your connection.</p></div>';
+      return;
+    }
+  }
+
+  try {
+    datasets = await Promise.all(fileList.map(f => fetch(`./datas/${f}`).then(r => r.json())));
+  } catch (e) {
+    console.error("Error loading individual dataset files:", e);
+    document.getElementById('cards').innerHTML = '<div class="empty-state"><div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div><h3>Error loading data</h3></div>';
     return;
   }
+
   buildTopicFilter();
   buildChips();
   filter();
@@ -72,7 +105,7 @@ function fmtNum(n) { if (!n) return '—'; const v = parseInt(n.toString().repla
 
 function getBadge(d) {
   if (d.access_type === 'api') return `<span class="access-badge api"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>Code</span>`;
-  return `<span class="access-badge download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download</span>`;
+  return `<span class="access-badge download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download</span>`;
 }
 
 function getCardAction(d) {
@@ -88,7 +121,10 @@ function getCardAction(d) {
     return primaryBtn;
   }
   const filename = d.download_url ? (d.download_url.split('/').pop().split('?')[0].split('#')[0] || 'data.dat') : `${d.id}.${d.format?.toLowerCase() || 'dat'}`;
-  return `<button class="btn btn-primary btn-sm btn-flex" onclick="event.stopPropagation();downloadFile('${esc(d.download_url)}', '${esc(filename)}')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download</button>`;
+  const sourceLabel = d.visit_url?.includes('github.com') ? 'GitHub' : 'Source';
+  const downloadBtn = `<button class="btn btn-primary btn-sm btn-flex" onclick="event.stopPropagation();downloadFile('${esc(d.download_url)}', '${esc(filename)}')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download</button>`;
+  const sourceBtn = d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline btn-sm btn-flex" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 0 1-2 2H5a2 0 0 1-2-2V8a2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>${sourceLabel}</a>` : '';
+  return downloadBtn + sourceBtn;
 }
 
 function renderCards() {
@@ -100,7 +136,7 @@ function renderCards() {
   const start = (currentPage - 1) * PER_PAGE;
   const pageItems = filtered.slice(start, start + PER_PAGE);
   
-  con.innerHTML = pageItems.map((d, i) => `<div class="card" style="animation-delay:${i * 30}ms" onclick="openModal('${d.id}', event)"><div class="card-header"><span class="topic-badge ${(d.topic || 'other').toLowerCase().replace(/\s+/g, '-')}">${esc(d.topic)}</span>${getBadge(d)}</div><div class="card-title">${esc(d.title)}</div><p class="card-overview">${esc(d.overview)}</p><div class="card-meta">${d.size ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/></svg>${esc(d.size)}</span>` : ''}${d.rows ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>${fmtNum(d.rows)}</span>` : ''}${d.source ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>${esc(d.source)}</span>` : ''}</div><div class="card-footer">${getCardAction(d)}${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline btn-sm btn-flex" target="_blank" rel="noopener" onclick="event.stopPropagation()">Source</a>` : ''}</div></div>`).join('');
+  con.innerHTML = pageItems.map((d, i) => `<div class="card" style="animation-delay:${i * 30}ms" onclick="openModal('${d.id}', event)"><div class="card-header"><span class="topic-badge ${(d.topic || 'other').toLowerCase().replace(/\s+/g, '-')}">${esc(d.topic)}</span>${getBadge(d)}</div><div class="card-title">${esc(d.title)}</div><p class="card-overview">${esc(d.overview)}</p><div class="card-meta">${d.size ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/></svg>${esc(d.size)}</span>` : ''}${d.rows ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>${fmtNum(d.rows)}</span>` : ''}${d.source ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>${esc(d.source)}</span>` : ''}</div><div class="card-footer">${getCardAction(d)}</div></div>`).join('');
 }
 
 function renderPagination() {
@@ -203,17 +239,24 @@ function openModal(id, event) {
     </div>
   ` : '';
   
+  const sourceCodeInfo = d.visit_url?.includes('github.com') ? 
+    `<div class="code-note" style="display:flex;align-items:center;gap:6px;margin:0 0 12px;color:#10b981;font-size:12px;font-weight:500"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Original source code available</div>` : '';
+
   let action = '';
   if (d.access_type === 'api') {
     const source = d.source?.toLowerCase() || '';
     if (source.includes('huggingface')) action = `<div class="modal-actions"><a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on HuggingFace</a><a href="${esc(d.download_url)}" class="btn btn-outline" target="_blank" rel="noopener">Documentation</a></div>`;
     else if (source.includes('kaggle')) action = `<div class="modal-actions"><a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on Kaggle</a></div>`;
-    else action = `<div class="modal-actions">${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Visit Site</a>` : ''}</div>`;
+    else {
+      const label = d.visit_url?.includes('github.com') ? 'View on GitHub' : 'Visit Source Site';
+      action = `<div class="modal-actions">${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>${label}</a>` : ''}</div>`;
+    }
   } else {
-    action = `<div class="modal-actions"><button class="btn btn-primary" onclick="downloadFile('${esc(d.download_url)}', '${esc(filename)}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Now</button>${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline" target="_blank" rel="noopener">Source Portal</a>` : ''}</div>`;
+    const sourceLabel = d.visit_url?.includes('github.com') ? 'View Source Repo' : 'Original Source Portal';
+    action = `<div class="modal-actions"><button class="btn btn-primary" onclick="downloadFile('${esc(d.download_url)}', '${esc(filename)}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Now</button>${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline" target="_blank" rel="noopener">${sourceLabel}</a>` : ''}</div>`;
   }
 
-  document.getElementById('modalContent').innerHTML = `<div class="modal-title">${esc(d.title)}</div><p class="modal-overview">${esc(d.overview)}</p>${d.access_type === 'api' ? '<div class="api-badge-large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>API / Code Required</div>' : ''}<div class="modal-meta"><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.topic)}</div><div class="modal-meta-label">Topic</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.format || '—')}</div><div class="modal-meta-label">Format</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.size || '—')}</div><div class="modal-meta-label">Size</div></div><div class="modal-meta-item"><div class="modal-meta-val">${fmtNum(d.rows)}</div><div class="modal-meta-label">Rows</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.source || '—')}</div><div class="modal-meta-label">Source</div></div><div class="modal-meta-item"><div class="modal-meta-val">${new Date(d.added).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div><div class="modal-meta-label">Added</div></div></div>${tags}${code}${cliSection}${action}<p style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:20px;padding-top:16px;border-top:1px dashed var(--border)">Need help? <a href="documentation/manual-download.html" target="_blank">View Platform Methodology</a></p>`;
+  document.getElementById('modalContent').innerHTML = `<div class="modal-title">${esc(d.title)}</div><p class="modal-overview">${esc(d.overview)}</p>${sourceCodeInfo}${d.access_type === 'api' ? '<div class="api-badge-large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>API / Code Required</div>' : ''}<div class="modal-meta"><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.topic)}</div><div class="modal-meta-label">Topic</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.format || '—')}</div><div class="modal-meta-label">Format</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.size || '—')}</div><div class="modal-meta-label">Size</div></div><div class="modal-meta-item"><div class="modal-meta-val">${fmtNum(d.rows)}</div><div class="modal-meta-label">Rows</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.source || '—')}</div><div class="modal-meta-label">Source</div></div><div class="modal-meta-item"><div class="modal-meta-val">${new Date(d.added).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div><div class="modal-meta-label">Added</div></div></div>${tags}${code}${cliSection}${action}<p style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:20px;padding-top:16px;border-top:1px dashed var(--border)">Need help? <a href="documentation/manual-download.html" target="_blank">View Platform Methodology</a></p>`;
   document.getElementById('modalOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
 }

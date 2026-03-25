@@ -1,0 +1,16 @@
+{
+  "id": "global-temp",
+  "title": "Global Surface Temperature",
+  "topic": "Biology",
+  "format": "CSV",
+  "size": "15 KB",
+  "rows": "140",
+  "overview": "Annual global mean temperature anomalies from GISTEMP and GCAG data sources, covering the period from 1880 to present.",
+  "source": "DataHub (GitHub)",
+  "access_type": "download",
+  "download_url": "https://raw.githubusercontent.com/datasets/global-temp/main/data/annual.csv",
+  "visit_url": "https://github.com/datasets/global-temp",
+  "added": "2026-03-25",
+  "tags": ["climate", "environment", "temperature", "biology"],
+  "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/datasets/global-temp/main/data/annual.csv'\ndf = pd.read_csv(url)\ndf_gcag = df[df.Source == 'GCAG']\nprint(df_gcag.tail())"
+}

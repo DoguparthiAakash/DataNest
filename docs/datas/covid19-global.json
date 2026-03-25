@@ -1,0 +1,20 @@
+{
+    "id": "covid19-global",
+    "title": "COVID-19 Global Dataset",
+    "topic": "Health",
+    "format": "CSV",
+    "size": "5.5 MB",
+    "rows": "100000+",
+    "overview": "Global time-series dataset of COVID-19 cases, deaths, and recoveries across countries, useful for trend analysis and forecasting.",
+    "source": "Johns Hopkins University (Public)",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv",
+    "visit_url": "https://github.com/datasets/covid-19",
+    "added": "2026-03-25",
+    "tags": [
+        "health",
+        "pandemic",
+        "time-series",
+        "global"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "titanic-csv",
+  "title": "Titanic - Machine Learning from Disaster",
+  "topic": "Society",
+  "format": "CSV",
+  "size": "60 KB",
+  "rows": "891",
+  "overview": "The classic dataset for binary classification. Predict survival on the Titanic based on passenger attributes like age, sex, and class.",
+  "source": "DataScienceDojo (GitHub)",
+  "access_type": "download",
+  "download_url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv",
+  "visit_url": "https://github.com/datasciencedojo/datasets",
+  "added": "2026-03-25",
+  "tags": ["classification", "history", "titanic", "society"],
+  "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'\ndf = pd.read_csv(url)\nprint(df.head())"
+}

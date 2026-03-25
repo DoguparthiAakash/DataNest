@@ -1,0 +1,16 @@
+{
+  "id": "mnist-train",
+  "title": "MNIST Handwritten Digits (CSV)",
+  "topic": "NLP",
+  "format": "CSV",
+  "size": "100 MB",
+  "rows": "60000",
+  "overview": "Subsampled MNIST handwritten digits in CSV format. Each row represents a 28x28 grayscale image of a digit from 0 to 9.",
+  "source": "Kaggle/GitHub",
+  "access_type": "download",
+  "download_url": "https://raw.githubusercontent.com/pjreddie/mnist-csv-png/main/mnist_train.csv",
+  "visit_url": "https://github.com/pjreddie/mnist-csv-png",
+  "added": "2026-03-25",
+  "tags": ["computer-vision", "digits", "classification", "mnist"],
+  "usage_code": "import pandas as pd\nimport numpy as np\nurl = 'https://raw.githubusercontent.com/pjreddie/mnist-csv-png/main/mnist_train.csv'\ndata = pd.read_csv(url, header=None)\ndigits = data.iloc[:, 1:].values.reshape(-1, 28, 28)\nlabels = data.iloc[:, 0].values"
+}

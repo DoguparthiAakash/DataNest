@@ -1,0 +1,16 @@
+{
+  "id": "credit-card-fraud",
+  "title": "Credit Card Fraud Detection",
+  "topic": "Society",
+  "format": "CSV",
+  "size": "150 MB",
+  "rows": "284807",
+  "overview": "Anonymized European credit card transactions from September 2013. Highly unbalanced dataset for anomaly detection and fraud investigation.",
+  "source": "Kaggle/GitHub",
+  "access_type": "download",
+  "download_url": "https://raw.githubusercontent.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection/master/creditcard.csv",
+  "visit_url": "https://github.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection",
+  "added": "2026-03-25",
+  "tags": ["fraud", "security", "anomaly-detection", "society"],
+  "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection/master/creditcard.csv'\ndf = pd.read_csv(url)\nprint(f'Fraud Cases: {len(df[df.Class == 1])}')"
+}

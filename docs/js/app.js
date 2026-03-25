@@ -12,25 +12,28 @@ async function init() {
   let fileList = [];
   
   // Try dynamic discovery via GitHub API (for GitHub Pages hosting)
-  // This allows the site to pick up new files even before the next deployment
-  try {
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    const repoPath = isGitHubPages ? window.location.pathname.split('/')[1] : 'DataNest'; 
-    const owner = isGitHubPages ? window.location.hostname.split('.')[0] : 'DoguparthiAakash';
-    
-    // Fallback Repo Detection for Custom Domains or Local Dev
-    const apiUrl = `https://api.github.com/repos/${owner}/${repoPath}/contents/docs/datas`;
-    
-    const apiRes = await fetch(apiUrl);
-    if (apiRes.ok) {
-      const data = await apiRes.json();
-      fileList = data
-        .filter(item => item.name.endsWith('.json') && item.name !== 'index.json')
-        .map(item => item.name);
-      console.log(`Auto-discovered ${fileList.length} datasets via GitHub API (${owner}/${repoPath})`);
+  // Skip if on localhost to use fresh local data via index.json
+  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  
+  if (!isLocal) {
+    try {
+      const isGitHubPages = window.location.hostname.includes('github.io');
+      const repoPath = isGitHubPages ? window.location.pathname.split('/')[1] : 'DataNest'; 
+      const owner = isGitHubPages ? window.location.hostname.split('.')[0] : 'DoguparthiAakash';
+      
+      const apiUrl = `https://api.github.com/repos/${owner}/${repoPath}/contents/docs/datas`;
+      
+      const apiRes = await fetch(apiUrl);
+      if (apiRes.ok) {
+        const data = await apiRes.json();
+        fileList = data
+          .filter(item => item.name.endsWith('.json') && item.name !== 'index.json')
+          .map(item => item.name);
+        console.log(`Auto-discovered ${fileList.length} datasets via GitHub API (${owner}/${repoPath})`);
+      }
+    } catch (e) {
+      console.warn("GitHub API discovery not available or failed. Falling back to index.json.", e);
     }
-  } catch (e) {
-    console.warn("GitHub API discovery not available or failed. Falling back to index.json.", e);
   }
 
   // Fallback to manual index.json if API discovery failed or returned no files
@@ -193,22 +196,20 @@ function getBadge(d) {
 }
 
 function getCardAction(d) {
-  if (d.access_type === 'api') {
-    const source = d.source?.toLowerCase() || '';
-    let primaryBtn = '';
-    const icon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
-    const codeIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>`;
-    
-    if (source.includes('huggingface')) primaryBtn = `<a href="${esc(d.visit_url)}" class="btn btn-primary btn-sm btn-flex" target="_blank" rel="noopener" onclick="event.stopPropagation()">${icon}HuggingFace</a>`;
-    else if (source.includes('kaggle')) primaryBtn = `<a href="${esc(d.visit_url)}" class="btn btn-primary btn-sm btn-flex" target="_blank" rel="noopener" onclick="event.stopPropagation()">${icon}Kaggle</a>`;
-    else primaryBtn = `<a href="#" class="btn btn-primary btn-sm btn-flex" onclick="event.stopPropagation();openModal('${d.id}');return false;">${codeIcon}View Code</a>`;
-    return primaryBtn;
+  const icon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+  const codeIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>`;
+  const downloadIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
+
+  let primaryBtn = '';
+  if (d.download_url && d.download_url.length > 5 && d.access_type === 'download') {
+    const filename = d.download_url.split('/').pop().split('?')[0].split('#')[0] || 'data.dat';
+    primaryBtn = `<button class="btn btn-primary btn-sm btn-flex" onclick="event.stopPropagation();downloadFile('${esc(d.download_url)}', '${esc(filename)}')">${downloadIcon}Download</button>`;
+  } else if (d.usage_code || d.access_type === 'api') {
+    primaryBtn = `<a href="#" class="btn btn-primary btn-sm btn-flex" onclick="event.stopPropagation();openModal('${d.id}');return false;">${codeIcon}View Code</a>`;
   }
-  const filename = d.download_url ? (d.download_url.split('/').pop().split('?')[0].split('#')[0] || 'data.dat') : `${d.id}.${d.format?.toLowerCase() || 'dat'}`;
-  const sourceLabel = d.visit_url?.includes('github.com') ? 'GitHub' : 'Source';
-  const downloadBtn = `<button class="btn btn-primary btn-sm btn-flex" onclick="event.stopPropagation();downloadFile('${esc(d.download_url)}', '${esc(filename)}')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download</button>`;
-  const sourceBtn = d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline btn-sm btn-flex" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 0 1-2 2H5a2 0 0 1-2-2V8a2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>${sourceLabel}</a>` : '';
-  return downloadBtn + sourceBtn;
+  
+  const sourceBtn = d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline btn-sm btn-flex" target="_blank" rel="noopener" onclick="event.stopPropagation()">${icon}Source</a>` : '';
+  return primaryBtn + sourceBtn;
 }
 
 function renderCards() {
@@ -306,8 +307,7 @@ function openModal(id, event) {
   if (!d) return;
   const tags = d.tags?.length ? `<div class="modal-tags">${d.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>` : '';
   const code = d.access_type === 'api' && d.usage_code ? `<h4 style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin:16px 0 8px">How to Use (Python)</h4><div class="code-block"><button class="code-copy-btn" onclick="copyCode(this)">Copy</button><pre><code>${esc(d.usage_code)}</code></pre></div>` : '';
-  
-  const filename = d.download_url ? (d.download_url.split('/').pop().split('?')[0].split('#')[0] || 'data.dat') : `${d.id}.${d.format?.toLowerCase() || 'dat'}`;
+   const filename = d.download_url ? (d.download_url.split('/').pop().split('?')[0].split('#')[0] || 'data.dat') : `${d.id}.${d.format?.toLowerCase() || 'dat'}`;
   
   // CLI Command Generation
   const curlCmd = `curl -L -o ${filename} "${d.download_url}"`;
@@ -316,7 +316,7 @@ function openModal(id, event) {
   const pySnippet = `import requests\nurl = "${d.download_url}"\nr = requests.get(url, allow_redirects=True)\nopen("${filename}", "wb").write(r.content)`;
   const nodeSnippet = `const https = require('https');\nconst fs = require('fs');\nconst file = fs.createWriteStream("${filename}");\nhttps.get("${d.download_url}", (res) => { res.pipe(file); });`;
 
-  const cliSection = d.access_type !== 'api' && d.download_url ? `
+  const cliSection = d.download_url && d.download_url.length > 5 ? `
     <h4 style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin:16px 0 0">CLI Download Methodology</h4>
     <div class="cli-tabs">
       <button class="tab-btn active" onclick="switchTab(this, 'bash')">Bash</button>
@@ -342,21 +342,14 @@ function openModal(id, event) {
   ` : '';
   
   const sourceCodeInfo = d.visit_url?.includes('github.com') ? 
-    `<div class="code-note" style="display:flex;align-items:center;gap:6px;margin:0 0 12px;color:#10b981;font-size:12px;font-weight:500"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Original source code available</div>` : '';
+    `<div class="code-note" style="display:flex;align-items:center;gap:6px;margin:0 0 12px;color:#10b981;font-size:12px;font-weight:500"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Internal processing scripts available</div>` : '';
 
   let action = '';
-  if (d.access_type === 'api') {
-    const source = d.source?.toLowerCase() || '';
-    if (source.includes('huggingface')) action = `<div class="modal-actions"><a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on HuggingFace</a><a href="${esc(d.download_url)}" class="btn btn-outline" target="_blank" rel="noopener">Documentation</a></div>`;
-    else if (source.includes('kaggle')) action = `<div class="modal-actions"><a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on Kaggle</a></div>`;
-    else {
-      const label = d.visit_url?.includes('github.com') ? 'View on GitHub' : 'Visit Source Site';
-      action = `<div class="modal-actions">${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 01-2 2H5a2 0 01-2-2V8a2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>${label}</a>` : ''}</div>`;
-    }
-  } else {
-    const sourceLabel = d.visit_url?.includes('github.com') ? 'View Source Repo' : 'Original Source Portal';
-    action = `<div class="modal-actions"><button class="btn btn-primary" onclick="downloadFile('${esc(d.download_url)}', '${esc(filename)}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Now</button>${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline" target="_blank" rel="noopener">${sourceLabel}</a>` : ''}</div>`;
-  }
+  const sourceLabel = d.visit_url?.includes('github.com') ? 'View Source Repo' : 'View Original Source';
+  const downloadBtn = (d.download_url && d.download_url.length > 5) ? `<button class="btn btn-primary" onclick="downloadFile('${esc(d.download_url)}', '${esc(filename)}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Now</button>` : '';
+  const sourceBtn = d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 0 0 1-2 2H5a2 0 0 1-2-2V8a2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>${sourceLabel}</a>` : '';
+  
+  action = `<div class="modal-actions">${downloadBtn}${sourceBtn}</div>`;
 
   const area = d.area || d.topic || 'Other';
   document.getElementById('modalContent').innerHTML = `

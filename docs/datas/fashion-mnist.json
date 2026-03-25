@@ -1,0 +1,18 @@
+{
+  "id": "fashion-mnist",
+  "title": "Fashion MNIST",
+  "area": "Computer Science",
+  "task": "Computer Vision",
+  "data_type": "Image",
+  "format": "JSON",
+  "size": "30 MB",
+  "rows": 70000,
+  "features": 784,
+  "overview": "Zalando's article images—MNIST-like dataset for fashion items.",
+  "source": "HuggingFace / Zalando",
+  "access_type": "api",
+  "visit_url": "https://github.com/zalandoresearch/fashion-mnist",
+  "usage_code": "from datasets import load_dataset\nds = load_dataset('fashion_mnist')",
+  "added": "2026-03-26",
+  "tags": ["fashion", "images", "multi-class-classification", "computer-vision"]
+}

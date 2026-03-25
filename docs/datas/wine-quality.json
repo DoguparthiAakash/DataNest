@@ -1,23 +1,19 @@
 {
-  "id": "35",
+  "id": "wine-quality",
   "title": "Wine Quality",
-  "topic": "Other",
-  "format": "CSV",
-  "size": "300 KB",
-  "rows": 6497,
-  "overview": "Red and white wine samples with physicochemical properties and quality ratings.",
-  "source": "UCI",
-  "access_type": "download",
-  "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv ",
-  "added": "2026-03-02",
-  "tags": [
-    "wine",
-    "quality",
-    "regression",
-    "tabular"
-  ],
-  "area": "Other",
+  "area": "Life Sciences",
   "task": "Regression",
   "data_type": "Tabular",
-  "features": 0
+  "format": "CSV",
+  "size": "264 KB",
+  "rows": 4898,
+  "features": 12,
+  "overview": "Predicting wine quality based on physicochemical tests.",
+  "source": "UCI",
+  "access_type": "download",
+  "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv",
+  "visit_url": "https://archive.ics.uci.edu/ml/datasets/wine+quality",
+  "added": "2026-03-26",
+  "tags": ["chemistry", "quality-prediction", "regression", "tabular"],
+  "usage_code": "import pandas as pd\ndf = pd.read_csv('winequality-white.csv', sep=';')"
 }

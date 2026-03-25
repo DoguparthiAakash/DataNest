@@ -1,0 +1,19 @@
+{
+  "id": "spambase",
+  "title": "Spambase Dataset",
+  "area": "Computer Science",
+  "task": "Classification",
+  "data_type": "Tabular",
+  "format": "CSV",
+  "size": "700 KB",
+  "rows": 4601,
+  "features": 57,
+  "overview": "Classifying emails as spam or non-spam based on word frequencies.",
+  "source": "UCI",
+  "access_type": "download",
+  "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/spambase.data",
+  "visit_url": "https://archive.ics.uci.edu/ml/datasets/spambase",
+  "added": "2026-03-26",
+  "tags": ["email", "spam-filter", "binary-classification", "tabular"],
+  "usage_code": "import pandas as pd\ndf = pd.read_csv('spambase.data', header=None)"
+}

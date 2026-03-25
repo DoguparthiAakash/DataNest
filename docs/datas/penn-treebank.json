@@ -1,1 +1,24 @@
-{"id":"28","title":"Penn Treebank","topic":"NLP","format":"TXT","size":"10 MB","rows":"1M","overview":"Annotated corpus of English text with syntactic parse annotations.","source":"LDC","access_type":"api","visit_url":"https://www.kaggle.com/datasets/nltkdata/penn-treebank","usage_code":"import nltk\nnltk.download('treebank')","added":"2026-03-09","tags":["syntactic","parsing","annotated","text"]}
+{
+  "id": "28",
+  "title": "Penn Treebank",
+  "topic": "NLP",
+  "format": "TXT",
+  "size": "10 MB",
+  "rows": 1000000,
+  "overview": "Annotated corpus of English text with syntactic parse annotations.",
+  "source": "LDC",
+  "access_type": "api",
+  "visit_url": "https://www.kaggle.com/datasets/nltkdata/penn-treebank",
+  "usage_code": "import nltk\nnltk.download('treebank')",
+  "added": "2026-03-09",
+  "tags": [
+    "syntactic",
+    "parsing",
+    "annotated",
+    "text"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Text",
+  "features": 0
+}

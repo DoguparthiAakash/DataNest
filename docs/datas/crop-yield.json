@@ -1,24 +1,78 @@
 {
   "id": "4",
-  "title": "South India Crop Yield 2000–2023",
+  "title": "South India Crop Yield 2000\u20132023",
   "topic": "Agriculture",
   "format": "CSV",
   "size": "5.1 MB",
-  "rows": "28000",
+  "rows": 28000,
   "overview": "Season-wise crop yield data for 6 major crops (rice, maize, groundnut, sugarcane, cotton, soybean) across Tamil Nadu, Andhra Pradesh, Karnataka, and Kerala. Includes soil type and rainfall context.",
   "source": "Tamil Nadu Agricultural University",
   "visit_url": "https://tnau.ac.in",
   "download_url": "https://example.com/crop-yield.csv",
   "added": "2026-01-05",
-  "tags": ["agriculture", "crops", "yield", "south-india", "farming", "production"],
+  "tags": [
+    "agriculture",
+    "crops",
+    "yield",
+    "south-india",
+    "farming",
+    "production"
+  ],
   "preview": {
-    "cols": ["year", "season", "state", "crop", "yield_kg_ha", "rainfall_mm"],
+    "cols": [
+      "year",
+      "season",
+      "state",
+      "crop",
+      "yield_kg_ha",
+      "rainfall_mm"
+    ],
     "rows": [
-      ["2020", "Kharif", "Tamil Nadu", "Rice", "5840", "980"],
-      ["2021", "Rabi", "Karnataka", "Maize", "7120", "420"],
-      ["2022", "Kharif", "Andhra Pradesh", "Cotton", "3200", "860"],
-      ["2023", "Annual", "Tamil Nadu", "Sugarcane", "98000", "1100"],
-      ["2023", "Kharif", "Kerala", "Rice", "4100", "2800"]
+      [
+        "2020",
+        "Kharif",
+        "Tamil Nadu",
+        "Rice",
+        "5840",
+        "980"
+      ],
+      [
+        "2021",
+        "Rabi",
+        "Karnataka",
+        "Maize",
+        "7120",
+        "420"
+      ],
+      [
+        "2022",
+        "Kharif",
+        "Andhra Pradesh",
+        "Cotton",
+        "3200",
+        "860"
+      ],
+      [
+        "2023",
+        "Annual",
+        "Tamil Nadu",
+        "Sugarcane",
+        "98000",
+        "1100"
+      ],
+      [
+        "2023",
+        "Kharif",
+        "Kerala",
+        "Rice",
+        "4100",
+        "2800"
+      ]
     ]
-  }
+  },
+  "area": "Life Sciences",
+  "task": "Other",
+  "data_type": "Tabular",
+  "features": 0,
+  "access_type": "download"
 }

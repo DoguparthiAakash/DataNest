@@ -1,24 +1,71 @@
 {
   "id": "1",
-  "title": "COVID-19 Patient Outcomes — India",
+  "title": "COVID-19 Patient Outcomes \u2014 India",
   "topic": "Healthcare",
   "format": "CSV",
   "size": "3.2 MB",
-  "rows": "48000",
+  "rows": 48000,
   "overview": "Anonymized records of 48,000 COVID-19 patients across 12 Indian states. Includes age, state, comorbidities, and outcome.",
   "source": "Ministry of Health and Family Welfare",
   "visit_url": "https://mohfw.gov.in",
   "download_url": "https://example.com/covid-india.csv",
   "added": "2026-03-01",
-  "tags": ["covid", "health", "india", "outcomes", "pandemic"],
+  "tags": [
+    "covid",
+    "health",
+    "india",
+    "outcomes",
+    "pandemic"
+  ],
   "preview": {
-    "cols": ["patient_id", "age", "state", "comorbidity", "outcome"],
+    "cols": [
+      "patient_id",
+      "age",
+      "state",
+      "comorbidity",
+      "outcome"
+    ],
     "rows": [
-      ["PT001", "45", "Maharashtra", "Diabetes", "Recovered"],
-      ["PT002", "67", "Delhi", "None", "Recovered"],
-      ["PT003", "72", "Tamil Nadu", "Hypertension", "Deceased"],
-      ["PT004", "34", "Karnataka", "None", "Recovered"],
-      ["PT005", "58", "Gujarat", "Asthma", "Recovered"]
+      [
+        "PT001",
+        "45",
+        "Maharashtra",
+        "Diabetes",
+        "Recovered"
+      ],
+      [
+        "PT002",
+        "67",
+        "Delhi",
+        "None",
+        "Recovered"
+      ],
+      [
+        "PT003",
+        "72",
+        "Tamil Nadu",
+        "Hypertension",
+        "Deceased"
+      ],
+      [
+        "PT004",
+        "34",
+        "Karnataka",
+        "None",
+        "Recovered"
+      ],
+      [
+        "PT005",
+        "58",
+        "Gujarat",
+        "Asthma",
+        "Recovered"
+      ]
     ]
-  }
+  },
+  "area": "Life Sciences",
+  "task": "Other",
+  "data_type": "Tabular",
+  "features": 0,
+  "access_type": "download"
 }

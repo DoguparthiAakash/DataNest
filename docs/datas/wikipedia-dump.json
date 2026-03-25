@@ -1,1 +1,23 @@
-{"id":"wikipedia","title":"Wikipedia Dump","topic":"NLP","format":"XML","access_type":"download","size":"~21 GB","rows":"60M","overview":"Complete Wikipedia database with all articles and metadata.","source":"Wikimedia","visit_url":"https://www.wikipedia.org/","download_url":"https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles-multistream.xml.bz2","added":"2026-03-01","tags":["wikipedia","articles","knowledge-base"]}
+{
+  "id": "wikipedia",
+  "title": "Wikipedia Dump",
+  "topic": "NLP",
+  "format": "XML",
+  "access_type": "download",
+  "size": "~21 GB",
+  "rows": 60000000,
+  "overview": "Complete Wikipedia database with all articles and metadata.",
+  "source": "Wikimedia",
+  "visit_url": "https://www.wikipedia.org/",
+  "download_url": "https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles-multistream.xml.bz2",
+  "added": "2026-03-01",
+  "tags": [
+    "wikipedia",
+    "articles",
+    "knowledge-base"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Tabular",
+  "features": 0
+}

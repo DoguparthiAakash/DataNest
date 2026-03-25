@@ -1,1 +1,24 @@
-{"id":"38","title":"Coco-Stuff","topic":"Computer Vision","format":"JSON","size":"5 GB","rows":"165K","overview":"Scene parsing dataset with dense pixel-wise annotations for 80 thing and 91 stuff classes.","source":"MIT","access_type":"api","visit_url":"https://github.com/nightrome/cocostuff","usage_code":"https://github.com/nightrome/cocostuff","added":"2026-02-27","tags":["segmentation","scenes","images","annotation"]}
+{
+  "id": "38",
+  "title": "Coco-Stuff",
+  "topic": "Computer Vision",
+  "format": "JSON",
+  "size": "5 GB",
+  "rows": 165000,
+  "overview": "Scene parsing dataset with dense pixel-wise annotations for 80 thing and 91 stuff classes.",
+  "source": "MIT",
+  "access_type": "api",
+  "visit_url": "https://github.com/nightrome/cocostuff",
+  "usage_code": "https://github.com/nightrome/cocostuff",
+  "added": "2026-02-27",
+  "tags": [
+    "segmentation",
+    "scenes",
+    "images",
+    "annotation"
+  ],
+  "area": "Computer Science",
+  "task": "Computer Vision",
+  "data_type": "Tabular",
+  "features": 0
+}

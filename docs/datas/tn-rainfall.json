@@ -1,24 +1,66 @@
 {
   "id": "2",
-  "title": "Tamil Nadu Rainfall 1980–2024",
+  "title": "Tamil Nadu Rainfall 1980\u20132024",
   "topic": "Climate",
   "format": "CSV",
   "size": "18 MB",
-  "rows": "640000",
+  "rows": 640000,
   "overview": "Daily rainfall measurements from 38 Tamil Nadu districts across 44 years. Sourced from IMD weather stations. Useful for flood prediction and climate research.",
   "source": "India Meteorological Department",
   "visit_url": "https://imd.gov.in",
   "download_url": "https://example.com/tn-rainfall.csv",
   "added": "2026-02-15",
-  "tags": ["rainfall", "climate", "tamil-nadu", "weather", "imd", "monsoon"],
+  "tags": [
+    "rainfall",
+    "climate",
+    "tamil-nadu",
+    "weather",
+    "imd",
+    "monsoon"
+  ],
   "preview": {
-    "cols": ["date", "district", "station", "rainfall_mm"],
+    "cols": [
+      "date",
+      "district",
+      "station",
+      "rainfall_mm"
+    ],
     "rows": [
-      ["1980-06-01", "Chennai", "Nungambakkam", "12.4"],
-      ["1980-06-01", "Coimbatore", "Peelamedu", "8.2"],
-      ["1980-06-02", "Chennai", "Nungambakkam", "0.0"],
-      ["1980-06-02", "Madurai", "Madurai Airport", "5.1"],
-      ["1980-06-03", "Salem", "Salem", "3.8"]
+      [
+        "1980-06-01",
+        "Chennai",
+        "Nungambakkam",
+        "12.4"
+      ],
+      [
+        "1980-06-01",
+        "Coimbatore",
+        "Peelamedu",
+        "8.2"
+      ],
+      [
+        "1980-06-02",
+        "Chennai",
+        "Nungambakkam",
+        "0.0"
+      ],
+      [
+        "1980-06-02",
+        "Madurai",
+        "Madurai Airport",
+        "5.1"
+      ],
+      [
+        "1980-06-03",
+        "Salem",
+        "Salem",
+        "3.8"
+      ]
     ]
-  }
+  },
+  "area": "Physical Sciences",
+  "task": "Other",
+  "data_type": "Tabular",
+  "features": 0,
+  "access_type": "download"
 }

@@ -1,1 +1,23 @@
-{"id":"40","title":"Heart Disease UCI","topic":"Healthcare","format":"CSV","size":"300 KB","rows":"303","overview":"Cleveland Heart Disease data with 76 attributes but commonly used subset of 14.","source":"UCI","access_type":"download","download_url":"https://raw.githubusercontent.com/selva86/datasets/master/heart.csv","added":"2026-02-25","tags":["heart","disease","classification","healthcare"]}
+{
+  "id": "40",
+  "title": "Heart Disease UCI",
+  "topic": "Healthcare",
+  "format": "CSV",
+  "size": "300 KB",
+  "rows": 303,
+  "overview": "Cleveland Heart Disease data with 76 attributes but commonly used subset of 14.",
+  "source": "UCI",
+  "access_type": "download",
+  "download_url": "https://raw.githubusercontent.com/selva86/datasets/master/heart.csv",
+  "added": "2026-02-25",
+  "tags": [
+    "heart",
+    "disease",
+    "classification",
+    "healthcare"
+  ],
+  "area": "Life Sciences",
+  "task": "Classification",
+  "data_type": "Tabular",
+  "features": 0
+}

@@ -1,1 +1,24 @@
-{"id":"26","title":"Cityscapes","topic":"Computer Vision","format":"JSON","size":"11 GB","rows":"5000","overview":"Semantic, instance-wise, dense pixel annotations for urban street scenes.","source":"Cityscapes","access_type":"api","visit_url":"https://www.cityscapes-dataset.com/","usage_code":"pip install cityscapesscripts","added":"2026-03-11","tags":["autonomous-driving","segmentation","urban","images"]}
+{
+  "id": "26",
+  "title": "Cityscapes",
+  "topic": "Computer Vision",
+  "format": "JSON",
+  "size": "11 GB",
+  "rows": 5000,
+  "overview": "Semantic, instance-wise, dense pixel annotations for urban street scenes.",
+  "source": "Cityscapes",
+  "access_type": "api",
+  "visit_url": "https://www.cityscapes-dataset.com/",
+  "usage_code": "pip install cityscapesscripts",
+  "added": "2026-03-11",
+  "tags": [
+    "autonomous-driving",
+    "segmentation",
+    "urban",
+    "images"
+  ],
+  "area": "Computer Science",
+  "task": "Computer Vision",
+  "data_type": "Tabular",
+  "features": 0
+}

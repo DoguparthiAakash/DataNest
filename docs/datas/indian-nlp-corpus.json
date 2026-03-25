@@ -4,21 +4,69 @@
   "topic": "NLP",
   "format": "JSON",
   "size": "2.1 GB",
-  "rows": "5000000",
+  "rows": 5000000,
   "overview": "Parallel text corpus for 22 Indian languages with English translations. Sourced from government documents, news articles, and educational content.",
   "source": "AI4Bharat, IIT Bombay",
   "visit_url": "https://ai4bharat.org",
   "download_url": "https://example.com/indian-nlp-corpus.json",
   "added": "2025-07-05",
-  "tags": ["nlp", "translation", "indian-languages", "multilingual", "ai", "transformers"],
+  "tags": [
+    "nlp",
+    "translation",
+    "indian-languages",
+    "multilingual",
+    "ai",
+    "transformers"
+  ],
   "preview": {
-    "cols": ["id", "hindi", "tamil", "telugu", "english"],
+    "cols": [
+      "id",
+      "hindi",
+      "tamil",
+      "telugu",
+      "english"
+    ],
     "rows": [
-      ["1", "भारत एक महान देश है", "இந்தியா ஒரு பெரிய நாடு", "భారతదేశం", "India is a great nation"],
-      ["2", "नमस्ते कैसे हैं आप", "வணக்கம்", "నమస్కారం", "Hello, how are you"],
-      ["3", "धन्यवाद", "நன்றி", "ధన్యవాదాలు", "Thank you"],
-      ["4", "आज मौसम अच्छा है", "காலை", "ఈ రోజు", "The weather is nice today"],
-      ["5", "मुझे भोजन पसंद है", "உணவு", "ఆహారం", "I like food"]
+      [
+        "1",
+        "\u092d\u093e\u0930\u0924 \u090f\u0915 \u092e\u0939\u093e\u0928 \u0926\u0947\u0936 \u0939\u0948",
+        "\u0b87\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe \u0b92\u0bb0\u0bc1 \u0baa\u0bc6\u0bb0\u0bbf\u0baf \u0ba8\u0bbe\u0b9f\u0bc1",
+        "\u0c2d\u0c3e\u0c30\u0c24\u0c26\u0c47\u0c36\u0c02",
+        "India is a great nation"
+      ],
+      [
+        "2",
+        "\u0928\u092e\u0938\u094d\u0924\u0947 \u0915\u0948\u0938\u0947 \u0939\u0948\u0902 \u0906\u092a",
+        "\u0bb5\u0ba3\u0b95\u0bcd\u0b95\u0bae\u0bcd",
+        "\u0c28\u0c2e\u0c38\u0c4d\u0c15\u0c3e\u0c30\u0c02",
+        "Hello, how are you"
+      ],
+      [
+        "3",
+        "\u0927\u0928\u094d\u092f\u0935\u093e\u0926",
+        "\u0ba8\u0ba9\u0bcd\u0bb1\u0bbf",
+        "\u0c27\u0c28\u0c4d\u0c2f\u0c35\u0c3e\u0c26\u0c3e\u0c32\u0c41",
+        "Thank you"
+      ],
+      [
+        "4",
+        "\u0906\u091c \u092e\u094c\u0938\u092e \u0905\u091a\u094d\u091b\u093e \u0939\u0948",
+        "\u0b95\u0bbe\u0bb2\u0bc8",
+        "\u0c08 \u0c30\u0c4b\u0c1c\u0c41",
+        "The weather is nice today"
+      ],
+      [
+        "5",
+        "\u092e\u0941\u091d\u0947 \u092d\u094b\u091c\u0928 \u092a\u0938\u0902\u0926 \u0939\u0948",
+        "\u0b89\u0ba3\u0bb5\u0bc1",
+        "\u0c06\u0c39\u0c3e\u0c30\u0c02",
+        "I like food"
+      ]
     ]
-  }
+  },
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Text",
+  "features": 0,
+  "access_type": "download"
 }

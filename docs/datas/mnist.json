@@ -1,1 +1,24 @@
-{"id":"mnist","title":"MNIST Digits","topic":"Computer Vision","format":"CSV","access_type":"api","size":"~15 MB","rows":"70K","overview":"Classic handwritten digits (0-9). ML's 'Hello World'.","source":"Yann LeCun","visit_url":"http://yann.lecun.com/exdb/mnist/","download_url":"http://yann.lecun.com/exdb/mnist/","usage_code":"from tensorflow.keras.datasets import mnist\n(x_train,y_train),(x_test,y_test)=mnist.load_data()","added":"2026-03-01","tags":["digits","beginner","classification"]}
+{
+  "id": "mnist",
+  "title": "MNIST Digits",
+  "topic": "Computer Vision",
+  "format": "CSV",
+  "access_type": "api",
+  "size": "~15 MB",
+  "rows": 70000,
+  "overview": "Classic handwritten digits (0-9). ML's 'Hello World'.",
+  "source": "Yann LeCun",
+  "visit_url": "http://yann.lecun.com/exdb/mnist/",
+  "download_url": "http://yann.lecun.com/exdb/mnist/",
+  "usage_code": "from tensorflow.keras.datasets import mnist\n(x_train,y_train),(x_test,y_test)=mnist.load_data()",
+  "added": "2026-03-01",
+  "tags": [
+    "digits",
+    "beginner",
+    "classification"
+  ],
+  "area": "Computer Science",
+  "task": "Classification",
+  "data_type": "Tabular",
+  "features": 0
+}

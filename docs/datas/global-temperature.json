@@ -1,1 +1,22 @@
-{"id":"30","title":"Global Temperature","topic":"Climate","format":"CSV","size":"50 MB","rows":"12000","overview":"Global surface temperature change data from NASA GISS.","source":"NASA","access_type":"download","download_url":"https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv","added":"2026-03-07","tags":["temperature","climate-change","time-series"]}
+{
+  "id": "30",
+  "title": "Global Temperature",
+  "topic": "Climate",
+  "format": "CSV",
+  "size": "50 MB",
+  "rows": 12000,
+  "overview": "Global surface temperature change data from NASA GISS.",
+  "source": "NASA",
+  "access_type": "download",
+  "download_url": "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv",
+  "added": "2026-03-07",
+  "tags": [
+    "temperature",
+    "climate-change",
+    "time-series"
+  ],
+  "area": "Physical Sciences",
+  "task": "Other",
+  "data_type": "Time-Series",
+  "features": 0
+}

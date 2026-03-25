@@ -4,21 +4,63 @@
   "topic": "NLP",
   "format": "JSON",
   "size": "22 MB",
-  "rows": "90000",
+  "rows": 90000,
   "overview": "90,000 Tamil tweets and social media posts labelled positive, negative, or neutral. Balanced across topics: politics, cinema, sports, and daily life.",
   "source": "AU-KBC Research Centre",
   "visit_url": "https://au-kbc.org",
   "download_url": "https://example.com/tamil-sentiment.json",
   "added": "2026-01-20",
-  "tags": ["tamil", "nlp", "sentiment", "tweets", "classification", "social-media"],
+  "tags": [
+    "tamil",
+    "nlp",
+    "sentiment",
+    "tweets",
+    "classification",
+    "social-media"
+  ],
   "preview": {
-    "cols": ["id", "text", "label", "topic"],
+    "cols": [
+      "id",
+      "text",
+      "label",
+      "topic"
+    ],
     "rows": [
-      ["1", "நல்ல படம்", "positive", "cinema"],
-      ["2", "மோசமான சேவை", "negative", "daily"],
-      ["3", "சரியான முடிவு", "positive", "politics"],
-      ["4", "கோபமாக இருக்கிறது", "negative", "daily"],
-      ["5", "அருமையான ஆட்டம்", "positive", "sports"]
+      [
+        "1",
+        "\u0ba8\u0bb2\u0bcd\u0bb2 \u0baa\u0b9f\u0bae\u0bcd",
+        "positive",
+        "cinema"
+      ],
+      [
+        "2",
+        "\u0bae\u0bcb\u0b9a\u0bae\u0bbe\u0ba9 \u0b9a\u0bc7\u0bb5\u0bc8",
+        "negative",
+        "daily"
+      ],
+      [
+        "3",
+        "\u0b9a\u0bb0\u0bbf\u0baf\u0bbe\u0ba9 \u0bae\u0bc1\u0b9f\u0bbf\u0bb5\u0bc1",
+        "positive",
+        "politics"
+      ],
+      [
+        "4",
+        "\u0b95\u0bcb\u0baa\u0bae\u0bbe\u0b95 \u0b87\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
+        "negative",
+        "daily"
+      ],
+      [
+        "5",
+        "\u0b85\u0bb0\u0bc1\u0bae\u0bc8\u0baf\u0bbe\u0ba9 \u0b86\u0b9f\u0bcd\u0b9f\u0bae\u0bcd",
+        "positive",
+        "sports"
+      ]
     ]
-  }
+  },
+  "area": "Computer Science",
+  "task": "Classification",
+  "data_type": "Text",
+  "features": 0,
+  "access_type": "download"
 }

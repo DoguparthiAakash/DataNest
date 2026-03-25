@@ -1,1 +1,24 @@
-{"id":"48","title":"Otto Group Products","topic":"Finance","format":"CSV","size":"200 MB","rows":"200K","overview":"Sales transactions for 9 product groups from Otto Group.","source":"Kaggle","access_type":"api","visit_url":"https://www.kaggle.com/c/otto-group-product-classification-challenge/data","usage_code":"https://www.kaggle.com/c/otto-group-product-classification-challenge/data","added":"2026-02-17","tags":["e-commerce","products","classification","tabular"]}
+{
+  "id": "48",
+  "title": "Otto Group Products",
+  "topic": "Finance",
+  "format": "CSV",
+  "size": "200 MB",
+  "rows": 200000,
+  "overview": "Sales transactions for 9 product groups from Otto Group.",
+  "source": "Kaggle",
+  "access_type": "api",
+  "visit_url": "https://www.kaggle.com/c/otto-group-product-classification-challenge/data",
+  "usage_code": "https://www.kaggle.com/c/otto-group-product-classification-challenge/data",
+  "added": "2026-02-17",
+  "tags": [
+    "e-commerce",
+    "products",
+    "classification",
+    "tabular"
+  ],
+  "area": "Business",
+  "task": "Classification",
+  "data_type": "Tabular",
+  "features": 0
+}

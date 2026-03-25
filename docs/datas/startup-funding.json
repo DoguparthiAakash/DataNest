@@ -1,24 +1,78 @@
 {
   "id": "9",
-  "title": "Indian Startup Funding 2016–2024",
+  "title": "Indian Startup Funding 2016\u20132024",
   "topic": "Economics",
   "format": "CSV",
   "size": "3.8 MB",
-  "rows": "15000",
+  "rows": 15000,
   "overview": "Detailed records of startup funding rounds in India including seed, Series A/B/C, and IPOs. Includes investors, valuations, and sector information.",
   "source": "Tracxn, Crunchbase",
   "visit_url": "https://tracxn.com",
   "download_url": "https://example.com/startup-funding.csv",
   "added": "2025-08-12",
-  "tags": ["startups", "funding", "investment", "india", "venture-capital", "economy"],
+  "tags": [
+    "startups",
+    "funding",
+    "investment",
+    "india",
+    "venture-capital",
+    "economy"
+  ],
   "preview": {
-    "cols": ["company", "round", "amount_usd", "date", "investors", "sector"],
+    "cols": [
+      "company",
+      "round",
+      "amount_usd",
+      "date",
+      "investors",
+      "sector"
+    ],
     "rows": [
-      ["Flipkart", "Series G", "1000000000", "2023-05-15", "Walmart", "E-commerce"],
-      ["PhonePe", "Series F", "500000000", "2024-01-20", "General Atlantic", "Fintech"],
-      ["Meesho", "Series F", "275000000", "2023-08-10", "SoftBank", "Social Commerce"],
-      ["Shadowfax", "Series E", "200000000", "2023-03-25", "TPG", "Logistics"],
-      ["Capital AI", "Series B", "85000000", "2024-02-01", "Tiger Global", "AI/ML"]
+      [
+        "Flipkart",
+        "Series G",
+        "1000000000",
+        "2023-05-15",
+        "Walmart",
+        "E-commerce"
+      ],
+      [
+        "PhonePe",
+        "Series F",
+        "500000000",
+        "2024-01-20",
+        "General Atlantic",
+        "Fintech"
+      ],
+      [
+        "Meesho",
+        "Series F",
+        "275000000",
+        "2023-08-10",
+        "SoftBank",
+        "Social Commerce"
+      ],
+      [
+        "Shadowfax",
+        "Series E",
+        "200000000",
+        "2023-03-25",
+        "TPG",
+        "Logistics"
+      ],
+      [
+        "Capital AI",
+        "Series B",
+        "85000000",
+        "2024-02-01",
+        "Tiger Global",
+        "AI/ML"
+      ]
     ]
-  }
+  },
+  "area": "Business",
+  "task": "Other",
+  "data_type": "Tabular",
+  "features": 0,
+  "access_type": "download"
 }

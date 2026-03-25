@@ -64,8 +64,10 @@ a{color:var(--primary);text-decoration:none}
 .chip{padding:6px 14px;font-size:13px;font-weight:500;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-full);cursor:pointer;transition:all .2s;white-space:nowrap}
 .chip:hover{border-color:var(--primary);background:var(--primary-bg);color:var(--primary)}
 .chip.active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 4px 10px rgba(99,102,241,.2)}
-
-/* Results */
+.tag-chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.tag-chip{padding:4px 10px;font-size:11px;font-family:var(--font-mono);background:var(--border-light);color:var(--text-secondary);border-radius:6px;cursor:pointer;transition:all .2s;border:1px solid transparent}
+.tag-chip:hover{background:var(--border);color:var(--text)}
+.tag-chip.active{background:var(--text);color:#fff;border-color:var(--text)}
 .results-section{max-width:1200px;margin:0 auto;padding:24px 16px 60px}
 .results-header{margin-bottom:16px;font-size:13px;color:var(--text-muted)}
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
@@ -81,7 +83,14 @@ a{color:var(--primary);text-decoration:none}
 .topic-badge.finance{background:#f3e8ff;color:#9333ea}
 .topic-badge.nlp{background:#fce7f3;color:#db2777}
 .topic-badge.computer-vision{background:#ffedd5;color:#ea580c}
-.topic-badge.other{background:var(--border-light);color:var(--text-secondary)}
+.topic-badge.computer-science{background:#e0f2fe;color:#0369a1}
+.topic-badge.business{background:#fef3c7;color:#92400e}
+.topic-badge.physical-sciences{background:#f1f5f9;color:#475569}
+.topic-badge.social-sciences{background:#fdf2f8;color:#9d174d}
+.topic-badge.engineering{background:#ecfdf5;color:#065f46}
+
+.task-badge{padding:4px 8px;font-size:10px;font-weight:600;border-radius:6px;background:var(--border-light);color:var(--text-secondary);text-transform:capitalize}
+
 .access-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;font-size:10px;font-weight:600;border-radius:6px}
 .access-badge svg{width:10px;height:10px}
 .access-badge.download{background:var(--success-bg);color:var(--success)}
@@ -120,8 +129,8 @@ a{color:var(--primary);text-decoration:none}
 .modal-meta-item{background:var(--bg);border-radius:var(--radius);padding:12px;text-align:center}
 .modal-meta-val{font-size:14px;font-weight:600;font-family:var(--font-mono);margin-bottom:2px}
 .modal-meta-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px}
-.api-badge-large{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:linear-gradient(135deg,#f3e8ff,#e9d5ff);color:#9333ea;font-size:13px;font-weight:600;border-radius:var(--radius);margin-bottom:12px}
-.api-badge-large svg{width:16px;height:16px}
+.api-badge-large{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:24px;width:100%}
+.api-badge-large svg{width:20px;height:20px;color:var(--primary)}
 .modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .tag{padding:4px 10px;font-size:11px;font-family:var(--font-mono);background:var(--border-light);color:var(--text-secondary);border-radius:6px}
 .code-block{position:relative;background:#1e293b;border-radius:var(--radius);overflow:hidden;margin:12px 0}

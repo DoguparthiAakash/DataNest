@@ -1,1 +1,24 @@
-{"id":"31","title":"MIMIC-III","topic":"Healthcare","format":"CSV","size":"40 GB","rows":"50M","overview":"De-identified health data for adult patients admitted to ICU at Beth Israel Deaconess Medical Center.","source":"MIT","access_type":"api","visit_url":"https://physionet.org/content/mimiciii/1.4/","usage_code":"https://physionet.org/content/mimiciii/1.4/","added":"2026-03-06","tags":["healthcare","ICU","clinical","time-series"]}
+{
+  "id": "31",
+  "title": "MIMIC-III",
+  "topic": "Healthcare",
+  "format": "CSV",
+  "size": "40 GB",
+  "rows": 50000000,
+  "overview": "De-identified health data for adult patients admitted to ICU at Beth Israel Deaconess Medical Center.",
+  "source": "MIT",
+  "access_type": "api",
+  "visit_url": "https://physionet.org/content/mimiciii/1.4/",
+  "usage_code": "https://physionet.org/content/mimiciii/1.4/",
+  "added": "2026-03-06",
+  "tags": [
+    "healthcare",
+    "ICU",
+    "clinical",
+    "time-series"
+  ],
+  "area": "Life Sciences",
+  "task": "Other",
+  "data_type": "Time-Series",
+  "features": 0
+}

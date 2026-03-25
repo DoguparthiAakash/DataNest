@@ -1,1 +1,23 @@
-{"id":"29","title":"Adult Census Income","topic":"Finance","format":"CSV","size":"4 MB","rows":"48842","overview":"Predict whether income exceeds $50K/yr based on census data.","source":"UCI","access_type":"download","download_url":"https://raw.githubusercontent.com/datasciencedojo/datasets/master/adult.csv","added":"2026-03-08","tags":["census","income","classification","tabular"]}
+{
+  "id": "29",
+  "title": "Adult Census Income",
+  "topic": "Finance",
+  "format": "CSV",
+  "size": "4 MB",
+  "rows": 48842,
+  "overview": "Predict whether income exceeds $50K/yr based on census data.",
+  "source": "UCI",
+  "access_type": "download",
+  "download_url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/adult.csv",
+  "added": "2026-03-08",
+  "tags": [
+    "census",
+    "income",
+    "classification",
+    "tabular"
+  ],
+  "area": "Business",
+  "task": "Classification",
+  "data_type": "Tabular",
+  "features": 0
+}

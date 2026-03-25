@@ -1,1 +1,24 @@
-{"id":"53","title":"Mental Health Conversations","topic":"NLP","format":"JSON","size":"100 MB","rows":"150K","overview":"Mental health support conversations from online forums.","source":"Kaggle","access_type":"api","visit_url":"https://www.kaggle.com/datasets/eliza/mental-health-conversations","usage_code":"from datasets import load_dataset\nds = load_dataset('AreeshK/mental-health-conversations')","added":"2026-02-12","tags":["mental-health","conversations","support","NLP"]}
+{
+  "id": "53",
+  "title": "Mental Health Conversations",
+  "topic": "NLP",
+  "format": "JSON",
+  "size": "100 MB",
+  "rows": 150000,
+  "overview": "Mental health support conversations from online forums.",
+  "source": "Kaggle",
+  "access_type": "api",
+  "visit_url": "https://www.kaggle.com/datasets/eliza/mental-health-conversations",
+  "usage_code": "from datasets import load_dataset\nds = load_dataset('AreeshK/mental-health-conversations')",
+  "added": "2026-02-12",
+  "tags": [
+    "mental-health",
+    "conversations",
+    "support",
+    "NLP"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Text",
+  "features": 0
+}

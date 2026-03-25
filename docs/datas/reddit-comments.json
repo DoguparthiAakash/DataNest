@@ -1,1 +1,24 @@
-{"id":"39","title":"Reddit Comments","topic":"NLP","format":"JSON","size":"100 GB","rows":"1.7B","overview":"Public comments from Reddit with scores, subreddits, and metadata.","source":"Reddit","access_type":"api","visit_url":"https://huggingface.co/datasets/reddit","usage_code":"from datasets import load_dataset\nds = load_dataset('reddit', split='train')","added":"2026-02-26","tags":["social-media","comments","NLP","dialogue"]}
+{
+  "id": "39",
+  "title": "Reddit Comments",
+  "topic": "NLP",
+  "format": "JSON",
+  "size": "100 GB",
+  "rows": "1.7B",
+  "overview": "Public comments from Reddit with scores, subreddits, and metadata.",
+  "source": "Reddit",
+  "access_type": "api",
+  "visit_url": "https://huggingface.co/datasets/reddit",
+  "usage_code": "from datasets import load_dataset\nds = load_dataset('reddit', split='train')",
+  "added": "2026-02-26",
+  "tags": [
+    "social-media",
+    "comments",
+    "NLP",
+    "dialogue"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Text",
+  "features": 0
+}

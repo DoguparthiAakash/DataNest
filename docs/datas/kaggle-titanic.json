@@ -1,1 +1,25 @@
-{"id":"titanic","title":"Kaggle Titanic","topic":"Finance","format":"CSV","access_type":"api","size":"~60 KB","rows":"891","overview":"Classic ML dataset. Passenger info with survival outcomes.","source":"Kaggle","visit_url":"https://www.kaggle.com/competitions/titanic","download_url":"https://www.kaggle.com/competitions/titanic/data","usage_code":"import seaborn as sns\ntitanic = sns.load_dataset('titanic')","added":"2026-03-01","tags":["kaggle","classification","beginner","tabular"]}
+{
+  "id": "titanic",
+  "title": "Kaggle Titanic",
+  "topic": "Finance",
+  "format": "CSV",
+  "access_type": "api",
+  "size": "~60 KB",
+  "rows": 891,
+  "overview": "Classic ML dataset. Passenger info with survival outcomes.",
+  "source": "Kaggle",
+  "visit_url": "https://www.kaggle.com/competitions/titanic",
+  "download_url": "https://www.kaggle.com/competitions/titanic/data",
+  "usage_code": "import seaborn as sns\ntitanic = sns.load_dataset('titanic')",
+  "added": "2026-03-01",
+  "tags": [
+    "kaggle",
+    "classification",
+    "beginner",
+    "tabular"
+  ],
+  "area": "Business",
+  "task": "Classification",
+  "data_type": "Tabular",
+  "features": 0
+}

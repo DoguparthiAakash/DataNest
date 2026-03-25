@@ -1,1 +1,24 @@
-{"id":"43","title":"SNLI","topic":"NLP","format":"JSON","size":"400 MB","rows":"550K","overview":"Stanford Natural Language Inference - sentence pair classification for entailment.","source":"Stanford","access_type":"api","visit_url":"https://huggingface.co/datasets/snli","usage_code":"from datasets import load_dataset\nds = load_dataset('snli')","added":"2026-02-22","tags":["entailment","NLI","inference","NLP"]}
+{
+  "id": "43",
+  "title": "SNLI",
+  "topic": "NLP",
+  "format": "JSON",
+  "size": "400 MB",
+  "rows": 550000,
+  "overview": "Stanford Natural Language Inference - sentence pair classification for entailment.",
+  "source": "Stanford",
+  "access_type": "api",
+  "visit_url": "https://huggingface.co/datasets/snli",
+  "usage_code": "from datasets import load_dataset\nds = load_dataset('snli')",
+  "added": "2026-02-22",
+  "tags": [
+    "entailment",
+    "NLI",
+    "inference",
+    "NLP"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Text",
+  "features": 0
+}

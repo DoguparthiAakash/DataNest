@@ -1,24 +1,85 @@
 {
   "id": "5",
-  "title": "NSE Stock Prices 2015–2024",
+  "title": "NSE Stock Prices 2015\u20132024",
   "topic": "Finance",
   "format": "CSV",
   "size": "210 MB",
-  "rows": "2400000",
+  "rows": 2400000,
   "overview": "Daily OHLCV (Open, High, Low, Close, Volume) data for all NSE-listed stocks from 2015 to 2024. Includes sector labels and index membership.",
   "source": "National Stock Exchange of India",
   "visit_url": "https://nseindia.com",
   "download_url": "https://example.com/nse-stocks.csv",
   "added": "2025-12-10",
-  "tags": ["stocks", "nse", "finance", "ohlcv", "india", "market", "trading"],
+  "tags": [
+    "stocks",
+    "nse",
+    "finance",
+    "ohlcv",
+    "india",
+    "market",
+    "trading"
+  ],
   "preview": {
-    "cols": ["date", "symbol", "open", "high", "low", "close", "volume"],
+    "cols": [
+      "date",
+      "symbol",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume"
+    ],
     "rows": [
-      ["2024-01-02", "RELIANCE", "2820.00", "2865.00", "2810.00", "2850.00", "4200000"],
-      ["2024-01-02", "TCS", "3940.00", "3980.00", "3920.00", "3965.00", "1800000"],
-      ["2024-01-02", "HDFCBANK", "1620.00", "1645.00", "1615.00", "1638.00", "6100000"],
-      ["2024-01-03", "RELIANCE", "2850.00", "2900.00", "2840.00", "2890.00", "3900000"],
-      ["2024-01-03", "INFY", "1520.00", "1548.00", "1515.00", "1540.00", "2400000"]
+      [
+        "2024-01-02",
+        "RELIANCE",
+        "2820.00",
+        "2865.00",
+        "2810.00",
+        "2850.00",
+        "4200000"
+      ],
+      [
+        "2024-01-02",
+        "TCS",
+        "3940.00",
+        "3980.00",
+        "3920.00",
+        "3965.00",
+        "1800000"
+      ],
+      [
+        "2024-01-02",
+        "HDFCBANK",
+        "1620.00",
+        "1645.00",
+        "1615.00",
+        "1638.00",
+        "6100000"
+      ],
+      [
+        "2024-01-03",
+        "RELIANCE",
+        "2850.00",
+        "2900.00",
+        "2840.00",
+        "2890.00",
+        "3900000"
+      ],
+      [
+        "2024-01-03",
+        "INFY",
+        "1520.00",
+        "1548.00",
+        "1515.00",
+        "1540.00",
+        "2400000"
+      ]
     ]
-  }
+  },
+  "area": "Business",
+  "task": "Other",
+  "data_type": "Tabular",
+  "features": 0,
+  "access_type": "download"
 }

@@ -1,1 +1,24 @@
-{"id":"34","title":"Enron Email","topic":"NLP","format":"CSV","size":"1.5 GB","rows":"500K","overview":"Email data from the Enron Corporation, with labeled subsets for analysis.","source":"CALO","access_type":"api","visit_url":"https://huggingface.co/datasets/enron_emails","usage_code":"from datasets import load_dataset\nds = load_dataset('enron_emails')","added":"2026-03-03","tags":["emails","fraud","corporate","NLP"]}
+{
+  "id": "34",
+  "title": "Enron Email",
+  "topic": "NLP",
+  "format": "CSV",
+  "size": "1.5 GB",
+  "rows": 500000,
+  "overview": "Email data from the Enron Corporation, with labeled subsets for analysis.",
+  "source": "CALO",
+  "access_type": "api",
+  "visit_url": "https://huggingface.co/datasets/enron_emails",
+  "usage_code": "from datasets import load_dataset\nds = load_dataset('enron_emails')",
+  "added": "2026-03-03",
+  "tags": [
+    "emails",
+    "fraud",
+    "corporate",
+    "NLP"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Text",
+  "features": 0
+}

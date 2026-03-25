@@ -1,1 +1,24 @@
-{"id":"squad","title":"SQuAD","topic":"NLP","format":"JSON","access_type":"api","size":"~40 MB","rows":"150K","overview":"Reading comprehension with 100K+ Q&A pairs on Wikipedia.","source":"Stanford","visit_url":"https://rajpurkar.github.io/SQuAD-explorer/","download_url":"https://rajpurkar.github.io/SQuAD-explorer/","usage_code":"pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('squad')","added":"2026-03-01","tags":["nlp","qa","wikipedia"]}
+{
+  "id": "squad",
+  "title": "SQuAD",
+  "topic": "NLP",
+  "format": "JSON",
+  "access_type": "api",
+  "size": "~40 MB",
+  "rows": 150000,
+  "overview": "Reading comprehension with 100K+ Q&A pairs on Wikipedia.",
+  "source": "Stanford",
+  "visit_url": "https://rajpurkar.github.io/SQuAD-explorer/",
+  "download_url": "https://rajpurkar.github.io/SQuAD-explorer/",
+  "usage_code": "pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('squad')",
+  "added": "2026-03-01",
+  "tags": [
+    "nlp",
+    "qa",
+    "wikipedia"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Text",
+  "features": 0
+}

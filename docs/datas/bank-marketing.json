@@ -1,1 +1,23 @@
-{"id":"37","title":"Bank Marketing","topic":"Finance","format":"CSV","size":"10 MB","rows":"45211","overview":"Marketing campaigns of a Portuguese banking institution.","source":"UCI","access_type":"download","download_url":"https://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank-additional-full.csv","added":"2026-02-28","tags":["marketing","banking","classification","tabular"]}
+{
+  "id": "37",
+  "title": "Bank Marketing",
+  "topic": "Finance",
+  "format": "CSV",
+  "size": "10 MB",
+  "rows": 45211,
+  "overview": "Marketing campaigns of a Portuguese banking institution.",
+  "source": "UCI",
+  "access_type": "download",
+  "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank-additional-full.csv",
+  "added": "2026-02-28",
+  "tags": [
+    "marketing",
+    "banking",
+    "classification",
+    "tabular"
+  ],
+  "area": "Business",
+  "task": "Classification",
+  "data_type": "Tabular",
+  "features": 0
+}

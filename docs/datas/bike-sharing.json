@@ -1,1 +1,23 @@
-{"id":"46","title":"Bike Sharing","topic":"Finance","format":"CSV","size":"20 MB","rows":"17389","overview":"Hourly and daily bike rental counts with weather and seasonal information.","source":"UCI","access_type":"download","download_url":"https://archive.ics.uci.edu/ml/machine-learning-databases/00275/Bike-Sharing-Dataset.zip","added":"2026-02-19","tags":["bike","rental","time-series","regression"]}
+{
+  "id": "46",
+  "title": "Bike Sharing",
+  "topic": "Finance",
+  "format": "CSV",
+  "size": "20 MB",
+  "rows": 17389,
+  "overview": "Hourly and daily bike rental counts with weather and seasonal information.",
+  "source": "UCI",
+  "access_type": "download",
+  "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00275/Bike-Sharing-Dataset.zip",
+  "added": "2026-02-19",
+  "tags": [
+    "bike",
+    "rental",
+    "time-series",
+    "regression"
+  ],
+  "area": "Business",
+  "task": "Regression",
+  "data_type": "Time-Series",
+  "features": 0
+}

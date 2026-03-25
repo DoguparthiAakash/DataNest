@@ -1,1 +1,24 @@
-{"id":"arxiv","title":"arXiv Papers","topic":"NLP","format":"JSON","access_type":"api","size":"~50 GB","rows":"2M","overview":"2M+ academic papers from arXiv.","source":"arXiv","visit_url":"https://arxiv.org/","download_url":"https://arxiv.org/","usage_code":"pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('ccdv/arxiv-papers',split='train',streaming=True)","added":"2026-03-01","tags":["papers","academic","scientific"]}
+{
+  "id": "arxiv",
+  "title": "arXiv Papers",
+  "topic": "NLP",
+  "format": "JSON",
+  "access_type": "api",
+  "size": "~50 GB",
+  "rows": 2000000,
+  "overview": "2M+ academic papers from arXiv.",
+  "source": "arXiv",
+  "visit_url": "https://arxiv.org/",
+  "download_url": "https://arxiv.org/",
+  "usage_code": "pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('ccdv/arxiv-papers',split='train',streaming=True)",
+  "added": "2026-03-01",
+  "tags": [
+    "papers",
+    "academic",
+    "scientific"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Tabular",
+  "features": 0
+}

@@ -4,21 +4,75 @@
   "topic": "Social Science",
   "format": "CSV",
   "size": "4.2 MB",
-  "rows": "8500",
+  "rows": 8500,
   "overview": "Comprehensive voter turnout data for Lok Sabha and State Assembly elections across all constituencies. Includes demographic breakdown and turnout trends.",
   "source": "Election Commission of India",
   "visit_url": "https://eci.gov.in",
   "download_url": "https://example.com/elections.csv",
   "added": "2025-10-15",
-  "tags": ["elections", "voting", "india", "politics", "democracy", "turnout"],
+  "tags": [
+    "elections",
+    "voting",
+    "india",
+    "politics",
+    "democracy",
+    "turnout"
+  ],
   "preview": {
-    "cols": ["year", "state", "constituency", "voters", "votes_cast", "turnout_pct"],
+    "cols": [
+      "year",
+      "state",
+      "constituency",
+      "voters",
+      "votes_cast",
+      "turnout_pct"
+    ],
     "rows": [
-      ["2024", "Tamil Nadu", "Chennai Central", "245678", "198432", "80.77"],
-      ["2024", "Maharashtra", "Mumbai South", "312456", "267890", "85.74"],
-      ["2024", "Uttar Pradesh", "Lucknow", "289123", "234567", "81.13"],
-      ["2024", "West Bengal", "Kolkata North", "276543", "223456", "80.80"],
-      ["2024", "Karnataka", "Bangalore South", "345678", "289012", "83.61"]
+      [
+        "2024",
+        "Tamil Nadu",
+        "Chennai Central",
+        "245678",
+        "198432",
+        "80.77"
+      ],
+      [
+        "2024",
+        "Maharashtra",
+        "Mumbai South",
+        "312456",
+        "267890",
+        "85.74"
+      ],
+      [
+        "2024",
+        "Uttar Pradesh",
+        "Lucknow",
+        "289123",
+        "234567",
+        "81.13"
+      ],
+      [
+        "2024",
+        "West Bengal",
+        "Kolkata North",
+        "276543",
+        "223456",
+        "80.80"
+      ],
+      [
+        "2024",
+        "Karnataka",
+        "Bangalore South",
+        "345678",
+        "289012",
+        "83.61"
+      ]
     ]
-  }
+  },
+  "area": "Social Sciences",
+  "task": "Other",
+  "data_type": "Tabular",
+  "features": 0,
+  "access_type": "download"
 }

@@ -3,24 +3,34 @@ console.log("DataNest Portal v1.0.3 - Automated Dataset Discovery");
 let datasets = [], filtered = [];
 const PER_PAGE = 20;
 let currentPage = 1;
+let selectedTag = '';
+let isInitialized = false;
 
 async function init() {
+  if (isInitialized) return;
+  isInitialized = true;
   let fileList = [];
   
   // Try dynamic discovery via GitHub API (for GitHub Pages hosting)
+  // This allows the site to pick up new files even before the next deployment
   try {
-    const apiRes = await fetch('https://api.github.com/repos/DoguparthiAakash/DataNest/contents/docs/datas');
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const repoPath = isGitHubPages ? window.location.pathname.split('/')[1] : 'DataNest'; 
+    const owner = isGitHubPages ? window.location.hostname.split('.')[0] : 'DoguparthiAakash';
+    
+    // Fallback Repo Detection for Custom Domains or Local Dev
+    const apiUrl = `https://api.github.com/repos/${owner}/${repoPath}/contents/docs/datas`;
+    
+    const apiRes = await fetch(apiUrl);
     if (apiRes.ok) {
       const data = await apiRes.json();
       fileList = data
         .filter(item => item.name.endsWith('.json') && item.name !== 'index.json')
         .map(item => item.name);
-      console.log(`Auto-discovered ${fileList.length} datasets via GitHub API`);
-    } else {
-      console.warn(`GitHub API returned status ${apiRes.status}. Fallback to index.json.`);
+      console.log(`Auto-discovered ${fileList.length} datasets via GitHub API (${owner}/${repoPath})`);
     }
   } catch (e) {
-    console.warn("GitHub API discovery failed. Falling back to index.json.", e);
+    console.warn("GitHub API discovery not available or failed. Falling back to index.json.", e);
   }
 
   // Fallback to manual index.json if API discovery failed or returned no files
@@ -45,46 +55,120 @@ async function init() {
     return;
   }
 
-  buildTopicFilter();
+  buildAreaFilter();
+  buildTaskFilter();
+  buildTypeFilter();
   buildChips();
+  buildTagChips();
   filter();
 }
 
-function buildTopicFilter() {
-  const sel = document.getElementById('topicFilter');
+function buildAreaFilter() {
+  const sel = document.getElementById('areaFilter');
   if (!sel) return;
-  const topics = ['All', ...new Set(datasets.map(d => d.topic))];
-  sel.innerHTML = topics.map(t => `<option value="${t === 'All' ? '' : t}">${t === 'All' ? 'All Topics' : t}</option>`).join('');
+  const areas = ['All', ...new Set(datasets.map(d => d.area || 'Other'))];
+  sel.innerHTML = areas.map(a => `<option value="${a === 'All' ? '' : a}">${a === 'All' ? 'All Areas' : a}</option>`).join('');
+}
+
+function buildTaskFilter() {
+  const sel = document.getElementById('taskFilter');
+  if (!sel) return;
+  const tasks = ['All', ...new Set(datasets.map(d => d.task || 'Other'))];
+  sel.innerHTML = tasks.map(t => `<option value="${t === 'All' ? '' : t}">${t === 'All' ? 'All Tasks' : t}</option>`).join('');
+}
+
+function buildTypeFilter() {
+  const sel = document.getElementById('typeFilter');
+  if (!sel) return;
+  const types = ['All', ...new Set(datasets.map(d => d.data_type || 'Other'))];
+  sel.innerHTML = types.map(t => `<option value="${t === 'All' ? '' : t}">${t === 'All' ? 'All Types' : t}</option>`).join('');
 }
 
 function buildChips() {
   const con = document.getElementById('topicChips');
   if (!con) return;
-  const topics = ['All', ...new Set(datasets.map(d => d.topic))];
-  con.innerHTML = topics.map(t => `<button class="chip${t === 'All' ? ' active' : ''}" data-topic="${t}">${t}</button>`).join('');
-  con.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => setTopic(c.dataset.topic, c)));
+  const areas = ['All', ...new Set(datasets.map(d => d.area || 'Other'))];
+  con.innerHTML = areas.map(a => `<button class="chip${a === 'All' ? ' active' : ''}" data-area="${a}">${a}</button>`).join('');
+  con.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => setArea(c.dataset.area, c)));
 }
 
-function setTopic(topic, el) {
+function setArea(area, el) {
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
   el.classList.add('active');
-  const sel = document.getElementById('topicFilter');
-  if (sel) sel.value = topic === 'All' ? '' : topic;
+  const sel = document.getElementById('areaFilter');
+  if (sel) sel.value = area === 'All' ? '' : area;
+  selectedTag = '';
+  document.querySelectorAll('.tag-chip').forEach(c => c.classList.remove('active'));
+  currentPage = 1;
+  filter();
+}
+
+function buildTagChips() {
+  const con = document.getElementById('tagChips');
+  if (!con) return;
+  
+  const topics = new Set(datasets.map(d => (d.area || d.topic || '').toLowerCase().trim()));
+  const tagCounts = {};
+  
+  datasets.forEach(d => {
+    (d.tags || []).forEach(t => {
+      const cleanTag = t.trim();
+      const lowerTag = cleanTag.toLowerCase();
+      if (!topics.has(lowerTag)) {
+        // Keep original case but group by lowercase
+        // For simplicity, we'll just use the first version we encounter or 
+        // a consistent case. Let's use the lowercase version for the key
+        // to ensure we don't have both "NLP" and "nlp"
+        tagCounts[lowerTag] = (tagCounts[lowerTag] || 0) + 1;
+      }
+    });
+  });
+  
+  const sortedTags = Object.keys(tagCounts)
+    .sort((a, b) => tagCounts[b] - tagCounts[a])
+    .slice(0, 15);
+  
+  if (sortedTags.length === 0) {
+    con.style.display = 'none';
+    return;
+  }
+  
+  con.style.display = 'flex';
+  con.innerHTML = sortedTags.map(t => `<button class="tag-chip${t === selectedTag ? ' active' : ''}" data-tag="${t}">#${t}</button>`).join('');
+  con.querySelectorAll('.tag-chip').forEach(c => c.addEventListener('click', () => setTag(c.dataset.tag, c)));
+}
+
+function setTag(tag, el) {
+  const isActive = el.classList.contains('active');
+  document.querySelectorAll('.tag-chip').forEach(c => c.classList.remove('active'));
+  
+  if (isActive) {
+    selectedTag = '';
+  } else {
+    el.classList.add('active');
+    selectedTag = tag;
+  }
+  
   currentPage = 1;
   filter();
 }
 
 function filter() {
   const q = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
-  const topic = document.getElementById('topicFilter')?.value || '';
+  const area = document.getElementById('areaFilter')?.value || '';
+  const task = document.getElementById('taskFilter')?.value || '';
+  const type = document.getElementById('typeFilter')?.value || '';
   const fmt = document.getElementById('formatFilter')?.value || '';
   const sort = document.getElementById('sortBy')?.value || 'newest';
 
   filtered = datasets.filter(d => {
-    const tm = !topic || d.topic === topic;
+    const am = !area || d.area === area;
+    const tm = !task || d.task === task;
+    const ty = !type || d.data_type === type;
     const fm = !fmt || d.format === fmt;
-    const sm = !q || d.title.toLowerCase().includes(q) || d.topic.toLowerCase().includes(q) || d.overview.toLowerCase().includes(q) || (d.tags?.some(t => t.toLowerCase().includes(q)));
-    return tm && fm && sm;
+    const tg = !selectedTag || (d.tags && d.tags.some(t => t.toLowerCase().trim() === selectedTag));
+    const sm = !q || d.title.toLowerCase().includes(q) || (d.area || '').toLowerCase().includes(q) || (d.task || '').toLowerCase().includes(q) || d.overview.toLowerCase().includes(q) || (d.tags?.some(t => t.toLowerCase().includes(q)));
+    return am && tm && ty && fm && tg && sm;
   });
 
   switch (sort) {
@@ -136,7 +220,25 @@ function renderCards() {
   const start = (currentPage - 1) * PER_PAGE;
   const pageItems = filtered.slice(start, start + PER_PAGE);
   
-  con.innerHTML = pageItems.map((d, i) => `<div class="card" style="animation-delay:${i * 30}ms" onclick="openModal('${d.id}', event)"><div class="card-header"><span class="topic-badge ${(d.topic || 'other').toLowerCase().replace(/\s+/g, '-')}">${esc(d.topic)}</span>${getBadge(d)}</div><div class="card-title">${esc(d.title)}</div><p class="card-overview">${esc(d.overview)}</p><div class="card-meta">${d.size ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/></svg>${esc(d.size)}</span>` : ''}${d.rows ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>${fmtNum(d.rows)}</span>` : ''}${d.source ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>${esc(d.source)}</span>` : ''}</div><div class="card-footer">${getCardAction(d)}</div></div>`).join('');
+  con.innerHTML = pageItems.map((d, i) => {
+    const area = d.area || 'Other';
+    const task = d.task || 'Other';
+    return `<div class="card" style="animation-delay:${i * 30}ms" onclick="openModal('${d.id}', event)">
+      <div class="card-header">
+        <span class="topic-badge ${area.toLowerCase().replace(/\s+/g, '-')}">${esc(area)}</span>
+        <span class="task-badge">${esc(task)}</span>
+        ${getBadge(d)}
+      </div>
+      <div class="card-title">${esc(d.title)}</div>
+      <p class="card-overview">${esc(d.overview)}</p>
+      <div class="card-meta">
+        ${d.size ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/></svg>${esc(d.size)}</span>` : ''}
+        ${d.rows ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>${fmtNum(d.rows)}</span>` : ''}
+        ${d.features ? `<span class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>${esc(d.features)} Features</span>` : ''}
+      </div>
+      <div class="card-footer">${getCardAction(d)}</div>
+    </div>`;
+  }).join('');
 }
 
 function renderPagination() {
@@ -256,7 +358,22 @@ function openModal(id, event) {
     action = `<div class="modal-actions"><button class="btn btn-primary" onclick="downloadFile('${esc(d.download_url)}', '${esc(filename)}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 0 01-2 2H5a2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Now</button>${d.visit_url ? `<a href="${esc(d.visit_url)}" class="btn btn-outline" target="_blank" rel="noopener">${sourceLabel}</a>` : ''}</div>`;
   }
 
-  document.getElementById('modalContent').innerHTML = `<div class="modal-title">${esc(d.title)}</div><p class="modal-overview">${esc(d.overview)}</p>${sourceCodeInfo}${d.access_type === 'api' ? '<div class="api-badge-large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>API / Code Required</div>' : ''}<div class="modal-meta"><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.topic)}</div><div class="modal-meta-label">Topic</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.format || '—')}</div><div class="modal-meta-label">Format</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.size || '—')}</div><div class="modal-meta-label">Size</div></div><div class="modal-meta-item"><div class="modal-meta-val">${fmtNum(d.rows)}</div><div class="modal-meta-label">Rows</div></div><div class="modal-meta-item"><div class="modal-meta-val">${esc(d.source || '—')}</div><div class="modal-meta-label">Source</div></div><div class="modal-meta-item"><div class="modal-meta-val">${new Date(d.added).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div><div class="modal-meta-label">Added</div></div></div>${tags}${code}${cliSection}${action}<p style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:20px;padding-top:16px;border-top:1px dashed var(--border)">Need help? <a href="documentation/manual-download.html" target="_blank">View Platform Methodology</a></p>`;
+  const area = d.area || d.topic || 'Other';
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-title">${esc(d.title)}</div>
+    <p class="modal-overview">${esc(d.overview)}</p>
+    ${sourceCodeInfo}
+    ${d.access_type === 'api' ? '<div class="api-badge-large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>API / Code Required</div>' : ''}
+    <div class="modal-meta">
+      <div class="modal-meta-item"><div class="modal-meta-val">${esc(area)}</div><div class="modal-meta-label">Area</div></div>
+      <div class="modal-meta-item"><div class="modal-meta-val">${esc(d.format || '—')}</div><div class="modal-meta-label">Format</div></div>
+      <div class="modal-meta-item"><div class="modal-meta-val">${esc(d.size || '—')}</div><div class="modal-meta-label">Size</div></div>
+      <div class="modal-meta-item"><div class="modal-meta-val">${fmtNum(d.rows)}</div><div class="modal-meta-label">Rows</div></div>
+      <div class="modal-meta-item"><div class="modal-meta-val">${esc(d.features || '0')}</div><div class="modal-meta-label">Features</div></div>
+      <div class="modal-meta-item"><div class="modal-meta-val">${esc(d.source || '—')}</div><div class="modal-meta-label">Source</div></div>
+    </div>
+    ${tags}${code}${cliSection}${action}
+    <p style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:20px;padding-top:16px;border-top:1px dashed var(--border)">Need help? <a href="documentation/manual-download.html" target="_blank">View Platform Methodology</a></p>`;
   document.getElementById('modalOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
 }
@@ -323,7 +440,9 @@ async function downloadFile(url, filename) {
 
 document.addEventListener('DOMContentLoaded', init);
 document.getElementById('searchInput')?.addEventListener('input', e => { clearTimeout(window.searchTimeout); window.searchTimeout = setTimeout(() => { currentPage = 1; filter(); }, 150); });
-document.getElementById('topicFilter')?.addEventListener('change', () => { currentPage = 1; filter(); });
+document.getElementById('areaFilter')?.addEventListener('change', () => { currentPage = 1; filter(); });
+document.getElementById('taskFilter')?.addEventListener('change', () => { currentPage = 1; filter(); });
+document.getElementById('typeFilter')?.addEventListener('change', () => { currentPage = 1; filter(); });
 document.getElementById('formatFilter')?.addEventListener('change', () => { currentPage = 1; filter(); });
 document.getElementById('sortBy')?.addEventListener('change', () => { currentPage = 1; filter(); });
 document.getElementById('modalClose')?.addEventListener('click', closeModal);

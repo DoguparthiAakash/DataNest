@@ -1,1 +1,24 @@
-{"id":"45","title":"Kinetics-700","topic":"Computer Vision","format":"MP4","size":"500 GB","rows":"650K","overview":"Large-scale video dataset of 700 human action classes with 650K video clips.","source":"DeepMind","access_type":"api","visit_url":"https://deepmind.com/research/open-source/kinetics","usage_code":"https://deepmind.com/research/open-source/kinetics","added":"2026-02-20","tags":["video","actions","human","classification"]}
+{
+  "id": "45",
+  "title": "Kinetics-700",
+  "topic": "Computer Vision",
+  "format": "MP4",
+  "size": "500 GB",
+  "rows": 650000,
+  "overview": "Large-scale video dataset of 700 human action classes with 650K video clips.",
+  "source": "DeepMind",
+  "access_type": "api",
+  "visit_url": "https://deepmind.com/research/open-source/kinetics",
+  "usage_code": "https://deepmind.com/research/open-source/kinetics",
+  "added": "2026-02-20",
+  "tags": [
+    "video",
+    "actions",
+    "human",
+    "classification"
+  ],
+  "area": "Computer Science",
+  "task": "Classification",
+  "data_type": "Tabular",
+  "features": 0
+}

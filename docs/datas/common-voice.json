@@ -1,1 +1,25 @@
-{"id":"common-voice","title":"Common Voice","topic":"NLP","format":"ZIP","access_type":"api","size":"~80 GB","rows":"10M","overview":"Multilingual speech dataset. Millions of audio recordings in 100+ languages.","source":"Mozilla","visit_url":"https://commonvoice.mozilla.org/","download_url":"https://commonvoice.mozilla.org/datasets","usage_code":"pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('mozilla-foundation/common_voice_11_0','en',split='train')","added":"2026-03-01","tags":["speech","audio","multilingual","asr"]}
+{
+  "id": "common-voice",
+  "title": "Common Voice",
+  "topic": "NLP",
+  "format": "ZIP",
+  "access_type": "api",
+  "size": "~80 GB",
+  "rows": 10000000,
+  "overview": "Multilingual speech dataset. Millions of audio recordings in 100+ languages.",
+  "source": "Mozilla",
+  "visit_url": "https://commonvoice.mozilla.org/",
+  "download_url": "https://commonvoice.mozilla.org/datasets",
+  "usage_code": "pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('mozilla-foundation/common_voice_11_0','en',split='train')",
+  "added": "2026-03-01",
+  "tags": [
+    "speech",
+    "audio",
+    "multilingual",
+    "asr"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Audio",
+  "features": 0
+}

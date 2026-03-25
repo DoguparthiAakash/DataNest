@@ -1,1 +1,24 @@
-{"id":"22","title":"Amazon Reviews","topic":"NLP","format":"JSON","size":"20 GB","rows":"130M","overview":"Large-scale Amazon product reviews with ratings, helpfulness votes, and product information.","source":"Stanford","access_type":"api","visit_url":"https://huggingface.co/datasets/amazon_us_reviews","usage_code":"from datasets import load_dataset\nds = load_dataset('amazon_us_reviews', 'Books_v1_00')","added":"2026-03-15","tags":["sentiment","reviews","ecommerce","NLP"]}
+{
+  "id": "22",
+  "title": "Amazon Reviews",
+  "topic": "NLP",
+  "format": "JSON",
+  "size": "20 GB",
+  "rows": 130000000,
+  "overview": "Large-scale Amazon product reviews with ratings, helpfulness votes, and product information.",
+  "source": "Stanford",
+  "access_type": "api",
+  "visit_url": "https://huggingface.co/datasets/amazon_us_reviews",
+  "usage_code": "from datasets import load_dataset\nds = load_dataset('amazon_us_reviews', 'Books_v1_00')",
+  "added": "2026-03-15",
+  "tags": [
+    "sentiment",
+    "reviews",
+    "ecommerce",
+    "NLP"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Text",
+  "features": 0
+}

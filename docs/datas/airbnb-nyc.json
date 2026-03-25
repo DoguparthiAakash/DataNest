@@ -4,12 +4,21 @@
   "topic": "Society",
   "format": "CSV",
   "size": "7 MB",
-  "rows": "48895",
+  "rows": 48895,
   "overview": "Comprehensive information on Airbnb listings in New York City for 2019, including location, price, and reviews.",
   "source": "Kaggle (Public)",
-  "access_type": "download",
+  "access_type": "api",
   "download_url": "https://raw.githubusercontent.com/alexeygrigorev/datasets/master/AB_NYC_2019.csv",
   "visit_url": "https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data",
   "added": "2026-03-24",
-  "tags": ["travel", "real-estate", "nyc", "society"]
+  "tags": [
+    "travel",
+    "real-estate",
+    "nyc",
+    "society"
+  ],
+  "area": "Other",
+  "task": "Other",
+  "data_type": "Tabular",
+  "features": 0
 }

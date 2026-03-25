@@ -1,1 +1,24 @@
-{"id":"coco","title":"COCO","topic":"Computer Vision","format":"JSON","access_type":"api","size":"~25 GB","rows":"330K","overview":"Object detection, segmentation, and captioning. 330K images.","source":"COCO","visit_url":"https://cocodataset.org/","download_url":"https://cocodataset.org/","usage_code":"pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('merve/coco-2017-small',split='train')","added":"2026-03-01","tags":["object-detection","segmentation","captioning"]}
+{
+  "id": "coco",
+  "title": "COCO",
+  "topic": "Computer Vision",
+  "format": "JSON",
+  "access_type": "api",
+  "size": "~25 GB",
+  "rows": 330000,
+  "overview": "Object detection, segmentation, and captioning. 330K images.",
+  "source": "COCO",
+  "visit_url": "https://cocodataset.org/",
+  "download_url": "https://cocodataset.org/",
+  "usage_code": "pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('merve/coco-2017-small',split='train')",
+  "added": "2026-03-01",
+  "tags": [
+    "object-detection",
+    "segmentation",
+    "captioning"
+  ],
+  "area": "Computer Science",
+  "task": "Computer Vision",
+  "data_type": "Tabular",
+  "features": 0
+}

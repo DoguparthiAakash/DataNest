@@ -1,19 +1,23 @@
 {
-    "id": "35",
-    "title": "Wine Quality",
-    "topic": "Other",
-    "format": "CSV",
-    "size": "300 KB",
-    "rows": "6497",
-    "overview": "Red and white wine samples with physicochemical properties and quality ratings.",
-    "source": "UCI",
-    "access_type": "download",
-    "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv ",
-    "added": "2026-03-02",
-    "tags": [
-        "wine",
-        "quality",
-        "regression",
-        "tabular"
-    ]
+  "id": "35",
+  "title": "Wine Quality",
+  "topic": "Other",
+  "format": "CSV",
+  "size": "300 KB",
+  "rows": 6497,
+  "overview": "Red and white wine samples with physicochemical properties and quality ratings.",
+  "source": "UCI",
+  "access_type": "download",
+  "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv ",
+  "added": "2026-03-02",
+  "tags": [
+    "wine",
+    "quality",
+    "regression",
+    "tabular"
+  ],
+  "area": "Other",
+  "task": "Regression",
+  "data_type": "Tabular",
+  "features": 0
 }

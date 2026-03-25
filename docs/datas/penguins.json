@@ -4,12 +4,21 @@
   "topic": "Biology",
   "format": "CSV",
   "size": "15 KB",
-  "rows": "344",
+  "rows": 344,
   "overview": "Size measurements for adult foraging penguins near Palmer Station, Antarctica. A great alternative to the Iris dataset.",
   "source": "Allison Horst",
   "access_type": "download",
   "download_url": "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv",
   "visit_url": "https://allisonhorst.github.io/palmerpenguins/",
   "added": "2026-03-24",
-  "tags": ["penguins", "classification", "regression", "biology"]
+  "tags": [
+    "penguins",
+    "classification",
+    "regression",
+    "biology"
+  ],
+  "area": "Life Sciences",
+  "task": "Classification",
+  "data_type": "Tabular",
+  "features": 0
 }

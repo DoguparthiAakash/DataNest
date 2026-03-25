@@ -1,1 +1,23 @@
-{"id":"32","title":"SQuAD 2.0","topic":"NLP","format":"JSON","size":"80 MB","rows":"150K","overview":"Stanford Question Answering Dataset with unanswerable questions.","source":"Stanford","access_type":"api","visit_url":"https://huggingface.co/datasets/squad_v2","usage_code":"from datasets import load_dataset\nds = load_dataset('squad_v2')","added":"2026-03-05","tags":["question-answering","reading-comprehension","NLP"]}
+{
+  "id": "32",
+  "title": "SQuAD 2.0",
+  "topic": "NLP",
+  "format": "JSON",
+  "size": "80 MB",
+  "rows": 150000,
+  "overview": "Stanford Question Answering Dataset with unanswerable questions.",
+  "source": "Stanford",
+  "access_type": "api",
+  "visit_url": "https://huggingface.co/datasets/squad_v2",
+  "usage_code": "from datasets import load_dataset\nds = load_dataset('squad_v2')",
+  "added": "2026-03-05",
+  "tags": [
+    "question-answering",
+    "reading-comprehension",
+    "NLP"
+  ],
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Text",
+  "features": 0
+}

@@ -4,21 +4,75 @@
   "topic": "Healthcare",
   "format": "XLSX",
   "size": "12.5 MB",
-  "rows": "5200",
+  "rows": 5200,
   "overview": "Nutritional composition of 5200+ Indian food items including macro and micronutrients. Covers raw ingredients, cooked dishes, and processed foods.",
   "source": "National Institute of Nutrition",
   "visit_url": "https://www.nin.res.in",
   "download_url": "https://example.com/food-composition.xlsx",
   "added": "2025-09-01",
-  "tags": ["nutrition", "food", "india", "health", "diet", "micronutrients"],
+  "tags": [
+    "nutrition",
+    "food",
+    "india",
+    "health",
+    "diet",
+    "micronutrients"
+  ],
   "preview": {
-    "cols": ["food_item", "calories", "protein_g", "carbs_g", "fat_g", "fiber_g"],
+    "cols": [
+      "food_item",
+      "calories",
+      "protein_g",
+      "carbs_g",
+      "fat_g",
+      "fiber_g"
+    ],
     "rows": [
-      ["Idli (2 pcs)", "145", "4.2", "28.5", "1.8", "1.2"],
-      ["Dosa (1 pc)", "185", "5.1", "32.4", "4.2", "1.5"],
-      ["Biryani (1 cup)", "320", "12.8", "42.5", "10.2", "2.1"],
-      ["Dal (1 cup)", "220", "14.2", "32.5", "3.8", "8.5"],
-      ["Roti (1 pc)", "120", "3.2", "22.5", "2.1", "2.5"]
+      [
+        "Idli (2 pcs)",
+        "145",
+        "4.2",
+        "28.5",
+        "1.8",
+        "1.2"
+      ],
+      [
+        "Dosa (1 pc)",
+        "185",
+        "5.1",
+        "32.4",
+        "4.2",
+        "1.5"
+      ],
+      [
+        "Biryani (1 cup)",
+        "320",
+        "12.8",
+        "42.5",
+        "10.2",
+        "2.1"
+      ],
+      [
+        "Dal (1 cup)",
+        "220",
+        "14.2",
+        "32.5",
+        "3.8",
+        "8.5"
+      ],
+      [
+        "Roti (1 pc)",
+        "120",
+        "3.2",
+        "22.5",
+        "2.1",
+        "2.5"
+      ]
     ]
-  }
+  },
+  "area": "Life Sciences",
+  "task": "Other",
+  "data_type": "Tabular",
+  "features": 0,
+  "access_type": "download"
 }

@@ -1,57 +1,24 @@
 {
-    "id": "54",
+    "id": "cifar-100",
     "title": "CIFAR-100",
     "topic": "Computer Vision",
-    "format": "PNG",
-    "size": "200 MB",
-    "rows": "60000",
-    "overview": "60K 32x32 images with 100 classes, each having 600 images.",
-    "source": "CIFAR",
-    "access_type": "api",
-    "visit_url": "https://huggingface.co/datasets/cifar100",
-    "usage_code": "from datasets import load_dataset\nds = load_dataset('cifar100')",
-    "added": "2026-02-11",
-    "tags": [
-        "images",
-        "classification",
-        "small-images"
-    ],
-    "owner": "CIFAR",
+    "format": "Images",
+    "size": "160 MB",
+    "rows": "60,000",
+    "overview": "100 classes with 600 images each. There are 500 training images and 100 testing images per class.",
+    "source": "Toronto",
+    "access_type": "download",
+    "download_url": "https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz",
+    "added": "2026-03-05",
+    "tags": ["images", "classification", "CV"],
+    "owner": "Toronto",
     "origin_site": "Other",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["Image", "Fine_Label", "Coarse_Label"],
+        "rows": [["airplane", "4", "0"], ["automobile", "1", "1"], ["bird", "2", "2"]]
+    },
+    "area": "Computer Science",
+    "task": "Classification",
+    "data_type": "Image",
+    "features": 0
 }

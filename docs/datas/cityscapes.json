@@ -1,58 +1,24 @@
 {
-    "id": "26",
+    "id": "cityscapes",
     "title": "Cityscapes",
     "topic": "Computer Vision",
-    "format": "JSON",
-    "size": "11 GB",
-    "rows": "5000",
-    "overview": "Semantic, instance-wise, dense pixel annotations for urban street scenes.",
-    "source": "Cityscapes",
-    "access_type": "api",
-    "visit_url": "https://www.cityscapes-dataset.com/",
-    "usage_code": "pip install cityscapesscripts",
-    "added": "2026-03-11",
-    "tags": [
-        "autonomous-driving",
-        "segmentation",
-        "urban",
-        "images"
-    ],
-    "owner": "Cityscapes",
-    "origin_site": "Other",
+    "format": "Images",
+    "size": "50 GB",
+    "rows": "25,000",
+    "overview": "Semantic understanding of complex urban street scenes.",
+    "source": "Daimler",
+    "access_type": "download",
+    "download_url": "https://www.cityscapes-dataset.com/",
+    "added": "2026-03-22",
+    "tags": ["urban", "segmentation", "autonomous driving", "CV"],
+    "owner": "Cityscapes Consortium",
+    "origin_site": "Cityscapes Website",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["City", "Type", "Images"],
+        "rows": [["Aachen", "Train", "174"], ["Bremen", "Train", "316"], ["Darmstadt", "Train", "216"]]
+    },
+    "area": "Computer Science",
+    "task": "Semantic Segmentation",
+    "data_type": "Image",
+    "features": 0
 }

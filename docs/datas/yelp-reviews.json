@@ -1,10 +1,10 @@
 {
-    "id": "yelp-reviews",
-    "title": "Yelp Dataset Reviews",
+    "id": "23",
+    "title": "Yelp Reviews",
     "topic": "NLP",
     "format": "JSON",
-    "size": "5.3 GB",
-    "rows": "6,990,280",
+    "size": "5 GB",
+    "rows": 8000000,
     "overview": "Subset of Yelp's businesses, reviews, and user data for use in personal, educational, and academic purposes.",
     "source": "Yelp",
     "owner": "Yelp Inc.",
@@ -97,5 +97,9 @@
             "label": "Polars",
             "code": "import polars as pl\ndf = pl.read_ndjson('yelp_academic_dataset_review.json')"
         }
-    ]
+    ],
+    "area": "Computer Science",
+    "task": "NLP",
+    "data_type": "Text",
+    "features": 0
 }

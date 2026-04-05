@@ -1,10 +1,10 @@
 {
     "id": "global-temp",
-    "title": "Global Surface Temperature Anomalies",
+    "title": "Global Surface Temperature",
     "topic": "Environment",
     "format": "CSV",
-    "size": "25 KB",
-    "rows": "240",
+    "size": "15 KB",
+    "rows": 140,
     "overview": "Combined global mean temperature anomalies (relative to 1951-1980 mean) from GISS and Berkeley Earth sources.",
     "source": "NASA GISTEMP / Berkeley Earth",
     "owner": "NASA",
@@ -63,5 +63,9 @@
             "label": "Pandas",
             "code": "import pandas as pd\nurl = 'https://pkgstore.datahub.io/core/global-temp/annual_csv/data/a21150a233073b0970099289da0dec52/annual_csv.csv'\ndf = pd.read_csv(url)\nprint(df.head())"
         }
-    ]
+    ],
+    "area": "Life Sciences",
+    "task": "Other",
+    "data_type": "Tabular",
+    "features": 0
 }

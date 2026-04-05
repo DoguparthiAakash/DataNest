@@ -4,7 +4,7 @@
     "topic": "NLP",
     "format": "CSV",
     "size": "100 KB",
-    "rows": "5500",
+    "rows": 5500,
     "overview": "Questions classified into 6 coarse and 50 fine-grained categories.",
     "source": "TREC",
     "access_type": "download",
@@ -42,5 +42,9 @@
             ]
         ]
     },
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/trec50.zip'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/trec50.zip'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Computer Science",
+    "task": "Classification",
+    "data_type": "Text",
+    "features": 0
 }

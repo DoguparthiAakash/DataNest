@@ -1,50 +1,24 @@
 {
-    "id": "56",
-    "title": "FMA Music",
-    "topic": "Other",
-    "format": "MP3",
-    "size": "100 GB",
-    "rows": "106K",
-    "overview": "Full-length music tracks with audio features and metadata.",
+    "id": "fma-music",
+    "title": "FMA: Free Music Archive",
+    "topic": "Multimedia",
+    "format": "Audio",
+    "size": "912 GB",
+    "rows": "106,574",
+    "overview": "A dataset for music analysis with 106,574 tracks of Creative Commons-licensed audio.",
     "source": "FMA",
-    "access_type": "api",
-    "visit_url": "https://github.com/mdeff/fma",
-    "usage_code": "https://github.com/mdeff/fma",
-    "added": "2026-02-09",
-    "tags": [
-        "music",
-        "audio",
-        "classification",
-        "features"
-    ],
-    "owner": "mdeff",
+    "access_type": "download",
+    "download_url": "https://github.com/mdeff/fma",
+    "added": "2026-03-22",
+    "tags": ["audio", "music", "genres", "features"],
+    "owner": "Michaël Defferrard",
     "origin_site": "GitHub",
     "preview": {
-        "cols": [
-            "ID",
-            "Category",
-            "Value",
-            "Notes"
-        ],
-        "rows": [
-            [
-                "1",
-                "Category A",
-                "10.5",
-                "N/A"
-            ],
-            [
-                "2",
-                "Category B",
-                "22.1",
-                "Sample"
-            ],
-            [
-                "3",
-                "Category A",
-                "15.7",
-                "Active"
-            ]
-        ]
-    }
+        "cols": ["Track_ID", "Artist", "Title", "Genre"],
+        "rows": [["2", "AWOL", "Food", "Hip-Hop"], ["5", "AWOL", "This is it", "Hip-Hop"], ["10", "Kurt Vile", "Freeway", "Pop"]]
+    },
+    "area": "Computer Science",
+    "task": "Genre Classification",
+    "data_type": "Audio",
+    "features": 518
 }

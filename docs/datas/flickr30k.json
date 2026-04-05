@@ -1,57 +1,24 @@
 {
-    "id": "36",
+    "id": "flickr30k",
     "title": "Flickr30k",
     "topic": "Computer Vision",
-    "format": "JSON",
-    "size": "500 MB",
-    "rows": "30K",
-    "overview": "30,000 images with natural language captions for image captioning research.",
-    "source": "Flickr",
-    "access_type": "api",
-    "visit_url": "https://huggingface.co/datasets/nateraw/flickr30k-captions",
-    "usage_code": "from datasets import load_dataset\nds = load_dataset('nateraw/flickr30k-captions')",
-    "added": "2026-03-01",
-    "tags": [
-        "captions",
-        "images",
-        "multimodal"
-    ],
-    "owner": "Flickr",
-    "origin_site": "Other",
+    "format": "Images",
+    "size": "4.2 GB",
+    "rows": "31,783",
+    "overview": "Images with 5 sentences describing each image.",
+    "source": "UUI",
+    "access_type": "download",
+    "download_url": "https://shannon.cs.illinois.edu/DenotationGraph/",
+    "added": "2026-03-22",
+    "tags": ["captioning", "images", "sentences", "CV"],
+    "owner": "University of Illinois",
+    "origin_site": "UUI Website",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["Image_ID", "Comment_ID", "Comment"],
+        "rows": [["1000092795.jpg", "0", "Two young guys with shaggy hair..."], ["1000092795.jpg", "1", "Two young, white males..."], ["1000092795.jpg", "2", "Two men in green shirts..."]]
+    },
+    "area": "Computer Science",
+    "task": "Image Captioning",
+    "data_type": "Image",
+    "features": 0
 }

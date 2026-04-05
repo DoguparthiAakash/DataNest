@@ -1,46 +1,24 @@
 {
-    "id": "34",
-    "title": "Enron Email",
+    "id": "enron-emails",
+    "title": "Enron Emails",
     "topic": "NLP",
-    "format": "CSV",
-    "size": "1.5 GB",
-    "rows": "500K",
-    "overview": "Email data from the Enron Corporation, with labeled subsets for analysis.",
-    "source": "CALO",
-    "access_type": "api",
-    "visit_url": "https://huggingface.co/datasets/enron_emails",
-    "usage_code": "from datasets import load_dataset\nds = load_dataset('enron_emails')",
-    "added": "2026-03-03",
-    "tags": [
-        "emails",
-        "fraud",
-        "corporate",
-        "NLP"
-    ],
-    "owner": "CALO",
-    "origin_site": "Other",
+    "format": "TXT",
+    "size": "1.3 GB",
+    "rows": "500,000",
+    "overview": "Internal email communications from senior management at Enron.",
+    "source": "Enron",
+    "access_type": "download",
+    "download_url": "https://www.cs.cmu.edu/~./enron/",
+    "added": "2026-03-22",
+    "tags": ["email", "fraud", "enterprise", "NLP"],
+    "owner": "CMU",
+    "origin_site": "CMU Dataset Page",
     "preview": {
-        "cols": [
-            "Text",
-            "Label",
-            "Confidence"
-        ],
-        "rows": [
-            [
-                "The product is amazing!",
-                "Positive",
-                "0.98"
-            ],
-            [
-                "I didn't like the service.",
-                "Negative",
-                "0.85"
-            ],
-            [
-                "It was okay.",
-                "Neutral",
-                "0.72"
-            ]
-        ]
-    }
+        "cols": ["From", "To", "Subject", "Date"],
+        "rows": [["phillip.allen@enron.com", "tim.belden@enron.com", "Re: Gas", "2001-05-14"], ["tim.belden@enron.com", "phillip.allen@enron.com", "Gas meeting", "2001-05-14"], ["jeff.skilling@enron.com", "board@enron.com", "Quarterly", "2001-08-14"]]
+    },
+    "area": "Computer Science",
+    "task": "Text Classification",
+    "data_type": "Text",
+    "features": 0
 }

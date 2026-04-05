@@ -2,46 +2,23 @@
     "id": "common-voice",
     "title": "Common Voice",
     "topic": "NLP",
-    "format": "ZIP",
-    "access_type": "api",
-    "size": "~80 GB",
-    "rows": "10M",
-    "overview": "Multilingual speech dataset. Millions of audio recordings in 100+ languages.",
+    "format": "Audio",
+    "size": "70 GB",
+    "rows": "13,000 hrs",
+    "overview": "Mozilla's initiative to help teach machines how real people speak.",
     "source": "Mozilla",
-    "visit_url": "https://commonvoice.mozilla.org/",
-    "download_url": "https://commonvoice.mozilla.org/datasets",
-    "usage_code": "pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('mozilla-foundation/common_voice_11_0','en',split='train')",
-    "added": "2026-03-01",
-    "tags": [
-        "speech",
-        "audio",
-        "multilingual",
-        "asr"
-    ],
-    "owner": "Mozilla",
-    "origin_site": "Other",
+    "access_type": "download",
+    "download_url": "https://commonvoice.mozilla.org/",
+    "added": "2026-03-22",
+    "tags": ["audio", "speech", "multilingual", "NLP"],
+    "owner": "Mozilla Foundation",
+    "origin_site": "Mozilla Website",
     "preview": {
-        "cols": [
-            "Text",
-            "Label",
-            "Confidence"
-        ],
-        "rows": [
-            [
-                "The product is amazing!",
-                "Positive",
-                "0.98"
-            ],
-            [
-                "I didn't like the service.",
-                "Negative",
-                "0.85"
-            ],
-            [
-                "It was okay.",
-                "Neutral",
-                "0.72"
-            ]
-        ]
-    }
+        "cols": ["Client_ID", "Path", "Sentence", "Upvotes"],
+        "rows": [["user-1", "001.mp3", "Hello world", "5"], ["user-2", "002.mp3", "Good evening", "3"], ["user-3", "003.mp3", "How are you?", "10"]]
+    },
+    "area": "Computer Science",
+    "task": "Automatic Speech Recognition",
+    "data_type": "Audio",
+    "features": 0
 }

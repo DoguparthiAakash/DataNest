@@ -1,59 +1,24 @@
 {
-    "id": "titanic",
-    "title": "Kaggle Titanic",
-    "topic": "Finance",
+    "id": "kaggle-titanic",
+    "title": "Titanic - Machine Learning from Disaster",
+    "topic": "Sociology",
     "format": "CSV",
-    "access_type": "api",
-    "size": "~60 KB",
-    "rows": "891",
-    "overview": "Classic ML dataset. Passenger info with survival outcomes.",
+    "size": "60 KB",
+    "rows": 891,
+    "overview": "Predict survival on the Titanic based on passenger attributes.",
     "source": "Kaggle",
-    "visit_url": "https://www.kaggle.com/competitions/titanic",
+    "access_type": "download",
     "download_url": "https://www.kaggle.com/competitions/titanic/data",
-    "usage_code": "import seaborn as sns\ntitanic = sns.load_dataset('titanic')",
-    "added": "2026-03-01",
-    "tags": [
-        "kaggle",
-        "classification",
-        "beginner",
-        "tabular"
-    ],
+    "added": "2026-03-22",
+    "tags": ["titanic", "survival", "Kaggle", "Tabular"],
     "owner": "Kaggle",
-    "origin_site": "Kaggle",
+    "origin_site": "Kaggle Competitions",
     "preview": {
-        "cols": [
-            "Date",
-            "Symbol",
-            "Open",
-            "High",
-            "Low",
-            "Close"
-        ],
-        "rows": [
-            [
-                "2026-04-01",
-                "ABC",
-                "150.20",
-                "155.00",
-                "149.50",
-                "154.30"
-            ],
-            [
-                "2026-04-02",
-                "ABC",
-                "154.30",
-                "156.10",
-                "153.20",
-                "155.80"
-            ],
-            [
-                "2026-04-03",
-                "ABC",
-                "155.80",
-                "157.00",
-                "155.00",
-                "156.20"
-            ]
-        ]
-    }
+        "cols": ["PassengerId", "Survived", "Pclass", "Name", "Age"],
+        "rows": [["1", "0", "3", "Braund, Mr. Owen Harris", "22"], ["2", "1", "1", "Cumings, Mrs. John Bradley", "38"], ["3", "1", "3", "Heikkinen, Miss. Laina", "26"]]
+    },
+    "area": "Sociology",
+    "task": "Classification",
+    "data_type": "Tabular",
+    "features": 12
 }

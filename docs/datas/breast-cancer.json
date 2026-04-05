@@ -1,69 +1,24 @@
 {
     "id": "breast-cancer",
-    "title": "Breast Cancer Wisconsin",
-    "topic": "Biology",
+    "title": "Breast Cancer Wisconsin (Diagnostic)",
+    "topic": "Health",
     "format": "CSV",
-    "size": "120 KB",
-    "rows": "569",
-    "overview": "Wisconsin Diagnostic Breast Cancer (WDBC) dataset. Features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass.",
-    "source": "UCI/GitHub",
+    "size": "125 KB",
+    "rows": 569,
+    "overview": "Predict whether cancer is malignant or benign based on digitized images of a fine needle aspirate (FNA) of a breast mass.",
+    "source": "UCI",
     "access_type": "download",
-    "download_url": "https://raw.githubusercontent.com/remi-granier/breast-cancer-wisconsin-data/master/data.csv",
-    "visit_url": "https://github.com/remi-granier/breast-cancer-wisconsin-data",
-    "added": "2026-03-25",
-    "tags": [
-        "health",
-        "medical",
-        "classification",
-        "biology"
-    ],
-    "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/remi-granier/breast-cancer-wisconsin-data/master/data.csv'\ndf = pd.read_csv(url)\nprint(df.diagnosis.value_counts())",
-    "owner": "remi-granier",
-    "origin_site": "GitHub",
+    "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data",
+    "added": "2026-03-01",
+    "tags": ["healthcare", "classification", "medical"],
+    "owner": "UCI",
+    "origin_site": "UCI Archive",
     "preview": {
-        "cols": [
-            "Patient_ID",
-            "Age",
-            "Gender",
-            "Status",
-            "Blood_Pressure"
-        ],
-        "rows": [
-            [
-                "P1001",
-                "45",
-                "Male",
-                "Stable",
-                "120/80"
-            ],
-            [
-                "P1002",
-                "32",
-                "Female",
-                "Critical",
-                "140/95"
-            ],
-            [
-                "P1003",
-                "58",
-                "Male",
-                "Recovered",
-                "115/75"
-            ],
-            [
-                "P1004",
-                "24",
-                "Female",
-                "Stable",
-                "110/70"
-            ],
-            [
-                "P1005",
-                "67",
-                "Male",
-                "Stable",
-                "130/85"
-            ]
-        ]
-    }
+        "cols": ["ID", "Diagnosis", "Radius_mean", "Texture_mean", "Perimeter_mean"],
+        "rows": [["842302", "M", "17.99", "10.38", "122.8"], ["842517", "M", "20.57", "17.77", "132.9"], ["84300903", "M", "19.69", "21.25", "130.0"]]
+    },
+    "area": "Health",
+    "task": "Classification",
+    "data_type": "Tabular",
+    "features": 30
 }

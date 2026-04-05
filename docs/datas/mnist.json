@@ -1,58 +1,27 @@
 {
     "id": "mnist",
-    "title": "MNIST Digits",
+    "title": "MNIST Handwritten Digits",
     "topic": "Computer Vision",
-    "format": "CSV",
+    "format": "Images",
+    "size": "50 MB",
+    "rows": "70,000",
+    "overview": "A dataset of 60,000 training images and 10,000 testing images of handwritten digits.",
+    "source": "Lecun",
     "access_type": "api",
-    "size": "~15 MB",
-    "rows": "70K",
-    "overview": "Classic handwritten digits (0-9). ML's 'Hello World'.",
-    "source": "Yann LeCun",
     "visit_url": "http://yann.lecun.com/exdb/mnist/",
-    "download_url": "http://yann.lecun.com/exdb/mnist/",
-    "usage_code": "from tensorflow.keras.datasets import mnist\n(x_train,y_train),(x_test,y_test)=mnist.load_data()",
-    "added": "2026-03-01",
-    "tags": [
-        "digits",
-        "beginner",
-        "classification"
+    "usage_methods": [
+        {"name": "tensorflow", "label": "TensorFlow", "code": "from tensorflow.keras.datasets import mnist\n(x_train, y_train), (x_test, y_test) = mnist.load_data()"}
     ],
+    "added": "2026-03-01",
+    "tags": ["digits", "vision", "classification", "CV"],
     "owner": "Yann LeCun",
-    "origin_site": "Other",
+    "origin_site": "NIST Page",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["Pixel_0", "Pixel_1", "Pixel_2", "Label"],
+        "rows": [["0", "0", "0", "5"], ["0", "0", "0", "0"], ["0", "0", "0", "4"]]
+    },
+    "area": "Computer Science",
+    "task": "Image Classification",
+    "data_type": "Image",
+    "features": 784
 }

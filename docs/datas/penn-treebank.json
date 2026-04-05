@@ -1,46 +1,24 @@
 {
-    "id": "28",
+    "id": "penn-treebank",
     "title": "Penn Treebank",
     "topic": "NLP",
     "format": "TXT",
-    "size": "10 MB",
-    "rows": "1M",
-    "overview": "Annotated corpus of English text with syntactic parse annotations.",
-    "source": "LDC",
-    "access_type": "api",
-    "visit_url": "https://www.kaggle.com/datasets/nltkdata/penn-treebank",
-    "usage_code": "import nltk\nnltk.download('treebank')",
-    "added": "2026-03-09",
-    "tags": [
-        "syntactic",
-        "parsing",
-        "annotated",
-        "text"
-    ],
-    "owner": "nltkdata",
-    "origin_site": "Kaggle",
+    "size": "5 MB",
+    "rows": "1M words",
+    "overview": "A dataset of over 4.5 million words of American English, annotated for part-of-speech (POS) and syntactic structure.",
+    "source": "UPenn",
+    "access_type": "download",
+    "download_url": "https://catalog.ldc.upenn.edu/LDC99T42",
+    "added": "2026-03-22",
+    "tags": ["treebank", "parsing", "POS", "Text"],
+    "owner": "LDC",
+    "origin_site": "LDC Page",
     "preview": {
-        "cols": [
-            "Text",
-            "Label",
-            "Confidence"
-        ],
-        "rows": [
-            [
-                "The product is amazing!",
-                "Positive",
-                "0.98"
-            ],
-            [
-                "I didn't like the service.",
-                "Negative",
-                "0.85"
-            ],
-            [
-                "It was okay.",
-                "Neutral",
-                "0.72"
-            ]
-        ]
-    }
+        "cols": ["Word", "POS", "Constituent"],
+        "rows": [["The", "DT", "NP"], ["bank", "NN", "NP"], ["failed", "VBD", "VP"]]
+    },
+    "area": "Computer Science",
+    "task": "Syntactic Parsing",
+    "data_type": "Text",
+    "features": 0
 }

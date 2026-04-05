@@ -1,46 +1,27 @@
 {
-    "id": "53",
-    "title": "Mental Health Conversations",
-    "topic": "NLP",
+    "id": "mental-health-conversations",
+    "title": "Mental Health Conversational Data",
+    "topic": "Psychology",
     "format": "JSON",
-    "size": "100 MB",
-    "rows": "150K",
-    "overview": "Mental health support conversations from online forums.",
+    "size": "5 MB",
+    "rows": "3,512",
+    "overview": "Information on conversational patterns related to mental health topics.",
     "source": "Kaggle",
     "access_type": "api",
-    "visit_url": "https://www.kaggle.com/datasets/eliza/mental-health-conversations",
-    "usage_code": "from datasets import load_dataset\nds = load_dataset('AreeshK/mental-health-conversations')",
-    "added": "2026-02-12",
-    "tags": [
-        "mental-health",
-        "conversations",
-        "support",
-        "NLP"
+    "visit_url": "https://www.kaggle.com/datasets/samuelstark/mental-health-conversational-data",
+    "usage_methods": [
+        {"name": "kaggle", "label": "Kaggle CLI", "code": "kaggle datasets download -d samuelstark/mental-health-conversational-data"}
     ],
-    "owner": "eliza",
+    "added": "2026-03-22",
+    "tags": ["mental health", "conversations", "support", "NLP"],
+    "owner": "Samuel Stark",
     "origin_site": "Kaggle",
     "preview": {
-        "cols": [
-            "Text",
-            "Label",
-            "Confidence"
-        ],
-        "rows": [
-            [
-                "The product is amazing!",
-                "Positive",
-                "0.98"
-            ],
-            [
-                "I didn't like the service.",
-                "Negative",
-                "0.85"
-            ],
-            [
-                "It was okay.",
-                "Neutral",
-                "0.72"
-            ]
-        ]
-    }
+        "cols": ["Context", "Response"],
+        "rows": [["I am feeling very anxious lately", "I'm sorry to hear that. Anxiety is difficult..."], ["What is depression?", "Depression is a mental health disorder..."], ["How can I sleep better?", "Good sleep hygiene includes..."]]
+    },
+    "area": "Psychology",
+    "task": "Dialogue Generation",
+    "data_type": "Text",
+    "features": 0
 }

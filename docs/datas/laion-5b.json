@@ -1,59 +1,24 @@
 {
-    "id": "laion",
+    "id": "laion-5b",
     "title": "LAION-5B",
     "topic": "Computer Vision",
-    "format": "CSV",
-    "access_type": "api",
-    "size": "~250 GB",
-    "rows": "5.8B",
-    "overview": "5.85B CLIP-filtered image-text pairs. Used for Stable Diffusion.",
+    "format": "Indices",
+    "size": "500 TB (Total Images)",
+    "rows": "5.85B",
+    "overview": "A dataset consisting of 5.85 billion CLIP-filtered image-text pairs.",
     "source": "LAION",
-    "visit_url": "https://laion.ai/blog/laion-5b/",
-    "download_url": "https://laion.ai/datasets/laion-5b/",
-    "usage_code": "pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('laion/laion2B-en',split='train',streaming=True)",
-    "added": "2026-03-01",
-    "tags": [
-        "image-text",
-        "clip",
-        "multimodal",
-        "diffusion"
-    ],
+    "access_type": "download",
+    "download_url": "https://laion.ai/blog/laion-5b/",
+    "added": "2026-03-22",
+    "tags": ["CLIP", "images", "text", "multimodal"],
     "owner": "LAION",
-    "origin_site": "Other",
+    "origin_site": "LAION Website",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["URL", "Text", "Similarity"],
+        "rows": [["http://img1.jpg", "A landscape photo", "0.32"], ["http://img2.jpg", "A cat in a hat", "0.28"], ["http://img3.jpg", "A skyscraper at night", "0.35"]]
+    },
+    "area": "Computer Science",
+    "task": "Multimodal Learning",
+    "data_type": "Image-Text",
+    "features": 0
 }

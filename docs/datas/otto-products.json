@@ -1,58 +1,24 @@
 {
-    "id": "48",
-    "title": "Otto Group Products",
-    "topic": "Finance",
+    "id": "otto-products",
+    "title": "Otto Group Product Classification",
+    "topic": "E-commerce",
     "format": "CSV",
-    "size": "200 MB",
-    "rows": "200K",
-    "overview": "Sales transactions for 9 product groups from Otto Group.",
+    "size": "5 MB",
+    "rows": 61878,
+    "overview": "Information on 93 features for more than 200,000 products to classify them into 9 main categories.",
     "source": "Kaggle",
-    "access_type": "api",
-    "visit_url": "https://www.kaggle.com/c/otto-group-product-classification-challenge/data",
-    "usage_code": "https://www.kaggle.com/c/otto-group-product-classification-challenge/data",
-    "added": "2026-02-17",
-    "tags": [
-        "e-commerce",
-        "products",
-        "classification",
-        "tabular"
-    ],
-    "owner": "Kaggle",
+    "access_type": "download",
+    "download_url": "https://www.kaggle.com/competitions/otto-group-product-classification-challenge/data",
+    "added": "2026-03-22",
+    "tags": ["products", "classification", "Tabular"],
+    "owner": "Otto Group",
     "origin_site": "Kaggle",
     "preview": {
-        "cols": [
-            "Date",
-            "Symbol",
-            "Open",
-            "High",
-            "Low",
-            "Close"
-        ],
-        "rows": [
-            [
-                "2026-04-01",
-                "ABC",
-                "150.20",
-                "155.00",
-                "149.50",
-                "154.30"
-            ],
-            [
-                "2026-04-02",
-                "ABC",
-                "154.30",
-                "156.10",
-                "153.20",
-                "155.80"
-            ],
-            [
-                "2026-04-03",
-                "ABC",
-                "155.80",
-                "157.00",
-                "155.00",
-                "156.20"
-            ]
-        ]
-    }
+        "cols": ["ID", "feat_1", "feat_2", "Target"],
+        "rows": [["1", "1", "0", "Class_1"], ["2", "0", "8", "Class_12"], ["3", "1", "1", "Class_2"]]
+    },
+    "area": "Computer Science",
+    "task": "Product Classification",
+    "data_type": "Tabular",
+    "features": 93
 }

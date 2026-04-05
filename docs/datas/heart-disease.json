@@ -1,10 +1,10 @@
 {
-    "id": "40",
-    "title": "Heart Disease UCI",
+    "id": "heart-disease",
+    "title": "Heart Disease Dataset",
     "topic": "Healthcare",
     "format": "CSV",
-    "size": "300 KB",
-    "rows": "303",
+    "size": "11 KB",
+    "rows": 303,
     "overview": "Cleveland Heart Disease data with 76 attributes but commonly used subset of 14.",
     "source": "UCI",
     "access_type": "download",
@@ -64,5 +64,9 @@
             ]
         ]
     },
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/selva86/datasets/master/heart.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/selva86/datasets/master/heart.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Life Sciences",
+    "task": "Classification",
+    "data_type": "Tabular",
+    "features": 14
 }

@@ -4,7 +4,7 @@
     "topic": "Biology",
     "format": "CSV",
     "size": "4 KB",
-    "rows": "150",
+    "rows": 150,
     "overview": "The classic dataset for pattern recognition. Contains 3 classes of iris plants each with 50 instances.",
     "source": "UCI Machine Learning Repository",
     "access_type": "download",
@@ -65,5 +65,9 @@
             ]
         ]
     },
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://gist.githubusercontent.com/netj/8836201/raw/iris.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://gist.githubusercontent.com/netj/8836201/raw/iris.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Life Sciences",
+    "task": "Classification",
+    "data_type": "Tabular",
+    "features": 0
 }

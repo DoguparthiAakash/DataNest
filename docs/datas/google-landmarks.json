@@ -1,58 +1,24 @@
 {
-    "id": "50",
-    "title": "Google Landmarks",
+    "id": "google-landmarks",
+    "title": "Google Landmarks v2",
     "topic": "Computer Vision",
-    "format": "JSON",
+    "format": "Images",
     "size": "500 GB",
     "rows": "5M",
-    "overview": "Large-scale dataset of landmark images for recognition and retrieval.",
-    "source": "Google",
-    "access_type": "api",
-    "visit_url": "https://www.kaggle.com/c/landmark-recognition-challenge",
-    "usage_code": "https://www.kaggle.com/c/landmark-recognition-challenge",
-    "added": "2026-02-15",
-    "tags": [
-        "landmarks",
-        "recognition",
-        "retrieval",
-        "images"
-    ],
-    "owner": "Google",
-    "origin_site": "Kaggle",
+    "overview": "Information on millions of images of worldwide landmarks.",
+    "source": "Google Research",
+    "access_type": "download",
+    "download_url": "https://cvdfoundation.org/datasets/google-landmarks-v2/",
+    "added": "2026-03-22",
+    "tags": ["landmarks", "recognition", "retrieval", "CV"],
+    "owner": "CVDF",
+    "origin_site": "CVDF Website",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["Image_ID", "Landmark_ID"],
+        "rows": [["0000059611c7b06a.jpg", "149920"], ["000014b1395804f0.jpg", "191831"], ["000015f9d142079.jpg", "10732"]]
+    },
+    "area": "Computer Science",
+    "task": "Landmark Recognition",
+    "data_type": "Image",
+    "features": 0
 }

@@ -4,7 +4,7 @@
     "topic": "NLP",
     "format": "JSON",
     "size": "2.1 GB",
-    "rows": "5000000",
+    "rows": 5000000,
     "overview": "Parallel text corpus for 22 Indian languages with English translations. Sourced from government documents, news articles, and educational content.",
     "source": "AI4Bharat, IIT Bombay",
     "visit_url": "https://ai4bharat.org",
@@ -66,5 +66,9 @@
     },
     "owner": "AI4Bharat, IIT Bombay",
     "origin_site": "Other",
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/indian-nlp-corpus.json'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/indian-nlp-corpus.json'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Computer Science",
+    "task": "NLP",
+    "data_type": "Text",
+    "features": 0
 }

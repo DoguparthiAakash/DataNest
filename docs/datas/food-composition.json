@@ -4,7 +4,7 @@
     "topic": "Healthcare",
     "format": "XLSX",
     "size": "12.5 MB",
-    "rows": "5200",
+    "rows": 5200,
     "overview": "Nutritional composition of 5200+ Indian food items including macro and micronutrients. Covers raw ingredients, cooked dishes, and processed foods.",
     "source": "National Institute of Nutrition",
     "visit_url": "https://www.nin.res.in",
@@ -72,5 +72,9 @@
     },
     "owner": "National Institute of Nutrition",
     "origin_site": "Other",
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/food-composition.xlsx'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/food-composition.xlsx'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Life Sciences",
+    "task": "Other",
+    "data_type": "Tabular",
+    "features": 0
 }

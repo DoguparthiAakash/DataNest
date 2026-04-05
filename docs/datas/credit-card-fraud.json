@@ -1,51 +1,24 @@
 {
     "id": "credit-card-fraud",
     "title": "Credit Card Fraud Detection",
-    "topic": "Society",
+    "topic": "Finance",
     "format": "CSV",
-    "size": "150 MB",
-    "rows": "284807",
-    "overview": "Anonymized European credit card transactions from September 2013. Highly unbalanced dataset for anomaly detection and fraud investigation.",
-    "source": "Kaggle/GitHub",
+    "size": "66 MB",
+    "rows": 284807,
+    "overview": "Transactions made by credit cards in September 2013 by European cardholders.",
+    "source": "ULB",
     "access_type": "download",
-    "download_url": "https://raw.githubusercontent.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection/master/creditcard.csv",
-    "visit_url": "https://github.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection",
-    "added": "2026-03-25",
-    "tags": [
-        "fraud",
-        "security",
-        "anomaly-detection",
-        "society"
-    ],
-    "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection/master/creditcard.csv'\ndf = pd.read_csv(url)\nprint(f'Fraud Cases: {len(df[df.Class == 1])}')",
-    "owner": "nsethi31",
-    "origin_site": "GitHub",
+    "download_url": "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud",
+    "added": "2026-03-22",
+    "tags": ["finance", "fraud", "anomaly", "Tabular"],
+    "owner": "ULB",
+    "origin_site": "Kaggle",
     "preview": {
-        "cols": [
-            "ID",
-            "Category",
-            "Value",
-            "Notes"
-        ],
-        "rows": [
-            [
-                "1",
-                "Category A",
-                "10.5",
-                "N/A"
-            ],
-            [
-                "2",
-                "Category B",
-                "22.1",
-                "Sample"
-            ],
-            [
-                "3",
-                "Category A",
-                "15.7",
-                "Active"
-            ]
-        ]
-    }
+        "cols": ["Time", "V1", "V2", "Amount", "Class"],
+        "rows": [["0", "-1.359", "-0.072", "149.62", "0"], ["0", "1.191", "0.266", "2.69", "0"], ["1", "-1.358", "-1.340", "378.66", "0"]]
+    },
+    "area": "Finance",
+    "task": "Classification",
+    "data_type": "Tabular",
+    "features": 31
 }

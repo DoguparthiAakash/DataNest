@@ -1,58 +1,24 @@
 {
-    "id": "45",
+    "id": "kinetics-700",
     "title": "Kinetics-700",
     "topic": "Computer Vision",
-    "format": "MP4",
-    "size": "500 GB",
-    "rows": "650K",
-    "overview": "Large-scale video dataset of 700 human action classes with 650K video clips.",
+    "format": "Video",
+    "size": "450 GB",
+    "rows": "650,000",
+    "overview": "A large-scale, high-quality dataset of YouTube video URLs which include human-human and human-object interactions.",
     "source": "DeepMind",
-    "access_type": "api",
-    "visit_url": "https://deepmind.com/research/open-source/kinetics",
-    "usage_code": "https://deepmind.com/research/open-source/kinetics",
-    "added": "2026-02-20",
-    "tags": [
-        "video",
-        "actions",
-        "human",
-        "classification"
-    ],
+    "access_type": "download",
+    "download_url": "https://deepmind.com/research/open-source/kinetics",
+    "added": "2026-03-22",
+    "tags": ["video", "actions", "human", "CV"],
     "owner": "DeepMind",
-    "origin_site": "Other",
+    "origin_site": "DeepMind Website",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["Label", "Youtube_ID", "Time_Start", "Time_End"],
+        "rows": [["clay pottery making", "---0-N_d180", "19", "29"], ["news anchoring", "---ab93b93b", "0", "10"], ["playing ukulele", "---c93b93b", "5", "15"]]
+    },
+    "area": "Computer Science",
+    "task": "Action Recognition",
+    "data_type": "Video",
+    "features": 0
 }

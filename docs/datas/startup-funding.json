@@ -4,7 +4,7 @@
     "topic": "Economics",
     "format": "CSV",
     "size": "3.8 MB",
-    "rows": "15000",
+    "rows": 15000,
     "overview": "Detailed records of startup funding rounds in India including seed, Series A/B/C, and IPOs. Includes investors, valuations, and sector information.",
     "source": "Tracxn, Crunchbase",
     "visit_url": "https://tracxn.com",
@@ -72,5 +72,9 @@
     },
     "owner": "Tracxn, Crunchbase",
     "origin_site": "Other",
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/startup-funding.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/startup-funding.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Business",
+    "task": "Other",
+    "data_type": "Tabular",
+    "features": 0
 }

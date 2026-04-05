@@ -4,7 +4,7 @@
     "topic": "Climate",
     "format": "CSV",
     "size": "50 MB",
-    "rows": "12000",
+    "rows": 12000,
     "overview": "Global surface temperature change data from NASA GISS.",
     "source": "NASA",
     "access_type": "download",
@@ -45,5 +45,9 @@
             ]
         ]
     },
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Physical Sciences",
+    "task": "Other",
+    "data_type": "Time-Series",
+    "features": 0
 }

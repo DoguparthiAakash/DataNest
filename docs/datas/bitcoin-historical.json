@@ -1,10 +1,10 @@
 {
     "id": "bitcoin-historical",
-    "title": "Bitcoin Historical Data (USD)",
+    "title": "Bitcoin Historical Data",
     "topic": "Economics",
     "format": "CSV",
-    "size": "1.2 MB",
-    "rows": "4,500+",
+    "size": "500 KB",
+    "rows": 2900,
     "overview": "Daily Bitcoin price and volume data (OHLCV) from 2014 to present. Sourced from global exchanges and aggregated for research.",
     "source": "JerryWeiAI (GitHub)",
     "owner": "JerryWeiAi",
@@ -79,5 +79,9 @@
             "label": "Polars",
             "code": "import polars as pl\nurl = 'https://huggingface.co/datasets/Ammar-al-hajj/bitcoin-historical-data/raw/main/Bitcoin%20Historical%20Data.csv'\ndf = pl.read_csv(url)\nprint(df.tail())"
         }
-    ]
+    ],
+    "area": "Business",
+    "task": "Other",
+    "data_type": "Tabular",
+    "features": 0
 }

@@ -1,10 +1,10 @@
 {
     "id": "covid19-global",
-    "title": "COVID-19 Global Time-Series (OWID)",
+    "title": "COVID-19 Global Dataset",
     "topic": "Health",
     "format": "CSV",
-    "size": "12 MB",
-    "rows": "300,000+",
+    "size": "5.5 MB",
+    "rows": "100000+",
     "overview": "Comprehensive global dataset of COVID-19 cases, deaths, vaccinations, and testing, maintained by Our World in Data.",
     "source": "Our World in Data (GitHub)",
     "owner": "OWID",
@@ -79,5 +79,9 @@
             "label": "Polars",
             "code": "import polars as pl\nurl = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv'\ndf = pl.read_csv(url)\nprint(df.tail())"
         }
-    ]
+    ],
+    "area": "Life Sciences",
+    "task": "Other",
+    "data_type": "Time-Series",
+    "features": 0
 }

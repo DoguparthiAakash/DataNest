@@ -5,7 +5,7 @@
     "format": "XML",
     "access_type": "download",
     "size": "~21 GB",
-    "rows": "60M",
+    "rows": 60000000,
     "overview": "Complete Wikipedia database with all articles and metadata.",
     "source": "Wikimedia",
     "visit_url": "https://www.wikipedia.org/",
@@ -42,5 +42,9 @@
             ]
         ]
     },
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles-multistream.xml.bz2'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles-multistream.xml.bz2'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Computer Science",
+    "task": "NLP",
+    "data_type": "Tabular",
+    "features": 0
 }

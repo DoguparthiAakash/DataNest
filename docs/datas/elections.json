@@ -4,7 +4,7 @@
     "topic": "Social Science",
     "format": "CSV",
     "size": "4.2 MB",
-    "rows": "8500",
+    "rows": 8500,
     "overview": "Comprehensive voter turnout data for Lok Sabha and State Assembly elections across all constituencies. Includes demographic breakdown and turnout trends.",
     "source": "Election Commission of India",
     "visit_url": "https://eci.gov.in",
@@ -72,5 +72,9 @@
     },
     "owner": "Election Commission of India",
     "origin_site": "Other",
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/elections.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/elections.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Social Sciences",
+    "task": "Other",
+    "data_type": "Tabular",
+    "features": 0
 }

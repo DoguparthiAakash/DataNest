@@ -1,51 +1,24 @@
 {
-    "id": "titanic-csv",
-    "title": "Titanic - Machine Learning from Disaster",
-    "topic": "Society",
+    "id": "titanic",
+    "title": "Titanic Passenger Dataset",
+    "topic": "Sociology",
     "format": "CSV",
-    "size": "60 KB",
-    "rows": "891",
-    "overview": "The classic dataset for binary classification. Predict survival on the Titanic based on passenger attributes like age, sex, and class.",
-    "source": "DataScienceDojo (GitHub)",
+    "size": "50 KB",
+    "rows": 891,
+    "overview": "Information on Titanic passengers including survival status, age, gender, and class.",
+    "source": "Kaggle",
     "access_type": "download",
     "download_url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv",
-    "visit_url": "https://github.com/datasciencedojo/datasets",
-    "added": "2026-03-25",
-    "tags": [
-        "classification",
-        "history",
-        "titanic",
-        "society"
-    ],
-    "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'\ndf = pd.read_csv(url)\nprint(df.head())",
-    "owner": "datasciencedojo",
-    "origin_site": "GitHub",
+    "added": "2026-03-01",
+    "tags": ["survival", "passenger", "history", "Tabular"],
+    "owner": "Kaggle",
+    "origin_site": "Kaggle Competitions",
     "preview": {
-        "cols": [
-            "ID",
-            "Category",
-            "Value",
-            "Notes"
-        ],
-        "rows": [
-            [
-                "1",
-                "Category A",
-                "10.5",
-                "N/A"
-            ],
-            [
-                "2",
-                "Category B",
-                "22.1",
-                "Sample"
-            ],
-            [
-                "3",
-                "Category A",
-                "15.7",
-                "Active"
-            ]
-        ]
-    }
+        "cols": ["PassengerId", "Survived", "Pclass", "Name", "Age"],
+        "rows": [["1", "0", "3", "Braund, Mr. Owen Harris", "22"], ["2", "1", "1", "Cumings, Mrs. John Bradley", "38"], ["3", "1", "3", "Heikkinen, Miss. Laina", "26"]]
+    },
+    "area": "Sociology",
+    "task": "Classification",
+    "data_type": "Tabular",
+    "features": 12
 }

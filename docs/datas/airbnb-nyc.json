@@ -4,7 +4,7 @@
     "topic": "Society",
     "format": "CSV",
     "size": "7 MB",
-    "rows": "48895",
+    "rows": 48895,
     "overview": "Comprehensive information on Airbnb listings in New York City for 2019, including location, price, and reviews.",
     "source": "Kaggle (Public)",
     "access_type": "download",
@@ -47,5 +47,9 @@
             ]
         ]
     },
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/alexeygrigorev/datasets/master/AB_NYC_2019.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/alexeygrigorev/datasets/master/AB_NYC_2019.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Other",
+    "task": "Other",
+    "data_type": "Tabular",
+    "features": 0
 }

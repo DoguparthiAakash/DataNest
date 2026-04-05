@@ -1,46 +1,27 @@
 {
-    "id": "44",
+    "id": "goemotions",
     "title": "GoEmotions",
     "topic": "NLP",
-    "format": "CSV",
-    "size": "200 MB",
-    "rows": "58K",
-    "overview": "Reddit comments labeled with 27 emotion categories and sentiment.",
+    "format": "CSV/JSON",
+    "size": "10 MB",
+    "rows": "58,000",
+    "overview": "A corpus of 58k carefully curated Reddit comments labeled with 27 emotion categories.",
     "source": "Google",
     "access_type": "api",
-    "visit_url": "https://huggingface.co/datasets/google-research-datasets/go_emotions",
-    "usage_code": "from datasets import load_dataset\nds = load_dataset('google-research-datasets/go_emotions')",
-    "added": "2026-02-21",
-    "tags": [
-        "emotion",
-        "sentiment",
-        "comments",
-        "NLP"
+    "visit_url": "https://github.com/google-research/google-research/tree/master/goemotions",
+    "usage_methods": [
+        {"name": "datasets", "label": "Datasets (HF)", "code": "from datasets import load_dataset\nds = load_dataset('go_emotions')"}
     ],
-    "owner": "Google",
-    "origin_site": "Other",
+    "added": "2026-03-22",
+    "tags": ["sentiment", "reddit", "emotions", "NLP"],
+    "owner": "Google Research",
+    "origin_site": "GitHub",
     "preview": {
-        "cols": [
-            "Text",
-            "Label",
-            "Confidence"
-        ],
-        "rows": [
-            [
-                "The product is amazing!",
-                "Positive",
-                "0.98"
-            ],
-            [
-                "I didn't like the service.",
-                "Negative",
-                "0.85"
-            ],
-            [
-                "It was okay.",
-                "Neutral",
-                "0.72"
-            ]
-        ]
-    }
+        "cols": ["Text", "Emotions", "Liking"],
+        "rows": [["That's so sweet!", "love, admiration", "1"], ["I'm so angry right now", "anger", "1"], ["I don't know what to say", "neutral", "1"]]
+    },
+    "area": "Computer Science",
+    "task": "Sentiment Analysis",
+    "data_type": "Text",
+    "features": 28
 }

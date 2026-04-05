@@ -1,0 +1,18 @@
+{
+  "id": "imdb-movie-reviews",
+  "title": "IMDB Movie Reviews",
+  "area": "Computer Science",
+  "task": "NLP",
+  "data_type": "Text",
+  "format": "JSON",
+  "size": "80 MB",
+  "rows": 50000,
+  "features": 2,
+  "overview": "Large movie review dataset for binary sentiment classification.",
+  "source": "HuggingFace",
+  "access_type": "api",
+  "visit_url": "https://huggingface.co/datasets/imdb",
+  "usage_code": "from datasets import load_dataset\nds = load_dataset('imdb')",
+  "added": "2026-03-26",
+  "tags": ["sentiment", "movies", "text-classification", "nlp"]
+}

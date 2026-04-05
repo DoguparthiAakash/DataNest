@@ -1,10 +1,10 @@
 {
-    "id": "35",
+    "id": "wine-quality",
     "title": "Wine Quality",
     "topic": "Other",
     "format": "CSV",
-    "size": "300 KB",
-    "rows": "6497",
+    "size": "264 KB",
+    "rows": 4898,
     "overview": "Red and white wine samples with physicochemical properties and quality ratings.",
     "source": "UCI",
     "access_type": "download",
@@ -46,5 +46,9 @@
             ]
         ]
     },
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv '\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv '\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Life Sciences",
+    "task": "Regression",
+    "data_type": "Tabular",
+    "features": 12
 }

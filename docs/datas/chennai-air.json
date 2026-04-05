@@ -4,7 +4,7 @@
     "topic": "Climate",
     "format": "CSV",
     "size": "8.4 MB",
-    "rows": "62000",
+    "rows": 62000,
     "overview": "Daily PM2.5, PM10, NO2, SO2, and CO readings from 12 TNPCB monitoring stations across Chennai. Useful for pollution trend analysis and health impact studies.",
     "source": "Tamil Nadu Pollution Control Board",
     "visit_url": "https://www.tnpcb.gov.in",
@@ -72,5 +72,9 @@
     },
     "owner": "Tamil Nadu Pollution Control Board",
     "origin_site": "Other",
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/chennai-air.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/chennai-air.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Physical Sciences",
+    "task": "Other",
+    "data_type": "Tabular",
+    "features": 0
 }

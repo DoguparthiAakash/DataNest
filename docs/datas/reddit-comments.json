@@ -1,46 +1,24 @@
 {
-    "id": "39",
-    "title": "Reddit Comments",
-    "topic": "NLP",
+    "id": "reddit-comments",
+    "title": "Reddit Comments Dataset",
+    "topic": "Social Media",
     "format": "JSON",
-    "size": "100 GB",
+    "size": "1 TB+",
     "rows": "1.7B",
-    "overview": "Public comments from Reddit with scores, subreddits, and metadata.",
+    "overview": "Information on every single public comment made on Reddit from 2005 to 2017.",
     "source": "Reddit",
-    "access_type": "api",
-    "visit_url": "https://huggingface.co/datasets/reddit",
-    "usage_code": "from datasets import load_dataset\nds = load_dataset('reddit', split='train')",
-    "added": "2026-02-26",
-    "tags": [
-        "social-media",
-        "comments",
-        "NLP",
-        "dialogue"
-    ],
+    "access_type": "download",
+    "download_url": "https://www.kaggle.com/datasets/reddit/reddit-comments-may-2015",
+    "added": "2026-03-22",
+    "tags": ["social", "conversations", "NLP", "Text"],
     "owner": "Reddit",
-    "origin_site": "Other",
+    "origin_site": "Kaggle",
     "preview": {
-        "cols": [
-            "Text",
-            "Label",
-            "Confidence"
-        ],
-        "rows": [
-            [
-                "The product is amazing!",
-                "Positive",
-                "0.98"
-            ],
-            [
-                "I didn't like the service.",
-                "Negative",
-                "0.85"
-            ],
-            [
-                "It was okay.",
-                "Neutral",
-                "0.72"
-            ]
-        ]
-    }
+        "cols": ["Author", "Body", "Score", "Created_UTC"],
+        "rows": [["user-abc", "This is a great point!", "120", "1430438400"], ["user-xyz", "I disagree because...", "50", "1430438405"], ["user-123", "Nice one!", "10", "1430438410"]]
+    },
+    "area": "Social Science",
+    "task": "Dialogue Analysis",
+    "data_type": "Text",
+    "features": 0
 }

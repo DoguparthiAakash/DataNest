@@ -1,58 +1,24 @@
 {
     "id": "imagenet",
-    "title": "ImageNet ILSVRC",
+    "title": "ImageNet (ILSVRC)",
     "topic": "Computer Vision",
-    "format": "ZIP",
-    "access_type": "api",
-    "size": "~140 GB",
-    "rows": "1.4M",
-    "overview": "1.2M images across 1000 categories. Standard benchmark for image classification.",
-    "source": "ImageNet",
-    "visit_url": "https://www.image-net.org/",
-    "download_url": "https://www.image-net.org/download.php",
-    "usage_code": "# Requires registration at image-net.org\n# Alternative: Kaggle\nkaggle datasets download -d imanerds/imagenet10k",
+    "format": "Images",
+    "size": "150 GB",
+    "rows": "14M",
+    "overview": "A large-scale visual database designed for use in visual object recognition software research.",
+    "source": "Stanford",
+    "access_type": "download",
+    "download_url": "https://image-net.org/",
     "added": "2026-03-01",
-    "tags": [
-        "image-classification",
-        "deep-learning",
-        "1000-class"
-    ],
-    "owner": "ImageNet",
-    "origin_site": "Other",
+    "tags": ["objects", "classification", "visual", "CV"],
+    "owner": "Stanford University",
+    "origin_site": "ImageNet Website",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["SynsetId", "Category", "Count"],
+        "rows": [["n02084071", "Dog", "1300"], ["n02121808", "Cat", "1300"], ["n02504458", "Elephant", "1300"]]
+    },
+    "area": "Computer Science",
+    "task": "Image Classification",
+    "data_type": "Image",
+    "features": 0
 }

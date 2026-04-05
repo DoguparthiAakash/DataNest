@@ -1,0 +1,24 @@
+{
+  "id": "mushroom-classification",
+  "title": "Mushroom Dataset",
+  "area": "Other",
+  "task": "Classification",
+  "data_type": "Tabular",
+  "format": "CSV",
+  "size": "374 KB",
+  "rows": 8124,
+  "features": 22,
+  "overview": "Determining if a mushroom is edible or poisonous based on physical characteristics.",
+  "source": "UCI",
+  "access_type": "api",
+  "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data",
+  "visit_url": "https://archive.ics.uci.edu/ml/datasets/mushroom",
+  "added": "2026-03-26",
+  "tags": [
+    "biology",
+    "edibility",
+    "classification",
+    "tabular"
+  ],
+  "usage_code": "import pandas as pd\ndf = pd.read_csv('mushroom.csv')"
+}

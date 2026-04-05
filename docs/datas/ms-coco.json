@@ -1,58 +1,24 @@
 {
-    "id": "25",
-    "title": "MS COCO",
+    "id": "ms-coco",
+    "title": "Microsoft COCO (Common Objects in Context)",
     "topic": "Computer Vision",
-    "format": "JSON",
+    "format": "Images",
     "size": "25 GB",
-    "rows": "330K",
-    "overview": "Common Objects in Context - large-scale object detection, segmentation, and captioning dataset.",
+    "rows": "330,000",
+    "overview": "Information on 330,000 images containing 1.5 million object instances across 80 categories.",
     "source": "Microsoft",
-    "access_type": "api",
-    "visit_url": "https://huggingface.co/datasets/merve/coco-2017",
-    "usage_code": "from datasets import load_dataset\nds = load_dataset('merve/coco-2017')",
-    "added": "2026-03-12",
-    "tags": [
-        "object-detection",
-        "segmentation",
-        "captions",
-        "images"
-    ],
+    "access_type": "download",
+    "download_url": "https://cocodataset.org/",
+    "added": "2026-03-22",
+    "tags": ["objects", "detection", "segmentation", "CV"],
     "owner": "Microsoft",
-    "origin_site": "Other",
+    "origin_site": "COCO Website",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["Image_ID", "Categories", "Captions"],
+        "rows": [["000000000001", "Cat, Sofa", "A cat lounging on a sofa"], ["000000000002", "Person, Dog", "A man walking his dog in the park"], ["000000000003", "Bus, Car", "Traffic flowing through a busy intersection"]]
+    },
+    "area": "Computer Science",
+    "task": "Object Detection",
+    "data_type": "Image",
+    "features": 0
 }

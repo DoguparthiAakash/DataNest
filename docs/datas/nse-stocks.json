@@ -4,7 +4,7 @@
     "topic": "Finance",
     "format": "CSV",
     "size": "210 MB",
-    "rows": "2400000",
+    "rows": 2400000,
     "overview": "Daily OHLCV (Open, High, Low, Close, Volume) data for all NSE-listed stocks from 2015 to 2024. Includes sector labels and index membership.",
     "source": "National Stock Exchange of India",
     "visit_url": "https://nseindia.com",
@@ -79,5 +79,9 @@
     },
     "owner": "National Stock Exchange of India",
     "origin_site": "Other",
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/nse-stocks.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://example.com/nse-stocks.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Business",
+    "task": "Other",
+    "data_type": "Tabular",
+    "features": 0
 }

@@ -1,58 +1,24 @@
 {
-    "id": "51",
+    "id": "sports-1m",
     "title": "Sports-1M",
     "topic": "Computer Vision",
-    "format": "MP4",
-    "size": "1 TB",
-    "rows": "1M",
-    "overview": "YouTube video dataset covering 487 sports categories.",
-    "source": "Google",
-    "access_type": "api",
-    "visit_url": "https://deepmind.com/research/open-source/sports-1m-dataset",
-    "usage_code": "https://deepmind.com/research/open-source/sports-1m-dataset",
-    "added": "2026-02-14",
-    "tags": [
-        "video",
-        "sports",
-        "actions",
-        "YouTube"
-    ],
-    "owner": "Google",
-    "origin_site": "Other",
+    "format": "Video",
+    "size": "500 GB",
+    "rows": "1,133,158",
+    "overview": "Information on 1.1 million YouTube videos, each annotated with one of 487 sports categories.",
+    "source": "Google Research",
+    "access_type": "download",
+    "download_url": "https://github.com/gtoderici/sports-1m-dataset",
+    "added": "2026-03-22",
+    "tags": ["video", "sports", "actions", "CV"],
+    "owner": "Andrej Karpathy",
+    "origin_site": "GitHub",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["Youtube_ID", "Label", "Category"],
+        "rows": [["---0-N_d180", "1", "Tennis"], ["---ab93b93b", "2", "Basketball"], ["---c93b93b", "3", "Soccer"]]
+    },
+    "area": "Computer Science",
+    "task": "Activity Recognition",
+    "data_type": "Video",
+    "features": 0
 }

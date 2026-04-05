@@ -1,45 +1,27 @@
 {
-    "id": "27",
+    "id": "wikitext-103",
     "title": "WikiText-103",
     "topic": "NLP",
-    "format": "JSON",
-    "size": "200 MB",
-    "rows": "267K",
-    "overview": "Large-scale language modeling dataset extracted from Wikipedia articles.",
+    "format": "TXT",
+    "size": "190 MB",
+    "rows": "100M tokens",
+    "overview": "A collection of over 100 million tokens extracted from the set of verified Good and Featured articles on Wikipedia.",
     "source": "Salesforce",
     "access_type": "api",
-    "visit_url": "https://huggingface.co/datasets/wikitext",
-    "usage_code": "from datasets import load_dataset\nds = load_dataset('wikitext', 'wikitext-103-v1')",
-    "added": "2026-03-10",
-    "tags": [
-        "language-modeling",
-        "wikipedia",
-        "text"
+    "visit_url": "https://blog.salesforcearchive.com/the-wikitext-long-term-dependency-language-modeling-dataset/",
+    "usage_methods": [
+        {"name": "datasets", "label": "Datasets (HF)", "code": "from datasets import load_dataset\nds = load_dataset('wikitext', 'wikitext-103-v1')"}
     ],
-    "owner": "Salesforce",
-    "origin_site": "Other",
+    "added": "2026-03-22",
+    "tags": ["Wikipedia", "corpus", "modeling", "NLP"],
+    "owner": "Salesforce Research",
+    "origin_site": "Salesforce Page",
     "preview": {
-        "cols": [
-            "Text",
-            "Label",
-            "Confidence"
-        ],
-        "rows": [
-            [
-                "The product is amazing!",
-                "Positive",
-                "0.98"
-            ],
-            [
-                "I didn't like the service.",
-                "Negative",
-                "0.85"
-            ],
-            [
-                "It was okay.",
-                "Neutral",
-                "0.72"
-            ]
-        ]
-    }
+        "cols": ["Section", "Text"],
+        "rows": [["Introduction", "The first paragraph of the article..."], ["History", "A detailed history of the subject..."], ["References", "List of references used..."]]
+    },
+    "area": "Computer Science",
+    "task": "Language Modeling",
+    "data_type": "Text",
+    "features": 0
 }

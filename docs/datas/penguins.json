@@ -4,7 +4,7 @@
     "topic": "Biology",
     "format": "CSV",
     "size": "15 KB",
-    "rows": "344",
+    "rows": 344,
     "overview": "Size measurements for adult foraging penguins near Palmer Station, Antarctica. A great alternative to the Iris dataset.",
     "source": "Allison Horst",
     "access_type": "download",
@@ -65,5 +65,9 @@
             ]
         ]
     },
-    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())",
+    "area": "Life Sciences",
+    "task": "Classification",
+    "data_type": "Tabular",
+    "features": 0
 }

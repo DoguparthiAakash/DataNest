@@ -1,46 +1,24 @@
 {
-    "id": "43",
-    "title": "SNLI",
+    "id": "snli",
+    "title": "Stanford Natural Language Inference (SNLI)",
     "topic": "NLP",
-    "format": "JSON",
-    "size": "400 MB",
-    "rows": "550K",
-    "overview": "Stanford Natural Language Inference - sentence pair classification for entailment.",
+    "format": "JSONL/TXT",
+    "size": "100 MB",
+    "rows": "570,000",
+    "overview": "A collection of sentence pairs labeled for entailment, contradiction, and neutral.",
     "source": "Stanford",
-    "access_type": "api",
-    "visit_url": "https://huggingface.co/datasets/snli",
-    "usage_code": "from datasets import load_dataset\nds = load_dataset('snli')",
-    "added": "2026-02-22",
-    "tags": [
-        "entailment",
-        "NLI",
-        "inference",
-        "NLP"
-    ],
-    "owner": "Stanford",
-    "origin_site": "Other",
+    "access_type": "download",
+    "download_url": "https://nlp.stanford.edu/projects/snli/",
+    "added": "2026-03-22",
+    "tags": ["entailment", "inference", "NLU", "NLP"],
+    "owner": "Samuel R. Bowman",
+    "origin_site": "Stanford NLP",
     "preview": {
-        "cols": [
-            "Text",
-            "Label",
-            "Confidence"
-        ],
-        "rows": [
-            [
-                "The product is amazing!",
-                "Positive",
-                "0.98"
-            ],
-            [
-                "I didn't like the service.",
-                "Negative",
-                "0.85"
-            ],
-            [
-                "It was okay.",
-                "Neutral",
-                "0.72"
-            ]
-        ]
-    }
+        "cols": ["Sentence1", "Sentence2", "Label"],
+        "rows": [["A man in a red shirt is walking", "The man is moving", "entailment"], ["A woman is eating a salad", "A woman is playing basketball", "contradiction"], ["The sun is shining", "It is warm", "neutral"]]
+    },
+    "area": "Computer Science",
+    "task": "NLI",
+    "data_type": "Text",
+    "features": 0
 }

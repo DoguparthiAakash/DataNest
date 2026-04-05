@@ -1,46 +1,24 @@
 {
-    "id": "49",
-    "title": "dbpedia-14",
+    "id": "dbpedia-14",
+    "title": "DBPedia-14 Categories",
     "topic": "NLP",
-    "format": "JSON",
-    "size": "500 MB",
-    "rows": "840K",
-    "overview": "DBpedia ontology classification dataset with 14 classes from Wikipedia.",
-    "source": "DBpedia",
-    "access_type": "api",
-    "visit_url": "https://huggingface.co/datasets/dbpedia_14",
-    "usage_code": "from datasets import load_dataset\nds = load_dataset('dbpedia_14')",
-    "added": "2026-02-16",
-    "tags": [
-        "ontology",
-        "classification",
-        "wikipedia",
-        "NLP"
-    ],
+    "format": "CSV",
+    "size": "67 MB",
+    "rows": "630,000",
+    "overview": "14 non-overlapping classes from DBpedia 2014.",
+    "source": "LeCun",
+    "access_type": "download",
+    "download_url": "https://huggingface.co/datasets/dbpedia_14",
+    "added": "2026-03-22",
+    "tags": ["encyclopedia", "classification", "NLP"],
     "owner": "DBpedia",
-    "origin_site": "Other",
+    "origin_site": "DBpedia Website",
     "preview": {
-        "cols": [
-            "Text",
-            "Label",
-            "Confidence"
-        ],
-        "rows": [
-            [
-                "The product is amazing!",
-                "Positive",
-                "0.98"
-            ],
-            [
-                "I didn't like the service.",
-                "Negative",
-                "0.85"
-            ],
-            [
-                "It was okay.",
-                "Neutral",
-                "0.72"
-            ]
-        ]
-    }
+        "cols": ["Label", "Title", "Text"],
+        "rows": [["1", "Company", "Abbott Laboratories is a global healthcare company..."], ["2", "EducationalInstitution", "Oxford University is a research university..."], ["3", "Artist", "John Doe is an American painter..."]]
+    },
+    "area": "Computer Science",
+    "task": "NLP",
+    "data_type": "Text",
+    "features": 0
 }

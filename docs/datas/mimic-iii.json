@@ -1,68 +1,24 @@
 {
-    "id": "31",
-    "title": "MIMIC-III",
+    "id": "mimic-iii",
+    "title": "MIMIC-III Critical Care Database",
     "topic": "Healthcare",
-    "format": "CSV",
-    "size": "40 GB",
-    "rows": "50M",
-    "overview": "De-identified health data for adult patients admitted to ICU at Beth Israel Deaconess Medical Center.",
+    "format": "Relational DB",
+    "size": "45 GB",
+    "rows": "53,423",
+    "overview": "Information on de-identified health-related data associated with over forty thousand patients who stayed in critical care units.",
     "source": "MIT",
-    "access_type": "api",
-    "visit_url": "https://physionet.org/content/mimiciii/1.4/",
-    "usage_code": "https://physionet.org/content/mimiciii/1.4/",
-    "added": "2026-03-06",
-    "tags": [
-        "healthcare",
-        "ICU",
-        "clinical",
-        "time-series"
-    ],
-    "owner": "MIT",
-    "origin_site": "Other",
+    "access_type": "download",
+    "download_url": "https://mimic.mit.edu/docs/iii/",
+    "added": "2026-03-22",
+    "tags": ["healthcare", "ICU", "clinical", "Tabular"],
+    "owner": "MIT LCP",
+    "origin_site": "PhysioNet",
     "preview": {
-        "cols": [
-            "Patient_ID",
-            "Age",
-            "Gender",
-            "Status",
-            "Blood_Pressure"
-        ],
-        "rows": [
-            [
-                "P1001",
-                "45",
-                "Male",
-                "Stable",
-                "120/80"
-            ],
-            [
-                "P1002",
-                "32",
-                "Female",
-                "Critical",
-                "140/95"
-            ],
-            [
-                "P1003",
-                "58",
-                "Male",
-                "Recovered",
-                "115/75"
-            ],
-            [
-                "P1004",
-                "24",
-                "Female",
-                "Stable",
-                "110/70"
-            ],
-            [
-                "P1005",
-                "67",
-                "Male",
-                "Stable",
-                "130/85"
-            ]
-        ]
-    }
+        "cols": ["SUBJECT_ID", "HADM_ID", "ICUSTAY_ID", "CHARTTIME"],
+        "rows": [["1234", "5678", "9012", "2150-01-01 12:00"], ["5678", "9012", "3456", "2150-02-14 14:30"], ["9012", "3456", "7890", "2150-03-20 08:15"]]
+    },
+    "area": "Health",
+    "task": "Clinical Prediction",
+    "data_type": "Tabular",
+    "features": 26
 }

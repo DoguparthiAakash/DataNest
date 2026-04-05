@@ -1,58 +1,24 @@
 {
-    "id": "52",
-    "title": "VoxCeleb",
-    "topic": "Computer Vision",
-    "format": "MP4",
-    "size": "200 GB",
-    "rows": "1M",
-    "overview": "Audio-visual speaker recognition dataset with 1M utterances from 7K speakers.",
+    "id": "voxceleb",
+    "title": "VoxCeleb Speaker Recognition",
+    "topic": "Multimedia",
+    "format": "Audio",
+    "size": "100 GB",
+    "rows": "1M+ utterances",
+    "overview": "Information on audio-visual speaker recognition, containing over 1 million utterances for 7,000+ speakers.",
     "source": "Oxford",
-    "access_type": "api",
-    "visit_url": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/",
-    "usage_code": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/",
-    "added": "2026-02-13",
-    "tags": [
-        "speaker-recognition",
-        "audio",
-        "video",
-        "voice"
-    ],
-    "owner": "Oxford",
-    "origin_site": "Other",
+    "access_type": "download",
+    "download_url": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/",
+    "added": "2026-03-22",
+    "tags": ["audio", "speaker", "recognition", "CV"],
+    "owner": "VGG",
+    "origin_site": "VGG Website",
     "preview": {
-        "cols": [
-            "Image_ID",
-            "Category",
-            "X",
-            "Y",
-            "Width",
-            "Height"
-        ],
-        "rows": [
-            [
-                "IMG123",
-                "Car",
-                "100",
-                "150",
-                "200",
-                "120"
-            ],
-            [
-                "IMG124",
-                "Person",
-                "50",
-                "80",
-                "60",
-                "180"
-            ],
-            [
-                "IMG125",
-                "Tree",
-                "300",
-                "200",
-                "150",
-                "250"
-            ]
-        ]
-    }
+        "cols": ["Speaker_ID", "Video_ID", "Label"],
+        "rows": [["id10001", "---ab93b93b", "1"], ["id10002", "---c93b93b", "1"], ["id10003", "---d93b93b", "1"]]
+    },
+    "area": "Computer Science",
+    "task": "Speaker Recognition",
+    "data_type": "Audio",
+    "features": 0
 }

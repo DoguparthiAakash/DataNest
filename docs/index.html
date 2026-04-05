@@ -40,6 +40,7 @@
           <input type="text" id="searchInput" placeholder="Search datasets...">
         </div>
         <div class="filter-row">
+          <select id="topicFilter"><option value="">All Topics</option></select>
           <select id="areaFilter"><option value="">All Areas</option></select>
           <select id="taskFilter"><option value="">All Tasks</option></select>
           <select id="typeFilter"><option value="">All Types</option></select>
@@ -48,6 +49,17 @@
             <option value="CSV">CSV</option>
             <option value="JSON">JSON</option>
             <option value="API">API / Code</option>
+            <option value="ZIP">ZIP</option>
+          </select>
+          <select id="pricingFilter">
+            <option value="">All Pricing</option>
+            <option value="Free">Free Only</option>
+            <option value="Paid">Premium Only</option>
+          </select>
+          <select id="accessFilter">
+            <option value="">All Access</option>
+            <option value="download">Direct Download</option>
+            <option value="api">API / Code Access</option>
           </select>
           <select id="sortBy">
             <option value="newest">Newest</option>

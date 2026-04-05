@@ -1,1 +1,68 @@
-{"id":"40","title":"Heart Disease UCI","topic":"Healthcare","format":"CSV","size":"300 KB","rows":"303","overview":"Cleveland Heart Disease data with 76 attributes but commonly used subset of 14.","source":"UCI","access_type":"download","download_url":"https://raw.githubusercontent.com/selva86/datasets/master/heart.csv","added":"2026-02-25","tags":["heart","disease","classification","healthcare"]}
+{
+    "id": "40",
+    "title": "Heart Disease UCI",
+    "topic": "Healthcare",
+    "format": "CSV",
+    "size": "300 KB",
+    "rows": "303",
+    "overview": "Cleveland Heart Disease data with 76 attributes but commonly used subset of 14.",
+    "source": "UCI",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/selva86/datasets/master/heart.csv",
+    "added": "2026-02-25",
+    "tags": [
+        "heart",
+        "disease",
+        "classification",
+        "healthcare"
+    ],
+    "owner": "UCI",
+    "origin_site": "UCI Archive",
+    "preview": {
+        "cols": [
+            "Patient_ID",
+            "Age",
+            "Gender",
+            "Status",
+            "Blood_Pressure"
+        ],
+        "rows": [
+            [
+                "P1001",
+                "45",
+                "Male",
+                "Stable",
+                "120/80"
+            ],
+            [
+                "P1002",
+                "32",
+                "Female",
+                "Critical",
+                "140/95"
+            ],
+            [
+                "P1003",
+                "58",
+                "Male",
+                "Recovered",
+                "115/75"
+            ],
+            [
+                "P1004",
+                "24",
+                "Female",
+                "Stable",
+                "110/70"
+            ],
+            [
+                "P1005",
+                "67",
+                "Male",
+                "Stable",
+                "130/85"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/selva86/datasets/master/heart.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+}

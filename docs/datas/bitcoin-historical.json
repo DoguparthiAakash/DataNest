@@ -1,16 +1,83 @@
 {
-  "id": "bitcoin-historical",
-  "title": "Bitcoin Historical Data",
-  "topic": "Economics",
-  "format": "CSV",
-  "size": "500 KB",
-  "rows": "2900",
-  "overview": "Daily Bitcoin price (USD) and network metrics from the genesis block to 2024. Includes Volume, Market Cap, and Transaction counts.",
-  "source": "CoinMetrics (GitHub)",
-  "access_type": "download",
-  "download_url": "https://raw.githubusercontent.com/datasets/Bitcoin-Dataset/master/bitcoin_dataset.csv",
-  "visit_url": "https://github.com/datasets/Bitcoin-Dataset",
-  "added": "2026-03-25",
-  "tags": ["crypto", "finance", "bitcoin", "economics"],
-  "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/datasets/Bitcoin-Dataset/master/bitcoin_dataset.csv'\ndf = pd.read_csv(url)\nprint(df[['Date', 'btc_market_price']].tail())"
+    "id": "bitcoin-historical",
+    "title": "Bitcoin Historical Data (USD)",
+    "topic": "Economics",
+    "format": "CSV",
+    "size": "1.2 MB",
+    "rows": "4,500+",
+    "overview": "Daily Bitcoin price and volume data (OHLCV) from 2014 to present. Sourced from global exchanges and aggregated for research.",
+    "source": "JerryWeiAI (GitHub)",
+    "owner": "JerryWeiAi",
+    "origin_site": "GitHub",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/JerryWeiAI/DeepCryptocurrency/master/Bitcoin%20Data.csv",
+    "visit_url": "https://github.com/JerryWeiAI/DeepCryptocurrency",
+    "added": "2026-03-25",
+    "tags": [
+        "crypto",
+        "finance",
+        "bitcoin",
+        "time-series"
+    ],
+    "preview": {
+        "currentSplit": "history",
+        "splits": {
+            "history": {
+                "cols": [
+                    "Date",
+                    "Open",
+                    "High",
+                    "Low",
+                    "Close",
+                    "Volume"
+                ],
+                "rows": [
+                    [
+                        "2024-03-15",
+                        "73080.0",
+                        "73750.0",
+                        "68500.0",
+                        "69400.0",
+                        "45B"
+                    ],
+                    [
+                        "2024-03-14",
+                        "73000.0",
+                        "73800.0",
+                        "71000.0",
+                        "73050.0",
+                        "40B"
+                    ],
+                    [
+                        "2024-03-13",
+                        "71500.0",
+                        "73600.0",
+                        "71300.0",
+                        "73000.0",
+                        "38B"
+                    ],
+                    [
+                        "2024-03-12",
+                        "72000.0",
+                        "72800.0",
+                        "68000.0",
+                        "71400.0",
+                        "42B"
+                    ]
+                ]
+            }
+        }
+    },
+    "usage_methods": [
+        {
+            "name": "pandas",
+            "label": "Pandas",
+            "code": "import pandas as pd\nurl = 'https://huggingface.co/datasets/Ammar-al-hajj/bitcoin-historical-data/raw/main/Bitcoin%20Historical%20Data.csv'\ndf = pd.read_csv(url)\nprint(df.tail())"
+        },
+        {
+            "name": "polars",
+            "label": "Polars",
+            "code": "import polars as pl\nurl = 'https://huggingface.co/datasets/Ammar-al-hajj/bitcoin-historical-data/raw/main/Bitcoin%20Historical%20Data.csv'\ndf = pl.read_csv(url)\nprint(df.tail())"
+        }
+    ]
 }

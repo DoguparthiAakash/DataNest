@@ -1,0 +1,25 @@
+{
+    "id": "house-prices-advanced",
+    "title": "House Prices - Advanced Regression",
+    "topic": "Business",
+    "format": "CSV",
+    "size": "1.2 MB",
+    "rows": "1460",
+    "overview": "Predict sales prices and practice feature engineering, RFs, and gradient boosting.",
+    "source": "Kaggle",
+    "owner": "Kaggle Competitions",
+    "origin_site": "Kaggle",
+    "access_type": "api",
+    "visit_url": "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques",
+    "restricted": true,
+    "added": "2026-04-05",
+    "tags": ["regression", "real-estate", "kaggle"],
+    "preview": {
+        "cols": ["Id", "MSSubClass", "LotArea", "SalePrice"],
+        "rows": [
+            ["1", "60", "8450", "208500"],
+            ["2", "20", "9600", "181500"],
+            ["3", "60", "11250", "223500"]
+        ]
+    }
+}

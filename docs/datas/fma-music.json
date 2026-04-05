@@ -1,1 +1,50 @@
-{"id":"56","title":"FMA Music","topic":"Other","format":"MP3","size":"100 GB","rows":"106K","overview":"Full-length music tracks with audio features and metadata.","source":"FMA","access_type":"api","visit_url":"https://github.com/mdeff/fma","usage_code":"https://github.com/mdeff/fma","added":"2026-02-09","tags":["music","audio","classification","features"]}
+{
+    "id": "56",
+    "title": "FMA Music",
+    "topic": "Other",
+    "format": "MP3",
+    "size": "100 GB",
+    "rows": "106K",
+    "overview": "Full-length music tracks with audio features and metadata.",
+    "source": "FMA",
+    "access_type": "api",
+    "visit_url": "https://github.com/mdeff/fma",
+    "usage_code": "https://github.com/mdeff/fma",
+    "added": "2026-02-09",
+    "tags": [
+        "music",
+        "audio",
+        "classification",
+        "features"
+    ],
+    "owner": "mdeff",
+    "origin_site": "GitHub",
+    "preview": {
+        "cols": [
+            "ID",
+            "Category",
+            "Value",
+            "Notes"
+        ],
+        "rows": [
+            [
+                "1",
+                "Category A",
+                "10.5",
+                "N/A"
+            ],
+            [
+                "2",
+                "Category B",
+                "22.1",
+                "Sample"
+            ],
+            [
+                "3",
+                "Category A",
+                "15.7",
+                "Active"
+            ]
+        ]
+    }
+}

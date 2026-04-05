@@ -1,1 +1,46 @@
-{"id":"55","title":"TREC Question Classification","topic":"NLP","format":"CSV","size":"100 KB","rows":"5500","overview":"Questions classified into 6 coarse and 50 fine-grained categories.","source":"TREC","access_type":"download","download_url":"https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/trec50.zip","added":"2026-02-10","tags":["questions","classification","TREC","NLP"]}
+{
+    "id": "55",
+    "title": "TREC Question Classification",
+    "topic": "NLP",
+    "format": "CSV",
+    "size": "100 KB",
+    "rows": "5500",
+    "overview": "Questions classified into 6 coarse and 50 fine-grained categories.",
+    "source": "TREC",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/trec50.zip",
+    "added": "2026-02-10",
+    "tags": [
+        "questions",
+        "classification",
+        "TREC",
+        "NLP"
+    ],
+    "owner": "TREC",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Text",
+            "Label",
+            "Confidence"
+        ],
+        "rows": [
+            [
+                "The product is amazing!",
+                "Positive",
+                "0.98"
+            ],
+            [
+                "I didn't like the service.",
+                "Negative",
+                "0.85"
+            ],
+            [
+                "It was okay.",
+                "Neutral",
+                "0.72"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/trec50.zip'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+}

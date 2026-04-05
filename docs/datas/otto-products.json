@@ -1,1 +1,58 @@
-{"id":"48","title":"Otto Group Products","topic":"Finance","format":"CSV","size":"200 MB","rows":"200K","overview":"Sales transactions for 9 product groups from Otto Group.","source":"Kaggle","access_type":"api","visit_url":"https://www.kaggle.com/c/otto-group-product-classification-challenge/data","usage_code":"https://www.kaggle.com/c/otto-group-product-classification-challenge/data","added":"2026-02-17","tags":["e-commerce","products","classification","tabular"]}
+{
+    "id": "48",
+    "title": "Otto Group Products",
+    "topic": "Finance",
+    "format": "CSV",
+    "size": "200 MB",
+    "rows": "200K",
+    "overview": "Sales transactions for 9 product groups from Otto Group.",
+    "source": "Kaggle",
+    "access_type": "api",
+    "visit_url": "https://www.kaggle.com/c/otto-group-product-classification-challenge/data",
+    "usage_code": "https://www.kaggle.com/c/otto-group-product-classification-challenge/data",
+    "added": "2026-02-17",
+    "tags": [
+        "e-commerce",
+        "products",
+        "classification",
+        "tabular"
+    ],
+    "owner": "Kaggle",
+    "origin_site": "Kaggle",
+    "preview": {
+        "cols": [
+            "Date",
+            "Symbol",
+            "Open",
+            "High",
+            "Low",
+            "Close"
+        ],
+        "rows": [
+            [
+                "2026-04-01",
+                "ABC",
+                "150.20",
+                "155.00",
+                "149.50",
+                "154.30"
+            ],
+            [
+                "2026-04-02",
+                "ABC",
+                "154.30",
+                "156.10",
+                "153.20",
+                "155.80"
+            ],
+            [
+                "2026-04-03",
+                "ABC",
+                "155.80",
+                "157.00",
+                "155.00",
+                "156.20"
+            ]
+        ]
+    }
+}

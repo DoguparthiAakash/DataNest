@@ -1,15 +1,51 @@
 {
-  "id": "airbnb-nyc",
-  "title": "Airbnb NYC 2019 Listings",
-  "topic": "Society",
-  "format": "CSV",
-  "size": "7 MB",
-  "rows": "48895",
-  "overview": "Comprehensive information on Airbnb listings in New York City for 2019, including location, price, and reviews.",
-  "source": "Kaggle (Public)",
-  "access_type": "download",
-  "download_url": "https://raw.githubusercontent.com/alexeygrigorev/datasets/master/AB_NYC_2019.csv",
-  "visit_url": "https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data",
-  "added": "2026-03-24",
-  "tags": ["travel", "real-estate", "nyc", "society"]
+    "id": "airbnb-nyc",
+    "title": "Airbnb NYC 2019 Listings",
+    "topic": "Society",
+    "format": "CSV",
+    "size": "7 MB",
+    "rows": "48895",
+    "overview": "Comprehensive information on Airbnb listings in New York City for 2019, including location, price, and reviews.",
+    "source": "Kaggle (Public)",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/alexeygrigorev/datasets/master/AB_NYC_2019.csv",
+    "visit_url": "https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data",
+    "added": "2026-03-24",
+    "tags": [
+        "travel",
+        "real-estate",
+        "nyc",
+        "society"
+    ],
+    "owner": "Kaggle (Public)",
+    "origin_site": "Kaggle",
+    "preview": {
+        "cols": [
+            "ID",
+            "Category",
+            "Value",
+            "Notes"
+        ],
+        "rows": [
+            [
+                "1",
+                "Category A",
+                "10.5",
+                "N/A"
+            ],
+            [
+                "2",
+                "Category B",
+                "22.1",
+                "Sample"
+            ],
+            [
+                "3",
+                "Category A",
+                "15.7",
+                "Active"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/alexeygrigorev/datasets/master/AB_NYC_2019.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
 }

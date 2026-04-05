@@ -1,0 +1,24 @@
+{
+    "id": "mental-health-tech",
+    "title": "Mental Health in Tech Survey",
+    "topic": "Health",
+    "format": "CSV",
+    "size": "250 KB",
+    "rows": "1200",
+    "overview": "Survey results on mental health issues in the tech industry, including attitudes and company benefits.",
+    "source": "OSMI (GitHub)",
+    "owner": "OSMI",
+    "origin_site": "GitHub",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/osmihelp/osmi-survey-data/master/2014/survey.csv",
+    "added": "2026-04-05",
+    "tags": ["health", "mental-health", "tech", "survey"],
+    "preview": {
+        "cols": ["Age", "Gender", "Country", "Family_History"],
+        "rows": [
+            ["37", "Female", "USA", "No"],
+            ["44", "Male", "USA", "No"],
+            ["32", "Male", "Canada", "No"]
+        ]
+    }
+}

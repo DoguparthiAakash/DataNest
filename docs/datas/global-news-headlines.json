@@ -1,0 +1,24 @@
+{
+    "id": "global-news-headlines",
+    "title": "Global Daily News Headlines (2010-2024)",
+    "topic": "NLP",
+    "format": "JSON",
+    "size": "2.4 GB",
+    "rows": "12M",
+    "overview": "Daily headlines from top news organizations worldwide, translated to English where necessary. Ideal for trend forecasting.",
+    "source": "GitHub Raw / OpenData",
+    "owner": "NewsDataOpen",
+    "origin_site": "GitHub",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/newsdata-open/headlines-2024/main/all_headlines.json",
+    "added": "2026-04-05",
+    "tags": ["nlp", "news", "headlines", "trends"],
+    "preview": {
+        "cols": ["Date", "Category", "Headline", "Region"],
+        "rows": [
+            ["2024-03-15", "Tech", "New AI Model Breakthrough Announced", "Global"],
+            ["2024-03-15", "Finance", "Central Banks Hold Interest Rates", "Europe"],
+            ["2024-03-15", "Health", "Breakthrough in Malaria Vaccine Trial", "Africa"]
+        ]
+    }
+}

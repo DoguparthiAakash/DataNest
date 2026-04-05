@@ -1,1 +1,49 @@
-{"id":"30","title":"Global Temperature","topic":"Climate","format":"CSV","size":"50 MB","rows":"12000","overview":"Global surface temperature change data from NASA GISS.","source":"NASA","access_type":"download","download_url":"https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv","added":"2026-03-07","tags":["temperature","climate-change","time-series"]}
+{
+    "id": "30",
+    "title": "Global Temperature",
+    "topic": "Climate",
+    "format": "CSV",
+    "size": "50 MB",
+    "rows": "12000",
+    "overview": "Global surface temperature change data from NASA GISS.",
+    "source": "NASA",
+    "access_type": "download",
+    "download_url": "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv",
+    "added": "2026-03-07",
+    "tags": [
+        "temperature",
+        "climate-change",
+        "time-series"
+    ],
+    "owner": "NASA",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "ID",
+            "Category",
+            "Value",
+            "Notes"
+        ],
+        "rows": [
+            [
+                "1",
+                "Category A",
+                "10.5",
+                "N/A"
+            ],
+            [
+                "2",
+                "Category B",
+                "22.1",
+                "Sample"
+            ],
+            [
+                "3",
+                "Category A",
+                "15.7",
+                "Active"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+}

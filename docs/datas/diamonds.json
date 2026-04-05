@@ -1,15 +1,51 @@
 {
-  "id": "diamonds",
-  "title": "Diamonds Dataset",
-  "topic": "Society",
-  "format": "CSV",
-  "size": "2.4 MB",
-  "rows": "53940",
-  "overview": "Prices and other attributes of almost 54,000 diamonds. Includes carat, cut, color, and clarity.",
-  "source": "ggplot2",
-  "access_type": "download",
-  "download_url": "https://raw.githubusercontent.com/tidyverse/ggplot2/master/data-raw/diamonds.csv",
-  "visit_url": "https://ggplot2.tidyverse.org/reference/diamonds.html",
-  "added": "2026-03-24",
-  "tags": ["luxury", "regression", "society", "visualization"]
+    "id": "diamonds",
+    "title": "Diamonds Dataset",
+    "topic": "Society",
+    "format": "CSV",
+    "size": "2.4 MB",
+    "rows": "53940",
+    "overview": "Prices and other attributes of almost 54,000 diamonds. Includes carat, cut, color, and clarity.",
+    "source": "ggplot2",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/tidyverse/ggplot2/master/data-raw/diamonds.csv",
+    "visit_url": "https://ggplot2.tidyverse.org/reference/diamonds.html",
+    "added": "2026-03-24",
+    "tags": [
+        "luxury",
+        "regression",
+        "society",
+        "visualization"
+    ],
+    "owner": "ggplot2",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "ID",
+            "Category",
+            "Value",
+            "Notes"
+        ],
+        "rows": [
+            [
+                "1",
+                "Category A",
+                "10.5",
+                "N/A"
+            ],
+            [
+                "2",
+                "Category B",
+                "22.1",
+                "Sample"
+            ],
+            [
+                "3",
+                "Category A",
+                "15.7",
+                "Active"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/tidyverse/ggplot2/master/data-raw/diamonds.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
 }

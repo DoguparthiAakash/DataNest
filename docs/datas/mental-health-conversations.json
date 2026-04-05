@@ -1,1 +1,46 @@
-{"id":"53","title":"Mental Health Conversations","topic":"NLP","format":"JSON","size":"100 MB","rows":"150K","overview":"Mental health support conversations from online forums.","source":"Kaggle","access_type":"api","visit_url":"https://www.kaggle.com/datasets/eliza/mental-health-conversations","usage_code":"from datasets import load_dataset\nds = load_dataset('AreeshK/mental-health-conversations')","added":"2026-02-12","tags":["mental-health","conversations","support","NLP"]}
+{
+    "id": "53",
+    "title": "Mental Health Conversations",
+    "topic": "NLP",
+    "format": "JSON",
+    "size": "100 MB",
+    "rows": "150K",
+    "overview": "Mental health support conversations from online forums.",
+    "source": "Kaggle",
+    "access_type": "api",
+    "visit_url": "https://www.kaggle.com/datasets/eliza/mental-health-conversations",
+    "usage_code": "from datasets import load_dataset\nds = load_dataset('AreeshK/mental-health-conversations')",
+    "added": "2026-02-12",
+    "tags": [
+        "mental-health",
+        "conversations",
+        "support",
+        "NLP"
+    ],
+    "owner": "eliza",
+    "origin_site": "Kaggle",
+    "preview": {
+        "cols": [
+            "Text",
+            "Label",
+            "Confidence"
+        ],
+        "rows": [
+            [
+                "The product is amazing!",
+                "Positive",
+                "0.98"
+            ],
+            [
+                "I didn't like the service.",
+                "Negative",
+                "0.85"
+            ],
+            [
+                "It was okay.",
+                "Neutral",
+                "0.72"
+            ]
+        ]
+    }
+}

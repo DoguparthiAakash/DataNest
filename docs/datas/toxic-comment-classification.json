@@ -1,0 +1,25 @@
+{
+    "id": "toxic-comment-classification",
+    "title": "Toxic Comment Classification Challenge",
+    "topic": "NLP",
+    "format": "CSV",
+    "size": "65 MB",
+    "rows": "150K",
+    "overview": "Identify and classify toxic online comments to improve online conversations.",
+    "source": "Kaggle",
+    "owner": "Jigsaw",
+    "origin_site": "Kaggle",
+    "access_type": "api",
+    "visit_url": "https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge",
+    "restricted": true,
+    "added": "2026-04-05",
+    "tags": ["social", "nlp", "classification", "toxic"],
+    "preview": {
+        "cols": ["comment_text", "toxic", "severe_toxic", "obscene"],
+        "rows": [
+            ["This is a helpful comment.", "0", "0", "0"],
+            ["I disagree with you.", "0", "0", "0"],
+            ["You are extremely rude!", "1", "0", "0"]
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "id": "credit-card-transactions",
+    "title": "Synthetic Credit Card Transactions (Anti-Fraud)",
+    "topic": "Finance",
+    "format": "CSV",
+    "size": "5.8 GB",
+    "rows": "50M",
+    "overview": "Ultra-large-scale synthetic transaction data designed for training advanced fraud detection models without privacy risks.",
+    "source": "FraudDetectionAI",
+    "owner": "FraudDetectionAI",
+    "origin_site": "Private Sale",
+    "access_type": "download",
+    "download_url": "https://example.com/license/fraud-detect",
+    "price": 99.00,
+    "added": "2026-04-05",
+    "tags": ["finance", "fraud", "security", "synthetic"],
+    "preview": {
+        "cols": ["Trans_ID", "Amount", "Merchant", "Is_Fraud"],
+        "rows": [
+            ["C-4421", "125.50", "Amazon", "Normal"],
+            ["C-4422", "8500.00", "Luxury Jewelry", "Suspect"],
+            ["C-4423", "12.00", "Starbucks", "Normal"]
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "id": "bitcoin-sentiment",
+    "title": "Bitcoin Sentiment Analysis (Social Media)",
+    "topic": "Finance",
+    "format": "CSV",
+    "size": "85 MB",
+    "rows": "500K",
+    "overview": "Sentiment scores and engagement metrics for Bitcoin-related social media posts from 2023-2024.",
+    "source": "Kaggle",
+    "owner": "SocialDataLabs",
+    "origin_site": "Kaggle",
+    "access_type": "api",
+    "visit_url": "https://www.kaggle.com/datasets/socialdatalabs/bitcoin-sentiment",
+    "restricted": true,
+    "added": "2026-04-05",
+    "tags": ["crypto", "sentiment", "finance"],
+    "preview": {
+        "cols": ["Date", "Platform", "Sentiment", "Likes"],
+        "rows": [
+            ["2024-03-01", "X/Twitter", "Positive", "1250"],
+            ["2024-03-01", "Reddit", "Neutral", "430"],
+            ["2024-03-02", "X/Twitter", "Very Positive", "8900"]
+        ]
+    }
+}

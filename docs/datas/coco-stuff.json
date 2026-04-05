@@ -1,1 +1,58 @@
-{"id":"38","title":"Coco-Stuff","topic":"Computer Vision","format":"JSON","size":"5 GB","rows":"165K","overview":"Scene parsing dataset with dense pixel-wise annotations for 80 thing and 91 stuff classes.","source":"MIT","access_type":"api","visit_url":"https://github.com/nightrome/cocostuff","usage_code":"https://github.com/nightrome/cocostuff","added":"2026-02-27","tags":["segmentation","scenes","images","annotation"]}
+{
+    "id": "38",
+    "title": "Coco-Stuff",
+    "topic": "Computer Vision",
+    "format": "JSON",
+    "size": "5 GB",
+    "rows": "165K",
+    "overview": "Scene parsing dataset with dense pixel-wise annotations for 80 thing and 91 stuff classes.",
+    "source": "MIT",
+    "access_type": "api",
+    "visit_url": "https://github.com/nightrome/cocostuff",
+    "usage_code": "https://github.com/nightrome/cocostuff",
+    "added": "2026-02-27",
+    "tags": [
+        "segmentation",
+        "scenes",
+        "images",
+        "annotation"
+    ],
+    "owner": "nightrome",
+    "origin_site": "GitHub",
+    "preview": {
+        "cols": [
+            "Image_ID",
+            "Category",
+            "X",
+            "Y",
+            "Width",
+            "Height"
+        ],
+        "rows": [
+            [
+                "IMG123",
+                "Car",
+                "100",
+                "150",
+                "200",
+                "120"
+            ],
+            [
+                "IMG124",
+                "Person",
+                "50",
+                "80",
+                "60",
+                "180"
+            ],
+            [
+                "IMG125",
+                "Tree",
+                "300",
+                "200",
+                "150",
+                "250"
+            ]
+        ]
+    }
+}

@@ -15,5 +15,36 @@
         "quality",
         "regression",
         "tabular"
-    ]
+    ],
+    "owner": "UCI",
+    "origin_site": "UCI Archive",
+    "preview": {
+        "cols": [
+            "ID",
+            "Category",
+            "Value",
+            "Notes"
+        ],
+        "rows": [
+            [
+                "1",
+                "Category A",
+                "10.5",
+                "N/A"
+            ],
+            [
+                "2",
+                "Category B",
+                "22.1",
+                "Sample"
+            ],
+            [
+                "3",
+                "Category A",
+                "15.7",
+                "Active"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv '\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
 }

@@ -1,1 +1,46 @@
-{"id":"47","title":"MultiNLI","topic":"NLP","format":"JSON","size":"150 MB","rows":"433K","overview":"Multi-Genre Natural Language Inference with 10 genres of written text.","source":"NYU","access_type":"api","visit_url":"https://huggingface.co/datasets/nyu-mll/multi_nli","usage_code":"from datasets import load_dataset\nds = load_dataset('nyu-mll/multi_nli')","added":"2026-02-18","tags":["entailment","NLI","inference","NLP"]}
+{
+    "id": "47",
+    "title": "MultiNLI",
+    "topic": "NLP",
+    "format": "JSON",
+    "size": "150 MB",
+    "rows": "433K",
+    "overview": "Multi-Genre Natural Language Inference with 10 genres of written text.",
+    "source": "NYU",
+    "access_type": "api",
+    "visit_url": "https://huggingface.co/datasets/nyu-mll/multi_nli",
+    "usage_code": "from datasets import load_dataset\nds = load_dataset('nyu-mll/multi_nli')",
+    "added": "2026-02-18",
+    "tags": [
+        "entailment",
+        "NLI",
+        "inference",
+        "NLP"
+    ],
+    "owner": "NYU",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Text",
+            "Label",
+            "Confidence"
+        ],
+        "rows": [
+            [
+                "The product is amazing!",
+                "Positive",
+                "0.98"
+            ],
+            [
+                "I didn't like the service.",
+                "Negative",
+                "0.85"
+            ],
+            [
+                "It was okay.",
+                "Neutral",
+                "0.72"
+            ]
+        ]
+    }
+}

@@ -1,1 +1,46 @@
-{"id":"39","title":"Reddit Comments","topic":"NLP","format":"JSON","size":"100 GB","rows":"1.7B","overview":"Public comments from Reddit with scores, subreddits, and metadata.","source":"Reddit","access_type":"api","visit_url":"https://huggingface.co/datasets/reddit","usage_code":"from datasets import load_dataset\nds = load_dataset('reddit', split='train')","added":"2026-02-26","tags":["social-media","comments","NLP","dialogue"]}
+{
+    "id": "39",
+    "title": "Reddit Comments",
+    "topic": "NLP",
+    "format": "JSON",
+    "size": "100 GB",
+    "rows": "1.7B",
+    "overview": "Public comments from Reddit with scores, subreddits, and metadata.",
+    "source": "Reddit",
+    "access_type": "api",
+    "visit_url": "https://huggingface.co/datasets/reddit",
+    "usage_code": "from datasets import load_dataset\nds = load_dataset('reddit', split='train')",
+    "added": "2026-02-26",
+    "tags": [
+        "social-media",
+        "comments",
+        "NLP",
+        "dialogue"
+    ],
+    "owner": "Reddit",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Text",
+            "Label",
+            "Confidence"
+        ],
+        "rows": [
+            [
+                "The product is amazing!",
+                "Positive",
+                "0.98"
+            ],
+            [
+                "I didn't like the service.",
+                "Negative",
+                "0.85"
+            ],
+            [
+                "It was okay.",
+                "Neutral",
+                "0.72"
+            ]
+        ]
+    }
+}

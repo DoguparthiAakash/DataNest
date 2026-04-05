@@ -1,1 +1,46 @@
-{"id":"squad","title":"SQuAD","topic":"NLP","format":"JSON","access_type":"api","size":"~40 MB","rows":"150K","overview":"Reading comprehension with 100K+ Q&A pairs on Wikipedia.","source":"Stanford","visit_url":"https://rajpurkar.github.io/SQuAD-explorer/","download_url":"https://rajpurkar.github.io/SQuAD-explorer/","usage_code":"pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('squad')","added":"2026-03-01","tags":["nlp","qa","wikipedia"]}
+{
+    "id": "squad",
+    "title": "SQuAD",
+    "topic": "NLP",
+    "format": "JSON",
+    "access_type": "api",
+    "size": "~40 MB",
+    "rows": "150K",
+    "overview": "Reading comprehension with 100K+ Q&A pairs on Wikipedia.",
+    "source": "Stanford",
+    "visit_url": "https://rajpurkar.github.io/SQuAD-explorer/",
+    "download_url": "https://rajpurkar.github.io/SQuAD-explorer/",
+    "usage_code": "pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('squad')",
+    "added": "2026-03-01",
+    "tags": [
+        "nlp",
+        "qa",
+        "wikipedia"
+    ],
+    "owner": "Stanford",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Text",
+            "Label",
+            "Confidence"
+        ],
+        "rows": [
+            [
+                "The product is amazing!",
+                "Positive",
+                "0.98"
+            ],
+            [
+                "I didn't like the service.",
+                "Negative",
+                "0.85"
+            ],
+            [
+                "It was okay.",
+                "Neutral",
+                "0.72"
+            ]
+        ]
+    }
+}

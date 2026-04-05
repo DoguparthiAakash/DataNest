@@ -1,0 +1,58 @@
+{
+    "id": "customer-churn",
+    "title": "Telco Customer Churn",
+    "topic": "Business",
+    "format": "CSV",
+    "size": "950 KB",
+    "rows": "7043",
+    "overview": "Data for predicting customer retention and churn in a telecommunications company.",
+    "source": "IBM / GitHub",
+    "owner": "IBM",
+    "origin_site": "GitHub",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv",
+    "visit_url": "https://github.com/IBM/telco-customer-churn-on-icp4d",
+    "added": "2026-04-05",
+    "tags": [
+        "business",
+        "retention",
+        "classification"
+    ],
+    "preview": {
+        "cols": [
+            "Date",
+            "Symbol",
+            "Open",
+            "High",
+            "Low",
+            "Close"
+        ],
+        "rows": [
+            [
+                "2026-04-01",
+                "ABC",
+                "150.20",
+                "155.00",
+                "149.50",
+                "154.30"
+            ],
+            [
+                "2026-04-02",
+                "ABC",
+                "154.30",
+                "156.10",
+                "153.20",
+                "155.80"
+            ],
+            [
+                "2026-04-03",
+                "ABC",
+                "155.80",
+                "157.00",
+                "155.00",
+                "156.20"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+}

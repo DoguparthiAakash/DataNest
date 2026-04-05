@@ -1,20 +1,83 @@
 {
     "id": "covid19-global",
-    "title": "COVID-19 Global Dataset",
+    "title": "COVID-19 Global Time-Series (OWID)",
     "topic": "Health",
     "format": "CSV",
-    "size": "5.5 MB",
-    "rows": "100000+",
-    "overview": "Global time-series dataset of COVID-19 cases, deaths, and recoveries across countries, useful for trend analysis and forecasting.",
-    "source": "Johns Hopkins University (Public)",
+    "size": "12 MB",
+    "rows": "300,000+",
+    "overview": "Comprehensive global dataset of COVID-19 cases, deaths, vaccinations, and testing, maintained by Our World in Data.",
+    "source": "Our World in Data (GitHub)",
+    "owner": "OWID",
+    "origin_site": "GitHub",
     "access_type": "download",
-    "download_url": "https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv",
-    "visit_url": "https://github.com/datasets/covid-19",
+    "download_url": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv",
+    "visit_url": "https://github.com/owid/covid-19-data",
     "added": "2026-03-25",
     "tags": [
         "health",
         "pandemic",
         "time-series",
         "global"
+    ],
+    "preview": {
+        "currentSplit": "latest",
+        "splits": {
+            "latest": {
+                "cols": [
+                    "iso_code",
+                    "location",
+                    "date",
+                    "total_cases",
+                    "new_cases",
+                    "total_deaths"
+                ],
+                "rows": [
+                    [
+                        "AFG",
+                        "Afghanistan",
+                        "2024-01-01",
+                        "230000",
+                        "45",
+                        "7960"
+                    ],
+                    [
+                        "ALB",
+                        "Albania",
+                        "2024-01-01",
+                        "334000",
+                        "12",
+                        "3600"
+                    ],
+                    [
+                        "DZA",
+                        "Algeria",
+                        "2024-01-01",
+                        "272000",
+                        "2",
+                        "6881"
+                    ],
+                    [
+                        "AND",
+                        "Andorra",
+                        "2024-01-01",
+                        "48000",
+                        "0",
+                        "165"
+                    ]
+                ]
+            }
+        }
+    },
+    "usage_methods": [
+        {
+            "name": "pandas",
+            "label": "Pandas",
+            "code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv'\ndf = pd.read_csv(url)\nprint(df[['location', 'date', 'total_cases']].tail())"
+        },
+        {
+            "name": "polars",
+            "label": "Polars",
+            "code": "import polars as pl\nurl = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv'\ndf = pl.read_csv(url)\nprint(df.tail())"
+        }
     ]
 }

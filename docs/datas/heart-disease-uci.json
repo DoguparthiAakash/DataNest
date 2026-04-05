@@ -1,0 +1,24 @@
+{
+    "id": "heart-disease-uci",
+    "title": "Heart Disease UCI",
+    "topic": "Health",
+    "format": "CSV",
+    "size": "15 KB",
+    "rows": "303",
+    "overview": "The Cleveland database for predicting heart disease presence.",
+    "source": "UCI ML Repository",
+    "owner": "UCI",
+    "origin_site": "UCI Repository",
+    "access_type": "download",
+    "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data",
+    "added": "2026-04-05",
+    "tags": ["health", "classification", "medical"],
+    "preview": {
+        "cols": ["age", "sex", "cp", "trestbps", "chol"],
+        "rows": [
+            ["63", "1", "1", "145", "233"],
+            ["67", "1", "4", "160", "286"],
+            ["67", "1", "4", "120", "229"]
+        ]
+    }
+}

@@ -1,1 +1,58 @@
-{"id":"45","title":"Kinetics-700","topic":"Computer Vision","format":"MP4","size":"500 GB","rows":"650K","overview":"Large-scale video dataset of 700 human action classes with 650K video clips.","source":"DeepMind","access_type":"api","visit_url":"https://deepmind.com/research/open-source/kinetics","usage_code":"https://deepmind.com/research/open-source/kinetics","added":"2026-02-20","tags":["video","actions","human","classification"]}
+{
+    "id": "45",
+    "title": "Kinetics-700",
+    "topic": "Computer Vision",
+    "format": "MP4",
+    "size": "500 GB",
+    "rows": "650K",
+    "overview": "Large-scale video dataset of 700 human action classes with 650K video clips.",
+    "source": "DeepMind",
+    "access_type": "api",
+    "visit_url": "https://deepmind.com/research/open-source/kinetics",
+    "usage_code": "https://deepmind.com/research/open-source/kinetics",
+    "added": "2026-02-20",
+    "tags": [
+        "video",
+        "actions",
+        "human",
+        "classification"
+    ],
+    "owner": "DeepMind",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Image_ID",
+            "Category",
+            "X",
+            "Y",
+            "Width",
+            "Height"
+        ],
+        "rows": [
+            [
+                "IMG123",
+                "Car",
+                "100",
+                "150",
+                "200",
+                "120"
+            ],
+            [
+                "IMG124",
+                "Person",
+                "50",
+                "80",
+                "60",
+                "180"
+            ],
+            [
+                "IMG125",
+                "Tree",
+                "300",
+                "200",
+                "150",
+                "250"
+            ]
+        ]
+    }
+}

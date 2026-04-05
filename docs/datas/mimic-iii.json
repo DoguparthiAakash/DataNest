@@ -1,1 +1,68 @@
-{"id":"31","title":"MIMIC-III","topic":"Healthcare","format":"CSV","size":"40 GB","rows":"50M","overview":"De-identified health data for adult patients admitted to ICU at Beth Israel Deaconess Medical Center.","source":"MIT","access_type":"api","visit_url":"https://physionet.org/content/mimiciii/1.4/","usage_code":"https://physionet.org/content/mimiciii/1.4/","added":"2026-03-06","tags":["healthcare","ICU","clinical","time-series"]}
+{
+    "id": "31",
+    "title": "MIMIC-III",
+    "topic": "Healthcare",
+    "format": "CSV",
+    "size": "40 GB",
+    "rows": "50M",
+    "overview": "De-identified health data for adult patients admitted to ICU at Beth Israel Deaconess Medical Center.",
+    "source": "MIT",
+    "access_type": "api",
+    "visit_url": "https://physionet.org/content/mimiciii/1.4/",
+    "usage_code": "https://physionet.org/content/mimiciii/1.4/",
+    "added": "2026-03-06",
+    "tags": [
+        "healthcare",
+        "ICU",
+        "clinical",
+        "time-series"
+    ],
+    "owner": "MIT",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Patient_ID",
+            "Age",
+            "Gender",
+            "Status",
+            "Blood_Pressure"
+        ],
+        "rows": [
+            [
+                "P1001",
+                "45",
+                "Male",
+                "Stable",
+                "120/80"
+            ],
+            [
+                "P1002",
+                "32",
+                "Female",
+                "Critical",
+                "140/95"
+            ],
+            [
+                "P1003",
+                "58",
+                "Male",
+                "Recovered",
+                "115/75"
+            ],
+            [
+                "P1004",
+                "24",
+                "Female",
+                "Stable",
+                "110/70"
+            ],
+            [
+                "P1005",
+                "67",
+                "Male",
+                "Stable",
+                "130/85"
+            ]
+        ]
+    }
+}

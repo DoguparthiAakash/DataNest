@@ -1,0 +1,69 @@
+{
+    "id": "lung-cancer",
+    "title": "Lung Cancer Prediction",
+    "topic": "Health",
+    "format": "CSV",
+    "size": "5 KB",
+    "rows": "32",
+    "overview": "Small dataset from UCI containing clinical features to predict lung cancer presence.",
+    "source": "UCI Machine Learning Repository",
+    "owner": "UCI",
+    "origin_site": "UCI Archive",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/mikeizbicki/datasets/master/csv/uci/lung-cancer.csv",
+    "visit_url": "https://archive.ics.uci.edu/dataset/62/lung+cancer",
+    "added": "2026-04-05",
+    "tags": [
+        "health",
+        "cancer",
+        "medical",
+        "classification"
+    ],
+    "preview": {
+        "cols": [
+            "Patient_ID",
+            "Age",
+            "Gender",
+            "Status",
+            "Blood_Pressure"
+        ],
+        "rows": [
+            [
+                "P1001",
+                "45",
+                "Male",
+                "Stable",
+                "120/80"
+            ],
+            [
+                "P1002",
+                "32",
+                "Female",
+                "Critical",
+                "140/95"
+            ],
+            [
+                "P1003",
+                "58",
+                "Male",
+                "Recovered",
+                "115/75"
+            ],
+            [
+                "P1004",
+                "24",
+                "Female",
+                "Stable",
+                "110/70"
+            ],
+            [
+                "P1005",
+                "67",
+                "Male",
+                "Stable",
+                "130/85"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/mikeizbicki/datasets/master/csv/uci/lung-cancer.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+}

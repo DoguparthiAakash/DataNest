@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataNest — Redirecting...</title>
+    <script>
+        // GitHub Pages 404 redirect to handle clean URLs
+        // Get the current path and redirect to index.html with a query param
+        const path = window.location.pathname;
+        window.location.href = window.location.origin + window.location.pathname.split('/').slice(0, -1).join('/') + '/index.html?redirect=' + encodeURIComponent(path);
+    </script>
+</head>
+<body>
+    <p>Redirecting to home...</p>
+</body>
+</html>

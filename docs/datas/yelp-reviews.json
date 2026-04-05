@@ -1,1 +1,101 @@
-{"id":"23","title":"Yelp Reviews","topic":"NLP","format":"JSON","size":"5 GB","rows":"8M","overview":"Yelp reviews with ratings, business info, and user data for sentiment analysis.","source":"Yelp","access_type":"api","visit_url":"https://huggingface.co/datasets/Yelp/yelp_review_full","usage_code":"from datasets import load_dataset\nds = load_dataset('Yelp/yelp_review_full')","added":"2026-03-14","tags":["sentiment","reviews","business","NLP"]}
+{
+    "id": "yelp-reviews",
+    "title": "Yelp Dataset Reviews",
+    "topic": "NLP",
+    "format": "JSON",
+    "size": "5.3 GB",
+    "rows": "6,990,280",
+    "overview": "Subset of Yelp's businesses, reviews, and user data for use in personal, educational, and academic purposes.",
+    "source": "Yelp",
+    "owner": "Yelp Inc.",
+    "origin_site": "Yelp Dataset Portal",
+    "access_type": "api",
+    "visit_url": "https://www.yelp.com/dataset",
+    "download_url": "https://www.yelp.com/dataset/download",
+    "added": "2026-04-01",
+    "tags": [
+        "social",
+        "reviews",
+        "sentiments",
+        "graphs"
+    ],
+    "preview": {
+        "currentSplit": "train",
+        "splits": {
+            "train": {
+                "cols": [
+                    "review_id",
+                    "user_id",
+                    "stars",
+                    "text",
+                    "date"
+                ],
+                "rows": [
+                    [
+                        "KU_O5E6niDHqTVKqcY",
+                        "mh_-e9S-9",
+                        5,
+                        "I love this place! The food is amazing.",
+                        "2026-03-15"
+                    ],
+                    [
+                        "BiT_7nZ_3W6l9o",
+                        "Oyo_V9E-",
+                        4,
+                        "Great service, but a bit loud.",
+                        "2026-03-16"
+                    ],
+                    [
+                        "W_Qpv_p-F",
+                        "u8A_m8X-",
+                        2,
+                        "Disappointing experience. Stale bread.",
+                        "2026-03-17"
+                    ]
+                ]
+            },
+            "test": {
+                "cols": [
+                    "review_id",
+                    "user_id",
+                    "stars",
+                    "text",
+                    "date"
+                ],
+                "rows": [
+                    [
+                        "T_RE5T_01",
+                        "U_5ER_01",
+                        3,
+                        "Average food, nothing special.",
+                        "2026-03-20"
+                    ],
+                    [
+                        "T_RE5T_02",
+                        "U_5ER_02",
+                        5,
+                        "Best pizza in town!",
+                        "2026-03-21"
+                    ]
+                ]
+            }
+        }
+    },
+    "usage_methods": [
+        {
+            "name": "pandas",
+            "label": "Pandas",
+            "code": "import pandas as pd\ndf = pd.read_json('yelp_academic_dataset_review.json', lines=True, chunksize=10000)"
+        },
+        {
+            "name": "datasets",
+            "label": "Datasets (HF)",
+            "code": "from datasets import load_dataset\ndataset = load_dataset('yelp_review_full')"
+        },
+        {
+            "name": "polars",
+            "label": "Polars",
+            "code": "import polars as pl\ndf = pl.read_ndjson('yelp_academic_dataset_review.json')"
+        }
+    ]
+}

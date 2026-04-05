@@ -1,1 +1,58 @@
-{"id":"46","title":"Bike Sharing","topic":"Finance","format":"CSV","size":"20 MB","rows":"17389","overview":"Hourly and daily bike rental counts with weather and seasonal information.","source":"UCI","access_type":"download","download_url":"https://archive.ics.uci.edu/ml/machine-learning-databases/00275/Bike-Sharing-Dataset.zip","added":"2026-02-19","tags":["bike","rental","time-series","regression"]}
+{
+    "id": "46",
+    "title": "Bike Sharing",
+    "topic": "Finance",
+    "format": "CSV",
+    "size": "20 MB",
+    "rows": "17389",
+    "overview": "Hourly and daily bike rental counts with weather and seasonal information.",
+    "source": "UCI",
+    "access_type": "download",
+    "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00275/Bike-Sharing-Dataset.zip",
+    "added": "2026-02-19",
+    "tags": [
+        "bike",
+        "rental",
+        "time-series",
+        "regression"
+    ],
+    "owner": "UCI",
+    "origin_site": "UCI Archive",
+    "preview": {
+        "cols": [
+            "Date",
+            "Symbol",
+            "Open",
+            "High",
+            "Low",
+            "Close"
+        ],
+        "rows": [
+            [
+                "2026-04-01",
+                "ABC",
+                "150.20",
+                "155.00",
+                "149.50",
+                "154.30"
+            ],
+            [
+                "2026-04-02",
+                "ABC",
+                "154.30",
+                "156.10",
+                "153.20",
+                "155.80"
+            ],
+            [
+                "2026-04-03",
+                "ABC",
+                "155.80",
+                "157.00",
+                "155.00",
+                "156.20"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00275/Bike-Sharing-Dataset.zip'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+}

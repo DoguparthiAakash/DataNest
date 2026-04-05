@@ -1,1 +1,58 @@
-{"id":"33","title":"CelebA","topic":"Computer Vision","format":"PNG","size":"200 GB","rows":"200K","overview":"Large-scale face attributes dataset with more than 200K celebrity images.","source":"MMLU","access_type":"api","visit_url":"https://huggingface.co/datasets/celeb_a","usage_code":"from datasets import load_dataset\nds = load_dataset('celeb_a')","added":"2026-03-04","tags":["face","attributes","celebrities","images"]}
+{
+    "id": "33",
+    "title": "CelebA",
+    "topic": "Computer Vision",
+    "format": "PNG",
+    "size": "200 GB",
+    "rows": "200K",
+    "overview": "Large-scale face attributes dataset with more than 200K celebrity images.",
+    "source": "MMLU",
+    "access_type": "api",
+    "visit_url": "https://huggingface.co/datasets/celeb_a",
+    "usage_code": "from datasets import load_dataset\nds = load_dataset('celeb_a')",
+    "added": "2026-03-04",
+    "tags": [
+        "face",
+        "attributes",
+        "celebrities",
+        "images"
+    ],
+    "owner": "MMLU",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Image_ID",
+            "Category",
+            "X",
+            "Y",
+            "Width",
+            "Height"
+        ],
+        "rows": [
+            [
+                "IMG123",
+                "Car",
+                "100",
+                "150",
+                "200",
+                "120"
+            ],
+            [
+                "IMG124",
+                "Person",
+                "50",
+                "80",
+                "60",
+                "180"
+            ],
+            [
+                "IMG125",
+                "Tree",
+                "300",
+                "200",
+                "150",
+                "250"
+            ]
+        ]
+    }
+}

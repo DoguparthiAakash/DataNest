@@ -1,1 +1,58 @@
-{"id":"52","title":"VoxCeleb","topic":"Computer Vision","format":"MP4","size":"200 GB","rows":"1M","overview":"Audio-visual speaker recognition dataset with 1M utterances from 7K speakers.","source":"Oxford","access_type":"api","visit_url":"https://www.robots.ox.ac.uk/~vgg/data/voxceleb/","usage_code":"https://www.robots.ox.ac.uk/~vgg/data/voxceleb/","added":"2026-02-13","tags":["speaker-recognition","audio","video","voice"]}
+{
+    "id": "52",
+    "title": "VoxCeleb",
+    "topic": "Computer Vision",
+    "format": "MP4",
+    "size": "200 GB",
+    "rows": "1M",
+    "overview": "Audio-visual speaker recognition dataset with 1M utterances from 7K speakers.",
+    "source": "Oxford",
+    "access_type": "api",
+    "visit_url": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/",
+    "usage_code": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/",
+    "added": "2026-02-13",
+    "tags": [
+        "speaker-recognition",
+        "audio",
+        "video",
+        "voice"
+    ],
+    "owner": "Oxford",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Image_ID",
+            "Category",
+            "X",
+            "Y",
+            "Width",
+            "Height"
+        ],
+        "rows": [
+            [
+                "IMG123",
+                "Car",
+                "100",
+                "150",
+                "200",
+                "120"
+            ],
+            [
+                "IMG124",
+                "Person",
+                "50",
+                "80",
+                "60",
+                "180"
+            ],
+            [
+                "IMG125",
+                "Tree",
+                "300",
+                "200",
+                "150",
+                "250"
+            ]
+        ]
+    }
+}

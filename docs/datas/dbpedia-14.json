@@ -1,1 +1,46 @@
-{"id":"49","title":"dbpedia-14","topic":"NLP","format":"JSON","size":"500 MB","rows":"840K","overview":"DBpedia ontology classification dataset with 14 classes from Wikipedia.","source":"DBpedia","access_type":"api","visit_url":"https://huggingface.co/datasets/dbpedia_14","usage_code":"from datasets import load_dataset\nds = load_dataset('dbpedia_14')","added":"2026-02-16","tags":["ontology","classification","wikipedia","NLP"]}
+{
+    "id": "49",
+    "title": "dbpedia-14",
+    "topic": "NLP",
+    "format": "JSON",
+    "size": "500 MB",
+    "rows": "840K",
+    "overview": "DBpedia ontology classification dataset with 14 classes from Wikipedia.",
+    "source": "DBpedia",
+    "access_type": "api",
+    "visit_url": "https://huggingface.co/datasets/dbpedia_14",
+    "usage_code": "from datasets import load_dataset\nds = load_dataset('dbpedia_14')",
+    "added": "2026-02-16",
+    "tags": [
+        "ontology",
+        "classification",
+        "wikipedia",
+        "NLP"
+    ],
+    "owner": "DBpedia",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Text",
+            "Label",
+            "Confidence"
+        ],
+        "rows": [
+            [
+                "The product is amazing!",
+                "Positive",
+                "0.98"
+            ],
+            [
+                "I didn't like the service.",
+                "Negative",
+                "0.85"
+            ],
+            [
+                "It was okay.",
+                "Neutral",
+                "0.72"
+            ]
+        ]
+    }
+}

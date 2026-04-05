@@ -1,16 +1,67 @@
 {
-  "id": "global-temp",
-  "title": "Global Surface Temperature",
-  "topic": "Biology",
-  "format": "CSV",
-  "size": "15 KB",
-  "rows": "140",
-  "overview": "Annual global mean temperature anomalies from GISTEMP and GCAG data sources, covering the period from 1880 to present.",
-  "source": "DataHub (GitHub)",
-  "access_type": "download",
-  "download_url": "https://raw.githubusercontent.com/datasets/global-temp/main/data/annual.csv",
-  "visit_url": "https://github.com/datasets/global-temp",
-  "added": "2026-03-25",
-  "tags": ["climate", "environment", "temperature", "biology"],
-  "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/datasets/global-temp/main/data/annual.csv'\ndf = pd.read_csv(url)\ndf_gcag = df[df.Source == 'GCAG']\nprint(df_gcag.tail())"
+    "id": "global-temp",
+    "title": "Global Surface Temperature Anomalies",
+    "topic": "Environment",
+    "format": "CSV",
+    "size": "25 KB",
+    "rows": "240",
+    "overview": "Combined global mean temperature anomalies (relative to 1951-1980 mean) from GISS and Berkeley Earth sources.",
+    "source": "NASA GISTEMP / Berkeley Earth",
+    "owner": "NASA",
+    "origin_site": "NASA GISS Data Portal",
+    "access_type": "download",
+    "download_url": "https://pkgstore.datahub.io/core/global-temp/annual_csv/data/a21150a233073b0970099289da0dec52/annual_csv.csv",
+    "visit_url": "https://datahub.io/core/global-temp",
+    "added": "2026-03-25",
+    "tags": [
+        "climate",
+        "environment",
+        "temperature"
+    ],
+    "preview": {
+        "currentSplit": "annual",
+        "splits": {
+            "annual": {
+                "cols": [
+                    "Source",
+                    "Year",
+                    "Mean"
+                ],
+                "rows": [
+                    [
+                        "GCAG",
+                        "2023",
+                        "0.98"
+                    ],
+                    [
+                        "GISTEMP",
+                        "2023",
+                        "1.02"
+                    ],
+                    [
+                        "GCAG",
+                        "2022",
+                        "0.89"
+                    ],
+                    [
+                        "GISTEMP",
+                        "2022",
+                        "0.91"
+                    ],
+                    [
+                        "GCAG",
+                        "2021",
+                        "0.85"
+                    ]
+                ]
+            }
+        }
+    },
+    "usage_methods": [
+        {
+            "name": "pandas",
+            "label": "Pandas",
+            "code": "import pandas as pd\nurl = 'https://pkgstore.datahub.io/core/global-temp/annual_csv/data/a21150a233073b0970099289da0dec52/annual_csv.csv'\ndf = pd.read_csv(url)\nprint(df.head())"
+        }
+    ]
 }

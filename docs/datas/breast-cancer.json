@@ -1,16 +1,69 @@
 {
-  "id": "breast-cancer",
-  "title": "Breast Cancer Wisconsin",
-  "topic": "Biology",
-  "format": "CSV",
-  "size": "120 KB",
-  "rows": "569",
-  "overview": "Wisconsin Diagnostic Breast Cancer (WDBC) dataset. Features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass.",
-  "source": "UCI/GitHub",
-  "access_type": "download",
-  "download_url": "https://raw.githubusercontent.com/remi-granier/breast-cancer-wisconsin-data/master/data.csv",
-  "visit_url": "https://github.com/remi-granier/breast-cancer-wisconsin-data",
-  "added": "2026-03-25",
-  "tags": ["health", "medical", "classification", "biology"],
-  "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/remi-granier/breast-cancer-wisconsin-data/master/data.csv'\ndf = pd.read_csv(url)\nprint(df.diagnosis.value_counts())"
+    "id": "breast-cancer",
+    "title": "Breast Cancer Wisconsin",
+    "topic": "Biology",
+    "format": "CSV",
+    "size": "120 KB",
+    "rows": "569",
+    "overview": "Wisconsin Diagnostic Breast Cancer (WDBC) dataset. Features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass.",
+    "source": "UCI/GitHub",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/remi-granier/breast-cancer-wisconsin-data/master/data.csv",
+    "visit_url": "https://github.com/remi-granier/breast-cancer-wisconsin-data",
+    "added": "2026-03-25",
+    "tags": [
+        "health",
+        "medical",
+        "classification",
+        "biology"
+    ],
+    "usage_code": "import pandas as pd\nurl = 'https://raw.githubusercontent.com/remi-granier/breast-cancer-wisconsin-data/master/data.csv'\ndf = pd.read_csv(url)\nprint(df.diagnosis.value_counts())",
+    "owner": "remi-granier",
+    "origin_site": "GitHub",
+    "preview": {
+        "cols": [
+            "Patient_ID",
+            "Age",
+            "Gender",
+            "Status",
+            "Blood_Pressure"
+        ],
+        "rows": [
+            [
+                "P1001",
+                "45",
+                "Male",
+                "Stable",
+                "120/80"
+            ],
+            [
+                "P1002",
+                "32",
+                "Female",
+                "Critical",
+                "140/95"
+            ],
+            [
+                "P1003",
+                "58",
+                "Male",
+                "Recovered",
+                "115/75"
+            ],
+            [
+                "P1004",
+                "24",
+                "Female",
+                "Stable",
+                "110/70"
+            ],
+            [
+                "P1005",
+                "67",
+                "Male",
+                "Stable",
+                "130/85"
+            ]
+        ]
+    }
 }

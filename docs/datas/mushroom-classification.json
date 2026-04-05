@@ -1,0 +1,24 @@
+{
+    "id": "mushroom-classification",
+    "title": "Mushroom Classification (Edible/Poisonous)",
+    "topic": "Biology",
+    "format": "CSV",
+    "size": "370 KB",
+    "rows": "8124",
+    "overview": "Classify mushrooms as edible or poisonous based on physical characteristics.",
+    "source": "UCI ML Repository",
+    "owner": "UCI",
+    "origin_site": "UCI Repository",
+    "access_type": "download",
+    "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data",
+    "added": "2026-04-05",
+    "tags": ["biology", "classification", "nature"],
+    "preview": {
+        "cols": ["class", "cap-shape", "cap-surface", "cap-color"],
+        "rows": [
+            ["p", "x", "s", "n"],
+            ["e", "x", "s", "y"],
+            ["e", "b", "s", "w"]
+        ]
+    }
+}

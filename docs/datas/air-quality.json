@@ -1,1 +1,50 @@
-{"id":"42","title":"Air Quality","topic":"Climate","format":"CSV","size":"50 MB","rows":"10000","overview":"Air quality measurements from sensors including CO, NO2, O3, and PM2.5 levels.","source":"UCI","access_type":"download","download_url":"https://archive.ics.uci.edu/ml/machine-learning-databases/00350/AirQualityUCI.zip","added":"2026-02-23","tags":["air-quality","pollution","sensors","time-series"]}
+{
+    "id": "42",
+    "title": "Air Quality",
+    "topic": "Climate",
+    "format": "CSV",
+    "size": "50 MB",
+    "rows": "10000",
+    "overview": "Air quality measurements from sensors including CO, NO2, O3, and PM2.5 levels.",
+    "source": "UCI",
+    "access_type": "download",
+    "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00350/AirQualityUCI.zip",
+    "added": "2026-02-23",
+    "tags": [
+        "air-quality",
+        "pollution",
+        "sensors",
+        "time-series"
+    ],
+    "owner": "UCI",
+    "origin_site": "UCI Archive",
+    "preview": {
+        "cols": [
+            "ID",
+            "Category",
+            "Value",
+            "Notes"
+        ],
+        "rows": [
+            [
+                "1",
+                "Category A",
+                "10.5",
+                "N/A"
+            ],
+            [
+                "2",
+                "Category B",
+                "22.1",
+                "Sample"
+            ],
+            [
+                "3",
+                "Category A",
+                "15.7",
+                "Active"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00350/AirQualityUCI.zip'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+}

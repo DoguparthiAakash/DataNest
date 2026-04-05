@@ -1,0 +1,24 @@
+{
+    "id": "adult-census-income",
+    "title": "Adult Census Income (Prediction)",
+    "topic": "Economics",
+    "format": "CSV",
+    "size": "3.8 MB",
+    "rows": "48K",
+    "overview": "Predict whether income exceeds $50K/yr based on census data.",
+    "source": "UCI ML Repository",
+    "owner": "UCI",
+    "origin_site": "UCI Repository",
+    "access_type": "download",
+    "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data",
+    "added": "2026-04-05",
+    "tags": ["economics", "classification", "census"],
+    "preview": {
+        "cols": ["age", "workclass", "education", "income"],
+        "rows": [
+            ["39", "State-gov", "Bachelors", "<=50K"],
+            ["50", "Self-emp-not-inc", "Bachelors", "<=50K"],
+            ["38", "Private", "HS-grad", "<=50K"]
+        ]
+    }
+}

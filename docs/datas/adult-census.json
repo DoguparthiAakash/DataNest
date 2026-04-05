@@ -1,1 +1,58 @@
-{"id":"29","title":"Adult Census Income","topic":"Finance","format":"CSV","size":"4 MB","rows":"48842","overview":"Predict whether income exceeds $50K/yr based on census data.","source":"UCI","access_type":"download","download_url":"https://raw.githubusercontent.com/datasciencedojo/datasets/master/adult.csv","added":"2026-03-08","tags":["census","income","classification","tabular"]}
+{
+    "id": "29",
+    "title": "Adult Census Income",
+    "topic": "Finance",
+    "format": "CSV",
+    "size": "4 MB",
+    "rows": "48842",
+    "overview": "Predict whether income exceeds $50K/yr based on census data.",
+    "source": "UCI",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/adult.csv",
+    "added": "2026-03-08",
+    "tags": [
+        "census",
+        "income",
+        "classification",
+        "tabular"
+    ],
+    "owner": "UCI",
+    "origin_site": "UCI Archive",
+    "preview": {
+        "cols": [
+            "Date",
+            "Symbol",
+            "Open",
+            "High",
+            "Low",
+            "Close"
+        ],
+        "rows": [
+            [
+                "2026-04-01",
+                "ABC",
+                "150.20",
+                "155.00",
+                "149.50",
+                "154.30"
+            ],
+            [
+                "2026-04-02",
+                "ABC",
+                "154.30",
+                "156.10",
+                "153.20",
+                "155.80"
+            ],
+            [
+                "2026-04-03",
+                "ABC",
+                "155.80",
+                "157.00",
+                "155.00",
+                "156.20"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/datasciencedojo/datasets/master/adult.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+}

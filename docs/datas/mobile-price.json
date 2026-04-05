@@ -1,0 +1,50 @@
+{
+    "id": "mobile-price",
+    "title": "Mobile Price Classification",
+    "topic": "Tech",
+    "format": "CSV",
+    "size": "70 KB",
+    "rows": "2000",
+    "overview": "Classification task to predict the price range of mobile phones based on specifications.",
+    "source": "Kaggle",
+    "owner": "iabhishekofficial",
+    "origin_site": "Kaggle",
+    "access_type": "visit",
+    "download_url": "https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification",
+    "visit_url": "https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification",
+    "added": "2026-04-05",
+    "tags": [
+        "tech",
+        "mobile",
+        "classification"
+    ],
+    "preview": {
+        "cols": [
+            "ID",
+            "Category",
+            "Value",
+            "Notes"
+        ],
+        "rows": [
+            [
+                "1",
+                "Category A",
+                "10.5",
+                "N/A"
+            ],
+            [
+                "2",
+                "Category B",
+                "22.1",
+                "Sample"
+            ],
+            [
+                "3",
+                "Category A",
+                "15.7",
+                "Active"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+}

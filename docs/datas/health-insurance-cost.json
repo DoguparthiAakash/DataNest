@@ -1,0 +1,25 @@
+{
+    "id": "health-insurance-cost",
+    "title": "Global Health Insurance Cost Benchmarks",
+    "topic": "Health",
+    "format": "JSON",
+    "size": "120 KB",
+    "rows": "5000",
+    "overview": "Anonymized benchmarks for health insurance premiums across 40 countries, segmented by age and coverage level.",
+    "source": "HealthStat Analytics",
+    "owner": "HealthStat",
+    "origin_site": "Direct Purchase",
+    "access_type": "download",
+    "download_url": "https://example.com/buy/health-costs",
+    "price": 29.00,
+    "added": "2026-04-05",
+    "tags": ["health", "insurance", "economics", "premium"],
+    "preview": {
+        "cols": ["Country", "Age_Group", "Premium_USD", "Coverage"],
+        "rows": [
+            ["USA", "25-30", "450", "Basic"],
+            ["Germany", "25-30", "320", "Full"],
+            ["India", "25-30", "45", "Standard"]
+        ]
+    }
+}

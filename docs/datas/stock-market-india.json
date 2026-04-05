@@ -1,0 +1,25 @@
+{
+    "id": "stock-market-india",
+    "title": "NIFTY 50 Historical Data (Premium)",
+    "topic": "Finance",
+    "format": "CSV",
+    "size": "450 MB",
+    "rows": "2M",
+    "overview": "Minute-by-minute historical data for all NIFTY 50 stocks over the last 10 years. Includes adjusted close and technical indicators.",
+    "source": "MarketDataPro",
+    "owner": "MarketDataPro",
+    "origin_site": "MarketDataPro Private",
+    "access_type": "download",
+    "download_url": "https://example.com/purchase/nifty50",
+    "price": 49.00,
+    "added": "2026-04-05",
+    "tags": ["stocks", "india", "finance", "premium"],
+    "preview": {
+        "cols": ["Symbol", "Timestamp", "Open", "Close", "Volume"],
+        "rows": [
+            ["RELIANCE", "2024-03-20 09:15:00", "2950.00", "2955.00", "120K"],
+            ["TCS", "2024-03-20 09:15:00", "3980.00", "3975.00", "85K"],
+            ["HDFCBANK", "2024-03-20 09:15:00", "1440.00", "1442.00", "210K"]
+        ]
+    }
+}

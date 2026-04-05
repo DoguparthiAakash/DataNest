@@ -1,15 +1,69 @@
 {
-  "id": "palmer-penguins",
-  "title": "Palmer Penguins",
-  "topic": "Biology",
-  "format": "CSV",
-  "size": "15 KB",
-  "rows": "344",
-  "overview": "Size measurements for adult foraging penguins near Palmer Station, Antarctica. A great alternative to the Iris dataset.",
-  "source": "Allison Horst",
-  "access_type": "download",
-  "download_url": "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv",
-  "visit_url": "https://allisonhorst.github.io/palmerpenguins/",
-  "added": "2026-03-24",
-  "tags": ["penguins", "classification", "regression", "biology"]
+    "id": "palmer-penguins",
+    "title": "Palmer Penguins",
+    "topic": "Biology",
+    "format": "CSV",
+    "size": "15 KB",
+    "rows": "344",
+    "overview": "Size measurements for adult foraging penguins near Palmer Station, Antarctica. A great alternative to the Iris dataset.",
+    "source": "Allison Horst",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv",
+    "visit_url": "https://allisonhorst.github.io/palmerpenguins/",
+    "added": "2026-03-24",
+    "tags": [
+        "penguins",
+        "classification",
+        "regression",
+        "biology"
+    ],
+    "owner": "Allison Horst",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Patient_ID",
+            "Age",
+            "Gender",
+            "Status",
+            "Blood_Pressure"
+        ],
+        "rows": [
+            [
+                "P1001",
+                "45",
+                "Male",
+                "Stable",
+                "120/80"
+            ],
+            [
+                "P1002",
+                "32",
+                "Female",
+                "Critical",
+                "140/95"
+            ],
+            [
+                "P1003",
+                "58",
+                "Male",
+                "Recovered",
+                "115/75"
+            ],
+            [
+                "P1004",
+                "24",
+                "Female",
+                "Stable",
+                "110/70"
+            ],
+            [
+                "P1005",
+                "67",
+                "Male",
+                "Stable",
+                "130/85"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
 }

@@ -1,1 +1,47 @@
-{"id":"glue","title":"GLUE Benchmark","topic":"NLP","format":"JSON","access_type":"api","size":"~200 MB","rows":"1M","overview":"9 NLP tasks for evaluating language models.","source":"NYU","visit_url":"https://gluebenchmark.com/","download_url":"https://gluebenchmark.com/","usage_code":"pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('glue','sst2',split='train')","added":"2026-03-01","tags":["nlp","benchmark","sentiment","qa"]}
+{
+    "id": "glue",
+    "title": "GLUE Benchmark",
+    "topic": "NLP",
+    "format": "JSON",
+    "access_type": "api",
+    "size": "~200 MB",
+    "rows": "1M",
+    "overview": "9 NLP tasks for evaluating language models.",
+    "source": "NYU",
+    "visit_url": "https://gluebenchmark.com/",
+    "download_url": "https://gluebenchmark.com/",
+    "usage_code": "pip install datasets\nfrom datasets import load_dataset\ndataset = load_dataset('glue','sst2',split='train')",
+    "added": "2026-03-01",
+    "tags": [
+        "nlp",
+        "benchmark",
+        "sentiment",
+        "qa"
+    ],
+    "owner": "NYU",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Text",
+            "Label",
+            "Confidence"
+        ],
+        "rows": [
+            [
+                "The product is amazing!",
+                "Positive",
+                "0.98"
+            ],
+            [
+                "I didn't like the service.",
+                "Negative",
+                "0.85"
+            ],
+            [
+                "It was okay.",
+                "Neutral",
+                "0.72"
+            ]
+        ]
+    }
+}

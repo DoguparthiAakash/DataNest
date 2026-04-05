@@ -1,0 +1,24 @@
+{
+    "id": "car-evaluation",
+    "title": "Car Evaluation Dataset",
+    "topic": "Business",
+    "format": "CSV",
+    "size": "50 KB",
+    "rows": "1728",
+    "overview": "Multiclass classification of cars based on buying price, maintenance, and safety.",
+    "source": "UCI ML Repository",
+    "owner": "UCI",
+    "origin_site": "UCI Repository",
+    "access_type": "download",
+    "download_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/car/car.data",
+    "added": "2026-04-05",
+    "tags": ["business", "classification", "automobile"],
+    "preview": {
+        "cols": ["buying", "maint", "doors", "persons", "safety"],
+        "rows": [
+            ["vhigh", "vhigh", "2", "2", "low"],
+            ["vhigh", "vhigh", "2", "2", "med"],
+            ["vhigh", "vhigh", "2", "2", "high"]
+        ]
+    }
+}

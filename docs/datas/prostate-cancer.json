@@ -1,0 +1,69 @@
+{
+    "id": "prostate-cancer",
+    "title": "Prostate Cancer Dataset",
+    "topic": "Health",
+    "format": "CSV",
+    "size": "15 KB",
+    "rows": "97",
+    "overview": "Classic dataset from 'Elements of Statistical Learning' book, containing clinical measures for prostate cancer.",
+    "source": "Stanford University / GitHub",
+    "owner": "selva86",
+    "origin_site": "GitHub",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/selva86/datasets/master/prostate.csv",
+    "visit_url": "https://github.com/selva86/datasets",
+    "added": "2026-04-05",
+    "tags": [
+        "health",
+        "cancer",
+        "medical",
+        "regression"
+    ],
+    "preview": {
+        "cols": [
+            "Patient_ID",
+            "Age",
+            "Gender",
+            "Status",
+            "Blood_Pressure"
+        ],
+        "rows": [
+            [
+                "P1001",
+                "45",
+                "Male",
+                "Stable",
+                "120/80"
+            ],
+            [
+                "P1002",
+                "32",
+                "Female",
+                "Critical",
+                "140/95"
+            ],
+            [
+                "P1003",
+                "58",
+                "Male",
+                "Recovered",
+                "115/75"
+            ],
+            [
+                "P1004",
+                "24",
+                "Female",
+                "Stable",
+                "110/70"
+            ],
+            [
+                "P1005",
+                "67",
+                "Male",
+                "Stable",
+                "130/85"
+            ]
+        ]
+    },
+    "usage_code": "import pandas as pd\nimport requests\n\nurl = 'https://raw.githubusercontent.com/selva86/datasets/master/prostate.csv'\n# Download and load directly\ndf = pd.read_csv(url)\nprint(df.head())"
+}

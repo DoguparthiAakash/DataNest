@@ -1,0 +1,24 @@
+{
+    "id": "diabetes-dataset",
+    "title": "Diabetes Dataset (Pima Indians)",
+    "topic": "Health",
+    "format": "CSV",
+    "size": "24 KB",
+    "rows": "768",
+    "overview": "Predict the onset of diabetes based on diagnostic measures.",
+    "source": "UCI / Kaggle",
+    "owner": "National Institute of Diabetes",
+    "origin_site": "GitHub Mirror",
+    "access_type": "download",
+    "download_url": "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv",
+    "added": "2026-04-05",
+    "tags": ["health", "classification", "diabetes"],
+    "preview": {
+        "cols": ["Pregnancies", "Glucose", "BloodPressure", "Outcome"],
+        "rows": [
+            ["6", "148", "72", "1"],
+            ["1", "85", "66", "0"],
+            ["8", "183", "64", "1"]
+        ]
+    }
+}

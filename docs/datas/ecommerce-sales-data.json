@@ -1,0 +1,25 @@
+{
+    "id": "ecommerce-sales-data",
+    "title": "E-commerce Global Sales 2024 (Premium)",
+    "topic": "Business",
+    "format": "JSON",
+    "size": "850 MB",
+    "rows": "5M",
+    "overview": "Detailed sales and customer behavior data from leading global e-commerce platforms, aggregated for 2024.",
+    "source": "RetailIntel",
+    "owner": "RetailIntel",
+    "origin_site": "RetailIntel Store",
+    "access_type": "download",
+    "download_url": "https://example.com/buy/ecommerce-2024",
+    "price": 75.00,
+    "added": "2026-04-05",
+    "tags": ["business", "ecommerce", "sales", "retail"],
+    "preview": {
+        "cols": ["Order_ID", "Product", "Revenue_USD", "Region"],
+        "rows": [
+            ["E-101", "Smartphone", "899.00", "North America"],
+            ["E-102", "Smart Watch", "199.00", "Europe"],
+            ["E-103", "Laptop", "1450.00", "Asia"]
+        ]
+    }
+}

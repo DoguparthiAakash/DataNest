@@ -1,0 +1,25 @@
+{
+    "id": "customer-support-tickets",
+    "title": "Customer Support Tickets (Telecom)",
+    "topic": "Business",
+    "format": "CSV",
+    "size": "1.2 GB",
+    "rows": "8.5M",
+    "overview": "Large-scale dataset of telecom customer support tickets, categorized by issue type and resolution status.",
+    "source": "Kaggle",
+    "owner": "TelecomData",
+    "origin_site": "Kaggle",
+    "access_type": "api",
+    "visit_url": "https://www.kaggle.com/datasets/telecomdata/support-tickets",
+    "restricted": true,
+    "added": "2026-04-05",
+    "tags": ["business", "customers", "telecom"],
+    "preview": {
+        "cols": ["Ticket_ID", "Category", "Sentiment", "Resolved"],
+        "rows": [
+            ["T-9981", "Billing", "Slightly Negative", "Yes"],
+            ["T-9982", "Technical", "Negative", "No"],
+            ["T-9983", "New Service", "Positive", "Yes"]
+        ]
+  }
+}

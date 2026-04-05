@@ -1,1 +1,58 @@
-{"id":"imagenet","title":"ImageNet ILSVRC","topic":"Computer Vision","format":"ZIP","access_type":"api","size":"~140 GB","rows":"1.4M","overview":"1.2M images across 1000 categories. Standard benchmark for image classification.","source":"ImageNet","visit_url":"https://www.image-net.org/","download_url":"https://www.image-net.org/download.php","usage_code":"# Requires registration at image-net.org\n# Alternative: Kaggle\nkaggle datasets download -d imanerds/imagenet10k","added":"2026-03-01","tags":["image-classification","deep-learning","1000-class"]}
+{
+    "id": "imagenet",
+    "title": "ImageNet ILSVRC",
+    "topic": "Computer Vision",
+    "format": "ZIP",
+    "access_type": "api",
+    "size": "~140 GB",
+    "rows": "1.4M",
+    "overview": "1.2M images across 1000 categories. Standard benchmark for image classification.",
+    "source": "ImageNet",
+    "visit_url": "https://www.image-net.org/",
+    "download_url": "https://www.image-net.org/download.php",
+    "usage_code": "# Requires registration at image-net.org\n# Alternative: Kaggle\nkaggle datasets download -d imanerds/imagenet10k",
+    "added": "2026-03-01",
+    "tags": [
+        "image-classification",
+        "deep-learning",
+        "1000-class"
+    ],
+    "owner": "ImageNet",
+    "origin_site": "Other",
+    "preview": {
+        "cols": [
+            "Image_ID",
+            "Category",
+            "X",
+            "Y",
+            "Width",
+            "Height"
+        ],
+        "rows": [
+            [
+                "IMG123",
+                "Car",
+                "100",
+                "150",
+                "200",
+                "120"
+            ],
+            [
+                "IMG124",
+                "Person",
+                "50",
+                "80",
+                "60",
+                "180"
+            ],
+            [
+                "IMG125",
+                "Tree",
+                "300",
+                "200",
+                "150",
+                "250"
+            ]
+        ]
+    }
+}

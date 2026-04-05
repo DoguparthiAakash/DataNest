@@ -1,0 +1,25 @@
+{
+  "id": "sample-media-archive",
+  "title": "Internet Archive Media Samples",
+  "topic": "Multimedia",
+  "format": "Mixed Media",
+  "size": "45 MB",
+  "rows": "Sample Set",
+  "overview": "A collection of public domain samples from the Internet Archive, including cultural heritage audio and classic video clips.",
+  "access_type": "download",
+  "visit_url": "https://archive.org",
+  "added": "2026-04-03",
+  "tags": ["audio", "video", "multimedia", "archive"],
+  "owner": "Cultural Heritage Library",
+  "owner_url": "https://archive.org/details/culturalheritagelibrary",
+  "origin_site": "Internet Archive",
+  "origin_site_url": "https://archive.org",
+  "data_type": "audio",
+  "preview": [
+    { "url": "https://archive.org/download/test_audio_123/test.mp3", "label": "Jazz Heritage Sample" },
+    { "url": "https://archive.org/download/test_video_123/test.mp4", "label": "Early Cinema Clip" }
+  ],
+  "area": "Multimedia",
+  "task": "Archive",
+  "features": 0
+}

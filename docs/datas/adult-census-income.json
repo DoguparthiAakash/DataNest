@@ -18,7 +18,18 @@
         "rows": [
             ["39", "State-gov", "Bachelors", "<=50K"],
             ["50", "Self-emp-not-inc", "Bachelors", "<=50K"],
-            ["38", "Private", "HS-grad", "<=50K"]
+            ["38", "Private", "HS-grad", "<=50K"],
+            ["53", "Private", "11th", "<=50K"],
+            ["28", "Private", "Bachelors", "<=50K"],
+            ["37", "Private", "Masters", "<=50K"],
+            ["49", "Private", "9th", "<=50K"],
+            ["52", "Self-emp-not-inc", "HS-grad", ">50K"],
+            ["31", "Private", "Masters", ">50K"],
+            ["42", "Private", "Bachelors", ">50K"],
+            ["37", "Private", "Some-college", "<=50K"],
+            ["30", "State-gov", "Bachelors", ">50K"],
+            ["23", "Private", "Bachelors", "<=50K"],
+            ["32", "Private", "HS-grad", "<=50K"]
         ]
     }
 }

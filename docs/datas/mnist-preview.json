@@ -1,0 +1,29 @@
+{
+  "id": "mnist-preview",
+  "title": "MNIST Digits (Images)",
+  "topic": "Computer Vision",
+  "format": "Image Pack",
+  "size": "50 MB",
+  "rows": "70,000",
+  "overview": "The classic dataset of handwritten digits, perfect for training image classification models. Features 28x28 grayscale images of digits 0-9.",
+  "access_type": "download",
+  "visit_url": "https://github.com/myleott/mnist_png",
+  "added": "2026-04-01",
+  "tags": ["computer-vision", "digits", "classification", "classic"],
+  "owner": "myleott",
+  "owner_url": "https://github.com/myleott",
+  "origin_site": "GitHub",
+  "origin_site_url": "https://github.com",
+  "data_type": "image",
+  "preview": [
+    { "url": "https://raw.githubusercontent.com/myleott/mnist_png/master/mnist_png/training/0/1.png", "label": "Digit 0" },
+    { "url": "https://raw.githubusercontent.com/myleott/mnist_png/master/mnist_png/training/1/3.png", "label": "Digit 1" },
+    { "url": "https://raw.githubusercontent.com/myleott/mnist_png/master/mnist_png/training/2/5.png", "label": "Digit 2" },
+    { "url": "https://raw.githubusercontent.com/myleott/mnist_png/master/mnist_png/training/3/7.png", "label": "Digit 3" },
+    { "url": "https://raw.githubusercontent.com/myleott/mnist_png/master/mnist_png/training/4/2.png", "label": "Digit 4" },
+    { "url": "https://raw.githubusercontent.com/myleott/mnist_png/master/mnist_png/training/5/8.png", "label": "Digit 5" }
+  ],
+  "area": "Computer Vision",
+  "task": "Classification",
+  "features": 0
+}

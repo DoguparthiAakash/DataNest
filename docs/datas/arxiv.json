@@ -19,7 +19,9 @@
     "added": "2026-03-20",
     "tags": ["scholarly", "metadata", "science", "NLP"],
     "owner": "Cornell University",
+    "owner_url": "https://www.kaggle.com/Cornell-University",
     "origin_site": "Kaggle",
+    "origin_site_url": "https://www.kaggle.com",
     "preview": {
         "cols": ["Date", "Topic", "Author", "Title"],
         "rows": [["2026-03-15", "Physics", "J. Doe", "Quantization of Spacetime"], ["2026-03-18", "AI", "A. Smith", "A Neural Approach to Logic"], ["2026-03-22", "Biology", "B. Lee", "Evolutionary Models of Cells"]]
